@@ -1,0 +1,14 @@
+[
+  {
+    "path": "posts/2021-10-27-rsum/",
+    "title": "Résumé",
+    "description": {},
+    "author": [],
+    "date": "2021-10-31",
+    "categories": [],
+    "contents": "\r\n\r\n\r\na {n  \r\n  text-decoration: none; \r\n  color: rgba(121, 205, 205);\r\n}\r\na:hover {\r\n  color: rgba(255, 182, 255, 0.8);\r\n}\r\nul {\r\n  list-style: none; /* Remove list bullets bcz don't know how to change color */\r\n  padding: 0;\r\n  margin: 0;\r\n}\r\nli::before {\r\n  content: \"•\"; \r\n  color: \"#5A59A3\";\r\n}\r\nh1 {\r\n  font-family: candara; /* title */\r\n  font-style: italic;\r\n}\r\nh2 {\r\n  font-family: candara;\r\n  font-style: italic;\r\n  color: rgba(134, 35, 141, 0.72);\r\n}\r\np code,\r\nli code {\r\n    line-height: 2.0; \r\n    white-space: nowrap;\r\n}\r\nbody {\r\n    width: 100vw;\r\n    height: 100vh;\r\n    margin: 0;\r\n    background: linear-gradient(\r\n        130deg, \r\n        #5A59A3, \r\n        #C66060\r\n    ) no-repeat  fixed;\r\n}\r\n\r\nEducation\r\nBachelor of Business in Accounting: Adkerson School of Accountancy May 2020\r\nMinor in Business Analytics\r\nMississippi State University, Mississippi State, MS\r\nWorking Experience\r\n  Private Accountant for a Fire Protection Service CompanyFall 2014 – Fall 2015\r\n  Hunan, China\r\n              Journal entries and general ledger preparation\r\n              Bank statements and reconciliation\r\n              Examining expenses submitted by the construction manager\r\n              Taxation preparation during tax season\r\nCourse Group Projects\r\n  PowerPoint and social platforms: Marketing strategy plans for a drone startup\r\n  Excel and Word: Prepared consolidated financial reports for company acquisition\r\n  R: Bankruptcy analysis. Methods: holdout validation in discriminant analysis and logistic         regression analysis, and cross-validation in decision tree analysis\r\nComputer Skills\r\n  Advanced in Microsoft Office including Excel, Word, and PowerPoint\r\n  Developing knowledge in Access, R, SAS, and Tableau\r\nVolunteer Work\r\n  West Point Clay County Animal Shelter\r\n  MSU Community Garden\r\n  Starkville Community Farmers Market\r\n  The Salvation Army\r\n\r\n\r\n\r\n",
+    "preview": {},
+    "last_modified": "2021-10-31T19:50:27-05:00",
+    "input_file": {}
+  }
+]
