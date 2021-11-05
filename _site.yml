@@ -18,5 +18,7 @@ navbar:
       href: "change me later"
     - text: "R-squared"
       href: rsquared.html
+    - text: "Resume"
+      href: resume.html
 output: distill::distill_article
 google_analytics: "change me later"
