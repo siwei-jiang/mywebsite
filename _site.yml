@@ -16,9 +16,14 @@ navbar:
       href: https://github.com/siwei-jiang
     - icon: fa fa-linkedin
       href: "change me later"
-    - text: "R-squared"
-      href: rsquared.html
     - text: "Resume"
       href: resume.html
+    - text: "Project"
+      menu:
+        - text: "Rsquared"
+          href: rsquared.html
+        - text: "Machine Learning"
+          href: ml.html
+        - text: "Final Project"
+          href: final.html
 output: distill::distill_article
-google_analytics: "change me later"

@@ -1,0 +1,164 @@
+---
+title: "Final Project"
+description: |
+date: "`r Sys.Date()`"
+output: distill::distill_article
+---
+
+```{r setup, set.seed(610), include=FALSE}
+knitr::opts_chunk$set(error = TRUE)
+library(readr)
+library(gdata)
+library(DMwR2)
+library(ROSE)
+library(GGally)
+library(ggplot2)
+library(caret)
+library(dplyr)
+library(readr)
+library(knitr)
+library(FactoMineR)
+BankChurners <- read_csv("data/BankChurners.csv", 
+                         col_types = cols(CLIENTNUM = col_number(), 
+                                          Attrition_Flag = col_factor(levels = c()), 
+                                          Customer_Age = col_number(), Gender = col_factor(levels = c()), 
+                                          Dependent_count = col_number(), Education_Level = col_factor(levels = c()), 
+                                          Marital_Status = col_factor(levels = c()), 
+                                          Income_Level = col_number(), Income_Category = col_factor(levels = c()), 
+                                          Card_Category = col_factor(levels = c()), 
+                                          Months_on_book = col_number(), Total_Relationship_Count = col_number(), 
+                                          Months_Inactive_12_mon = col_number(), 
+                                          Contacts_Count_12_mon = col_number(), 
+                                          Credit_Limit = col_number(), Total_Revolving_Bal = col_number(), 
+                                          Avg_Open_To_Buy = col_number(), Total_Amt_Chng_Q4_Q1 = col_number(), 
+                                          Total_Trans_Amt = col_number(), Total_Trans_Ct = col_number(), 
+                                          Total_Ct_Chng_Q4_Q1 = col_number(), 
+                                          Avg_Utilization_Ratio = col_number(), 
+                                          Naive_Bayes_Classifier_Attrition_Flag_Card_Category_Contacts_Count_12_mon_Dependent_count_Education_Level_Months_Inactive_12_mon_1 = col_number(), 
+                                          Naive_Bayes_Classifier_Attrition_Flag_Card_Category_Contacts_Count_12_mon_Dependent_count_Education_Level_Months_Inactive_12_mon_2 = col_number()), 
+                         na = "0")
+save(BankChurners, file = "BankChurners.Rda")
+BankChurners <- BankChurners[, -c(9, 23, 24)]
+# View(BankChurners)
+```
+
+## I. About the Dataset (Describtion, source, and what purposes)
+> Describtion:  
+> Source:  
+> Purpose:  
+
+## II. Descriptive Stats: small discussion (NA, outliers, skewed)
+>  
+
+### Missing Values
+```{r NA}
+# missing values
+# summary(BankChurners)
+BankChurners1 <- unknownToNA(BankChurners, unknown = c("Unknown", ""))
+# summary(BankChurners1)
+table(is.na(BankChurners1))
+# sapply(BankChurners1, function(x) sum(is.na(x)))
+BankChurners2 <- knnImputation(BankChurners1)
+# summary(BankChurners2)
+table(is.na(BankChurners2))
+```
+
+### Resampling
+```{r resampling}
+# imbalanced dataset
+table(BankChurners2$Attrition_Flag)
+BankChurners2_rose <- ROSE(Attrition_Flag ~., data = BankChurners2)$data
+table(BankChurners2_rose$Attrition_Flag)
+# summary(BankChurners2_rose)
+# str(BankChurners2_rose)
+# View(BankChurners2_rose)
+# BankChurners2_rose %>% 
+#   mutate_if(is.factor, ~ factor(trimws(., whitespace = "\\s*-.*")))
+```
+
+## III. Describe the model
+> Gradient Boosting Tree:  
+> Random Forest:  
+
+## IV. Describe the process and results
+> Process:  
+> Results:
+
+## V. Code (summary, split data, run, results)
+
+### should I use PCA before RF bcz it takes forever to run RF
+```{r PCA, eval=FALSE}
+# caret-PCA
+# BankChurners_pca <- BankChurners2_rose
+# # BankChurners_pca <- as.numeric(BankChurners2_rose)
+# BankChurners2_pca <- preProcess(BankChurners_pca, method = "pca", pcaComp = 12)
+# BankChurners2_pca
+# BankChurners2_pca_stat <- prcomp(BankChurners_pca[, -2])
+# plot(BankChurners2_pca_stat, type = "l")
+
+# FactoMineR-PCA
+# BankChurners2_rose_pca <- BankChurners2_rose
+# BankChurners_pca <- PCA(BankChurners2_rose_pca, 
+#                         ncp = 5,
+#                         ind.sup = 2,
+#                         quali.sup = c(2, 4, 6, 7, 9))
+# pca_barplot <- barplot(BankChurners_pca$eig[, 1], 
+#                        main = "Eigenvalues", 
+#                        names.arg = 1:nrow(BankChurners_pca$eig))
+# summary(BankChurners_pca)
+# BankChurners_pca$eig
+# BankChurners_pca$var
+
+# FactoMineR-FAMD
+# BankChurners2_rose_pca <- BankChurners2_rose
+# BankChurners_pca <- FAMD(BankChurners2_rose_pca, 
+#      ncp = 16,
+#      sup.var = 2,
+#      graph = FALSE)
+# BankChurners_pca$eig
+# pca_barplot <- barplot(BankChurners_pca$eig[, 1], 
+#                        main = "Eigenvalues", 
+#                        names.arg = 1:nrow(BankChurners_pca$eig))
+```
+
+### Data Split
+```{r data split}
+index <- createDataPartition(BankChurners2_rose$Attrition_Flag, p = .6, list = FALSE, times = 1)
+train <- BankChurners2_rose[index,]
+test <- BankChurners2_rose[-index,]
+```
+
+### Model-Training
+```{r train}
+churn_RF <- train(
+  form = factor(Attrition_Flag) ~.,
+  data = train,
+  trControl = trainControl(method = "cv",
+                           number = 10,
+                           classProbs = TRUE),
+  method = "rf",
+  tuneLength = 6
+)
+```
+
+### Model-Testing
+```{r test}
+churn_RF_pred <- predict(churn_RF, test, type = "prob")
+churn_RF_test_pred <- cbind(churn_RF_pred, test)
+churn_RF_test_pred <- churn_RF_test_pred %>% 
+  mutate(prediction = if_else(ExistingCustomer > AttritedCustomer, "ExistingCustomer", "AttritedCustomer"))
+table(churn_RF_test_pred$prediction)
+```
+
+
+### Performance
+```{r result}
+confusionMatrix(factor(churn_RF_test_pred$prediction), factor(churn_RF_test_pred$Attrition_Flag))
+var_import <- varImp(churn_RF)$importance %>% 
+  arrange(desc(Overall))
+kable(var_import)
+```
+
+## VI. Results
+> Results: 
+

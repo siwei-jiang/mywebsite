@@ -15,9 +15,11 @@ output:
 
 Change me later:)
 
+<!-- Tools > Project Options > Git -->
+
 ```{css, echo=FALSE}
 h1, body {
-  color:     #bdaeea;
+  color: #bdaeea;
 }
 ```
 

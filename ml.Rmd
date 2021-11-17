@@ -1,0 +1,15 @@
+---
+title: "ML"
+description: |
+output:
+  distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+# use hw
+# describe the model
+# describe the process and results
+# code
+
