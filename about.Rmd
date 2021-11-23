@@ -5,6 +5,12 @@ description: |
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
+library(countdown)
 ```
 
-# Hi I am Siwei 
+# Christmas Countdown~
+
+```{r}
+countdown(minutes = 99, seconds = 0)
+```
+

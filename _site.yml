@@ -25,5 +25,5 @@ navbar:
         - text: "Machine Learning"
           href: ml.html
         - text: "Final Project"
-          href: final.html
+          href: final_project.html
 output: distill::distill_article

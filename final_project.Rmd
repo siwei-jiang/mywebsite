@@ -1,0 +1,711 @@
+---
+title: "Final Project"
+description: |
+  This report is the final project for my accounitng analysis class, and the codes are borrowed from my professor, Dr. Hunt's [course website](https://professor-hunt.github.io/ACC8143/).
+date: "`r Sys.Date()`"
+output: 
+  distill::distill_article:
+    toc: true
+    toc_depth: 3
+    toc_float: true
+    code_folding: true
+---
+
+```{r setup, set.seed(0), include=FALSE, echo=FALSE}
+knitr::opts_chunk$set(error = TRUE, cache = TRUE, warning = FALSE)
+library(readr)
+library(readxl)
+library(gdata)
+library(DMwR)
+library(GGally)
+library(ggplot2)
+library(caret)
+library(dplyr)
+library(knitr)
+library(FactoMineR)
+library(hrbrthemes)
+library(MASS)
+library(pracma)
+library(gplots)
+library(xaringan)
+library(xaringanExtra)
+library(sknifedatar)
+library(kableExtra)
+library(gbm)
+library(bnstruct)
+library(fastAdaboost)
+library(VIM)
+xaringanExtra::use_panelset()
+xaringanExtra::style_panelset_tabs(font_family = "inherit")
+BankChurners <- read_csv("data/BankChurners.csv", 
+                         col_types = cols(CLIENTNUM = col_number(), 
+                                          Attrition_Flag = col_factor(levels = c()), 
+                                          Customer_Age = col_number(), Gender = col_factor(levels = c()), 
+                                          Dependent_count = col_number(), Education_Level = col_factor(levels = c()), 
+                                          Marital_Status = col_factor(levels = c()), 
+                                          Income_Level = col_number(), Income_Category = col_factor(levels = c()), 
+                                          Card_Category = col_factor(levels = c()), 
+                                          Months_on_book = col_number(), Total_Relationship_Count = col_number(), 
+                                          Months_Inactive_12_mon = col_number(), 
+                                          Contacts_Count_12_mon = col_number(), 
+                                          Credit_Limit = col_number(), Total_Revolving_Bal = col_number(), 
+                                          Avg_Open_To_Buy = col_number(), Total_Amt_Chng_Q4_Q1 = col_number(), 
+                                          Total_Trans_Amt = col_number(), Total_Trans_Ct = col_number(), 
+                                          Total_Ct_Chng_Q4_Q1 = col_number(), 
+                                          Avg_Utilization_Ratio = col_number(), 
+                                          Naive_Bayes_Classifier_Attrition_Flag_Card_Category_Contacts_Count_12_mon_Dependent_count_Education_Level_Months_Inactive_12_mon_1 = col_number(), 
+                                          Naive_Bayes_Classifier_Attrition_Flag_Card_Category_Contacts_Count_12_mon_Dependent_count_Education_Level_Months_Inactive_12_mon_2 = col_number()), 
+                         na = "0")
+save(BankChurners, file = "BankChurners.Rda")
+BankChurners <- BankChurners[, -c(1, 9, 23, 24)]
+BankChurners$Education_Level <- factor(BankChurners$Education_Level, 
+                                        levels = c("Uneducated", "High School", "College", "Graduate", "Post-Graduate", "Doctorate"))
+IncomeLevel <- read_excel("data/IncomeLevel.xlsx")
+save(IncomeLevel, file = "IncomeLevel.Rda")
+# View(BankChurners)
+# summary(BankChurners)
+```
+
+## I. About the Dataset
+> I obtained this dataset from Kaggle^[https://www.kaggle.com/sakshigoyal7/credit-card-customers], and Sakshi Goyal uploaded it a year ago (2020). This dataset is about a bank's customer churn issue. The manager of the bank is interested in predicting which customer will leave this bank. By doing so, the bank can target those customers with special products and services to increase their satisfication and customer retention.  
+>  
+> It contains 10,127 observations, and 23 varirables. Because I had some issues with *Income Category* values, so I add another column used a scale of 1 through 5 to represent each income catergory. My data analyses are based on 20 variables, which excluded the Client Number and two Naive Bayes Classifiers😶.  
+>  
+> The purpose of this project is to predict churned customers, so recall is an important model fit measurement📐. I also include accuracy and kappa as measurements of model fitness. I choose kappa because customer churn is only around 16% of total customers. Although some studies state kappa is not a good measure for classification models^[https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0222916], it is good enough for this project😎 I include a comparison table📊 in the conclusion section for each models' performances. 
+
+## II. Descriptive Stats
+
+> This dataset has 9,664 missing values, which is 4.77% of the 212,667 total values.  
+>  
+> After using kNN to replace all the missing data by calculating their nearest 10 neighbours 🏠🏡 values, the new dataset contains 0️⃣ missing values.
+
+<aside>
+```{r NA}
+# missing values
+# summary(BankChurners)
+BankChurners1 <- unknownToNA(BankChurners, unknown = c("", "Unknown"))
+# summary(BankChurners1)
+na_cnt <- table(is.na(BankChurners1))
+na_pct <- prop.table(na_cnt)
+cbind(na_cnt, na_pct)
+
+# replace all missing values 
+
+BankChurners2 <- kNN(BankChurners1, 
+                     variable = c("Dependent_count", "Education_Level", 
+                                  "Marital_Status", "Income_Level", 
+                                  "Months_Inactive_12_mon", "Contacts_Count_12_mon",
+                                  "Total_Revolving_Bal", "Total_Amt_Chng_Q4_Q1",
+                                  "Total_Ct_Chng_Q4_Q1", "Avg_Utilization_Ratio"),
+                     k = 10)
+# summary(BankChurners2)
+BankChurners2 <- BankChurners2[,-c(21:30)]
+table(is.na(BankChurners2))
+```
+</aside>
+
+> The distribution of the tagert variable is not balanced ⚖️, as attrited customers only represents 16% of the total customers.
+
+<aside>
+```{r classes_distribution}
+counts <- table(BankChurners1$Attrition_Flag)
+proportions <- prop.table(counts)
+cbind(counts, proportions)
+```
+</aside>
+
+::: panelset
+::: panel
+[Transaction Count]{.panel-name} Attrited customer has less variability and less spread regarding the total number of transactions.We can see that 50% of customer churn has less than 50 transaction counts and no of those customers have more than 100 transactions.
+       
+```{r plot1}
+ggplot(data = BankChurners1, 
+       mapping = aes(x = Attrition_Flag, 
+                     y = Total_Trans_Ct,
+                     fill = Attrition_Flag)) +
+  labs(title = "Boxplot: Total Transaction Count",
+       tag = "Fig. 1") +
+  geom_boxplot(alpha = .3) +
+  theme(legend.position = "none") +
+  scale_fill_brewer(palette = "Dark2")
+```
+:::
+
+::: panel
+[Transaction Amt💸]{.panel-name} Both existing and attrited Customer are right skewed due to outliers regarding their total transaction amounts.
+
+```{r plot2}
+ggplot(data = BankChurners1, 
+       mapping = aes(x = Attrition_Flag, 
+                     y = Total_Trans_Amt,
+                     fill = Attrition_Flag)) +
+  labs(title = "Boxplot: Total Transaction Amount",
+       tag = "Fig. 2") +
+  geom_boxplot(alpha = .3) +
+  theme(legend.position = "none") +
+  scale_fill_brewer(palette = "Accent")
+```
+:::
+
+::: panel
+[Credit Limit]{.panel-name} The majority of attrited customers have lower than $5000 credit.
+
+```{r plot4}
+ggplot(data = BankChurners1,
+       mapping = aes(x = Credit_Limit,
+                     fill = Attrition_Flag)) +
+  geom_histogram(color = "#e9ecef", 
+                 alpha = 1,
+                 position = "stack") +
+  scale_fill_manual(values=c("#adb8ff", "#e8b5ff")) +
+  theme_ipsum() +
+  labs(title = "Histogram: Credit Limit vs Attrition",
+       tag = "Fig. 4")
+```
+:::
+
+::: panel
+[Income vs Gender]{.panel-name} Females' income level are concentrated at low levels such as level 1 and 2 while males have much higher income level distributions.
+
+```{r plot3}
+ggplot(data = BankChurners1,
+       mapping = aes(x = Income_Level,
+                     group = Gender,
+                     fill = Gender)) +
+  geom_density(adjust = 1.5, alpha = .4) +
+  theme_ipsum() +
+  labs(title = "Density Plot: Gender vs Income Level",
+       tag = "Fig. 3") +
+  scale_color_manual(values=c("M"="blue", "F"="pink")) # not working
+```
+:::
+
+<aside>
+```{r income_level}
+kable(IncomeLevel)
+```
+</aside>
+:::
+:::
+
+## III. Describe the Model
+> 1. Random Forest🌳:  Desicion trees are sensitive to changes, by introducing randomness to each split of trees, it reduce over-fitting issue. Also, random forest uses baggeing method to make decisions based on majority vote from each individual tree.
+> 2. Gradient Boosting Tree🌲:  Gradient boosting is noramlly better💪 than random forest due to its arbitrary cost functions for classification purpose^[https://en.wikipedia.org/wiki/Gradient_boosting].
+> 3. Neural Network🔮: Neural network is very effective and effiecient in making inferences and detecting patterns from complex datasets. It uses input information to optimise the weight of those inputs and then generates outputs. It also minimize the errors ❌ of those outputs to improve those processed inputs untill the errors become small enough🔄. The final result is based on minimized errors❓
+
+## IV. Describe the Process and Results
+> Process:  I split the dataset into the training set and testing set based on a 6:4 ratio. Then use three machine learning, 🌳random forest, gradient boosting tree🌲, and 💫 neural network🔮 to train🚋 each dataset. After importing the original dataset, I use kNN function with k = 10 to replace those missing values. For comparison, I did replace missing values only in the trainig set and leave the testing set as it is, and it has better performance. 
+## V. Code
+
+### i. 🎄Random Forest Total NA⭐
+> Original Dataset with Total Missing Value Replaced  
+> The model has 0.9583 of accuracy 🎯 and 0.835 in kappa, this huge drop probably is due to the imbalanced distribution of the attrition. The recall is 0.7938, which means that this model will missclassify 2 atrrited customers of every 10 customers as existing customers.     
+
+```{r RF1}
+# data split
+index <- createDataPartition(BankChurners2$Attrition_Flag, 
+                             p = .6, list = FALSE, times = 1)
+train <- BankChurners2[index,]
+test <- BankChurners2[-index,]
+
+# train1
+churn_RF1 <- train(
+  form = factor(Attrition_Flag) ~.,
+  data = train,
+  trControl = trainControl(method = "cv",
+                           number = 10,
+                           classProbs = TRUE),
+  method = "rf",
+  tuneLength = 10
+)
+# churn_RF1
+
+# feature importance
+var_imp1 <- varImp(churn_RF1)$importance %>% 
+  arrange(desc(Overall))
+kable(head(var_imp1)) 
+
+ggplot(var_imp1, aes(x = reorder(rownames(var_imp1), Overall), y = Overall)) +
+  geom_point(color = "plum1", size = 6, alpha = 1) +
+  geom_segment(aes(x = rownames(var_imp1), xend = rownames(var_imp1), 
+                   y = 0, yend = Overall), color = "skyblue") +
+  xlab("Variable") +
+  ylab("Overall Importance") +
+  theme_light() +  
+  coord_flip()
+
+# test1
+churn_RF_pred1 <- predict(churn_RF1, test, type = "prob")
+churn_RF_test_pred1 <- cbind(churn_RF_pred1, test)
+churn_RF_test_pred1 <- churn_RF_test_pred1 %>% 
+  mutate(prediction = if_else(AttritedCustomer > ExistingCustomer, 
+                              "AttritedCustomer", "ExistingCustomer"))
+table(churn_RF_test_pred1$prediction)
+
+# result1
+churn_matrix1 <- confusionMatrix(factor(churn_RF_test_pred1$prediction), 
+                                 factor(churn_RF_test_pred1$Attrition_Flag), 
+                                 positive = "AttritedCustomer")
+churn_matrix1
+# Accuracy : 0.9632  Kappa : 0.8586 Sensitivity : 0.8431
+
+ggplot(as.data.frame(churn_matrix1$table)) +
+  geom_raster(aes(x = Reference, y = Prediction, fill = Freq)) +
+  geom_text(aes(x = Reference, y = Prediction, label = Freq)) +
+  scale_fill_gradient2(low = "darkred", high = "darkgreen", 
+                       na.value = "gray", name = "Freq") +
+  scale_x_discrete(name = "Actual Class") +
+  scale_y_discrete(name = "Predicted Class") +
+  ggtitle("Merry Christmas") +
+  theme(plot.title = element_text(hjust = .5, size = 10, face = "bold"))
+```
+
+### ii. 🎄Random Forest NA & Var🌟
+> Dataset with 14 variables and Total Missing Value Replaced  
+> Eduaction level🎓, marital status💏, card category💳, income level💰, dependent count👶, and gender 👦 👩 are the least important variables that used for the final prediction. After dropping those 6 variables, the model performance is simlimar to the previous model's. The accuracy is the same with 0.0011 and 0.0076 drop in kappa and recall respecativelly.  
+
+```{r RF1_drop_var}
+# data split drop 6 var
+BankChurners_drop_var <- BankChurners2[-c(3:8)]
+index_var <- createDataPartition(BankChurners_drop_var$Attrition_Flag, 
+                             p = .6, list = FALSE, times = 1)
+train_var <- BankChurners_drop_var[index,]
+test_var <- BankChurners_drop_var[-index,]
+
+# train drop 6 var
+churn_RF_var <- train(
+  form = factor(Attrition_Flag) ~.,
+  data = train_var,
+  trControl = trainControl(method = "cv",
+                           number = 10,
+                           classProbs = TRUE),
+  method = "rf",
+  tuneLength = 10
+)
+# churn_RF_var
+
+# test drop 6 var
+churn_RF_pred_var <- predict(churn_RF_var, test_var, type = "prob")
+churn_RF_test_pred_var <- cbind(churn_RF_pred_var, test_var)
+churn_RF_test_pred_var <- churn_RF_test_pred_var %>% 
+  mutate(prediction = if_else(AttritedCustomer > ExistingCustomer, 
+                              "AttritedCustomer", "ExistingCustomer"))
+table(churn_RF_test_pred_var$prediction)
+
+# result drop 6 var
+churn_matrix_var <- confusionMatrix(factor(churn_RF_test_pred_var$prediction), 
+                                 factor(churn_RF_test_pred_var$Attrition_Flag), 
+                                 positive = "AttritedCustomer")
+churn_matrix_var
+```
+
+### iii. 🔔Random Forest Train NA✨
+> Original Dataset with Training Set Missing Value Replaced  
+> Only replaced missing values in the training set. The model has 0.961 of accuracy and 0.8452 in kappa, which improved 📈 compared to the previous model. The recall is 0.7985, which means that this model will missclassify 1 atrrited customers of every 10 customers as existing customers.
+
+```{r RF2}
+# data split
+index2 <- createDataPartition(BankChurners1$Attrition_Flag, 
+                             p = .6, list = FALSE, times = 1)
+train2 <- BankChurners1[index,]
+test2 <- BankChurners1[-index,]
+table(is.na(train2))
+
+# replace missing values in the training set
+train2 <- kNN(train2, 
+              variable = c("Dependent_count", "Education_Level", 
+                          "Marital_Status", "Income_Level", 
+                          "Months_Inactive_12_mon", "Contacts_Count_12_mon",
+                          "Total_Revolving_Bal", "Total_Amt_Chng_Q4_Q1",
+                          "Total_Ct_Chng_Q4_Q1", "Avg_Utilization_Ratio"),
+             k = 10)
+# summary(train2)
+train2 <- train2[,-c(21:30)]
+table(is.na(train2))
+
+# train2
+churn_RF2 <- train(
+  form = factor(Attrition_Flag) ~.,
+  data = train2,
+  trControl = trainControl(method = "cv",
+                           number = 10,
+                           classProbs = TRUE),
+  method = "rf",
+  tuneLength = 10
+)
+# churn_RF2
+
+# test1
+churn_RF_pred2 <- predict(churn_RF2, test, type = "prob")
+churn_RF_test_pred2 <- cbind(churn_RF_pred2, test)
+churn_RF_test_pred2 <- churn_RF_test_pred2 %>% 
+  mutate(prediction = if_else(AttritedCustomer > ExistingCustomer, 
+                              "AttritedCustomer", "ExistingCustomer"))
+table(churn_RF_test_pred2$prediction)
+
+#result1
+churn_matrix2 <- confusionMatrix(factor(churn_RF_test_pred2$prediction), 
+                                 factor(churn_RF_test_pred2$Attrition_Flag), 
+                                 positive = "AttritedCustomer")
+churn_matrix2
+
+ggplot(as.data.frame(churn_matrix2$table)) +
+  geom_raster(aes(x = Reference, y = Prediction, fill = Freq)) +
+  geom_text(aes(x = Reference, y = Prediction, label = Freq)) +
+  scale_fill_gradient2(low = "darkred", high = "plum1", 
+                       na.value = "gray", name = "Freq") +
+  scale_x_discrete(name = "Actual Class") +
+  scale_y_discrete(name = "Predicted Class") +
+  ggtitle("In 35 Days") +
+  theme(plot.title = element_text(hjust = .5, size = 10, face = "bold"))
+```
+
+
+### iv. ⛄Random Forest Total NA & SMOTE❄️
+> Original Dataset with Total Missing Value Replaced and Resamping in the Training Set  
+> The model has 0.9514 of accuracy and 0.8282 in kappa, which a little bit worse 📉 than the previous models. The recall is 0.9108, and lower than the previous model that without resampling. 
+
+```{r RF3}
+# data split
+index <- createDataPartition(BankChurners2$Attrition_Flag, 
+                             p = .6, list = FALSE, times = 1)
+train <- BankChurners2[index,]
+test <- BankChurners2[-index,]
+
+# train3
+churn_RF3 <- train(
+  form = factor(Attrition_Flag) ~.,
+  data = train,
+  trControl = trainControl(method = "cv",
+                           number = 10,
+                           classProbs = TRUE,
+                           sampling = "smote"),
+  method = "rf",
+  tuneLength = 10
+)
+# churn_RF3
+
+# feature importance
+var_imp3 <- varImp(churn_RF3)$importance %>% 
+  arrange(desc(Overall))
+kable(head(var_imp3))
+
+ggplot(var_imp3, aes(x = reorder(rownames(var_imp3), Overall), y = Overall)) +
+  geom_point(color = "plum1", size = 6, alpha = 1) +
+  geom_segment(aes(x = rownames(var_imp3), xend = rownames(var_imp3), 
+                   y = 0, yend = Overall), color = "skyblue") +
+  xlab("Variable") +
+  ylab("Overall Importance") +
+  theme_light() +
+  coord_flip()
+
+# test3
+churn_RF_pred3 <- predict(churn_RF3, test, type = "prob")
+churn_RF_test_pred3 <- cbind(churn_RF_pred3, test)
+churn_RF_test_pred3 <- churn_RF_test_pred3 %>% 
+  mutate(prediction = if_else(AttritedCustomer > ExistingCustomer, 
+                              "AttritedCustomer", "ExistingCustomer"))
+table(churn_RF_test_pred3$prediction)
+
+# result3
+churn_matrix3 <- confusionMatrix(factor(churn_RF_test_pred3$prediction), 
+                                 factor(churn_RF_test_pred3$Attrition_Flag), 
+                                 positive = "AttritedCustomer")
+churn_matrix3
+
+ggplot(as.data.frame(churn_matrix3$table)) +
+  geom_raster(aes(x = Reference, y = Prediction, fill = Freq)) +
+  geom_text(aes(x = Reference, y = Prediction, label = Freq)) +
+  scale_fill_gradient2(low = "darkred", high = "powderblue", 
+                       na.value = "gray", name = "Freq") +
+  scale_x_discrete(name = "Actual Class") +
+  scale_y_discrete(name = "Predicted Class") +
+  ggtitle("Let It Snow") +
+  theme(plot.title = element_text(hjust = .5, size = 10, face = "bold"))
+```
+
+
+### v. 🎁Gradient Boosting Tree Total NA🎅🍪🥛
+> Original Dataset with Total Missing Value Replaced  
+> The model has 0.9662 of accuracy and 0.8695 in kappa. The recall is 0.8477. Gradient boosting tree has better perforamce compared to random forest under the same condition.            
+
+```{r GBM1}
+# data split
+index <- createDataPartition(BankChurners2$Attrition_Flag, 
+                             p = .6, list = FALSE, times = 1)
+train <- BankChurners2[index,]
+test <- BankChurners2[-index,]
+
+# train4
+churn_GBM1 <- train(
+  form = factor(Attrition_Flag) ~.,
+  data = train,
+  trControl = trainControl(method = "cv",
+                           number = 10,
+                           classProbs = TRUE),
+  method = "gbm",
+  tuneLength = 10,
+  verbose = FALSE
+)
+kable(churn_GBM1$bestTune)
+plot(churn_GBM1)
+
+# test4
+churn_GBM_pred1 <- predict(churn_GBM1, test, type = "prob")
+churn_GBM_test_pred1 <- cbind(churn_GBM_pred1, test)
+churn_GBM_test_pred1 <- churn_GBM_test_pred1 %>% 
+  mutate(prediction = if_else(AttritedCustomer > ExistingCustomer, 
+                              "AttritedCustomer", "ExistingCustomer"))
+table(churn_GBM_test_pred1$prediction)
+
+# result4
+churn_matrix4 <- confusionMatrix(factor(churn_GBM_test_pred1$prediction), 
+                                 factor(churn_GBM_test_pred1$Attrition_Flag), 
+                                 positive = "AttritedCustomer")
+churn_matrix4
+
+ggplot(as.data.frame(churn_matrix4$table)) +
+  geom_raster(aes(x = Reference, y = Prediction, fill = Freq)) +
+  geom_text(aes(x = Reference, y = Prediction, label = Freq)) +
+  scale_fill_gradient2(low = "darkred", high = "pink",
+                       na.value = "grey", name = "Freq") +
+  scale_x_discrete(name = "Actual Class") +
+  scale_y_discrete(name = "Predicted Class") +
+  ggtitle("Christmas is Coming") +
+  theme(plot.title = element_text(hjust = .5, size = 10, face = "bold"))
+
+# feature importance
+# summary(churn_GBM)
+var_imp4 <- varImp(churn_GBM1, n.trees = 500)$importance %>% 
+  arrange(desc(Overall))
+kable(head(var_imp4))
+
+ggplot(var_imp4, aes(x = reorder(rownames(var_imp4), Overall), y = Overall)) +
+  geom_point(color = "violet", size = 6, alpha = 1) +
+  geom_segment(aes(x = rownames(var_imp4), xend = rownames(var_imp4), 
+                   y = 0, yend = Overall), color = "skyblue") +
+  xlab("Variable") +
+  ylab("Overall Importance") +
+  theme_light() +  
+  coord_flip()
+```
+
+### vi. 🔔Gradient Boosting Tree Train NA✨
+> Original Dataset with Training Set Missing Value Replaced  
+> Only replaced missing values in the training set. The model has 0.7422 of accuracy and 0.0264 in kappa, and recall is 0.17538, which is the worst model 😮 (P-Value [Acc > NIR] : 1, Mcnemar's Test P-Value : 0.4034). 
+
+```{r GBM2}
+# # data split
+# index2 <- createDataPartition(BankChurners1$Attrition_Flag, 
+#                              p = .6, list = FALSE, times = 1)
+# train2 <- BankChurners1[index,]
+# test2 <- BankChurners1[-index,]
+# table(is.na(train2))
+# 
+# # replace missing values in the training set
+# train2 <- kNN(train2, 
+#               variable = c("Dependent_count", "Education_Level", 
+#                           "Marital_Status", "Income_Level", 
+#                           "Months_Inactive_12_mon", "Contacts_Count_12_mon",
+#                           "Total_Revolving_Bal", "Total_Amt_Chng_Q4_Q1",
+#                           "Total_Ct_Chng_Q4_Q1", "Avg_Utilization_Ratio"),
+#              k = 10)
+# # summary(train2)
+# train2 <- train2[,-c(21:30)]
+# table(is.na(train2))
+
+# train5
+churn_GBM2 <- train(
+  form = factor(Attrition_Flag) ~.,
+  data = train2,
+  trControl = trainControl(method = "cv",
+                           number = 10,
+                           classProbs = TRUE),
+  method = "gbm",
+  tuneLength = 10,
+  verbose = FALSE
+)
+# churn_GBM2
+kable(churn_GBM2$bestTune)
+plot(churn_GBM2)
+
+# test5
+churn_GBM_pred2 <- predict(churn_GBM2, test, type = "prob")
+churn_GBM_test_pred2 <- cbind(churn_GBM_pred2, test2)
+churn_GBM_test_pred2 <- churn_GBM_test_pred2 %>% 
+  mutate(prediction = if_else(AttritedCustomer > ExistingCustomer, 
+                              "AttritedCustomer", "ExistingCustomer"))
+table(churn_GBM_test_pred2$prediction)
+
+# result5
+churn_matrix5 <- confusionMatrix(factor(churn_GBM_test_pred2$prediction), 
+                                 factor(churn_GBM_test_pred2$Attrition_Flag), 
+                                 positive = "AttritedCustomer")
+churn_matrix5
+
+ggplot(as.data.frame(churn_matrix5$table)) +
+  geom_raster(aes(x = Reference, y = Prediction, fill = Freq)) +
+  geom_text(aes(x = Reference, y = Prediction, label = Freq)) +
+  scale_fill_gradient2(low = "darkred", high = "pink",
+                       na.value = "grey", name = "Freq") +
+  scale_x_discrete(name = "Actual Class") +
+  scale_y_discrete(name = "Predicted Class") +
+  ggtitle("Christmas is Coming") +
+  theme(plot.title = element_text(hjust = .5, size = 10, face = "bold"))
+```
+
+### vii. 🦌Gradient Boosting Tree Total NA & SMOTE🥕
+> Original Dataset with Total Missing Value Replaced and Resamping in the Training Set  
+> The model has 0.964 of accuracy and 0.8685 in kappa, which are similar to the previous result. The recall is 0.9092 🎉 (Mcnemar's Test P-Value : 0.02545 🅿) 
+
+```{r GBM3}
+# data split
+index <- createDataPartition(BankChurners2$Attrition_Flag, 
+                             p = .6, list = FALSE, times = 1)
+train <- BankChurners2[index,]
+test <- BankChurners2[-index,]
+
+# train6
+churn_GBM3 <- train(
+  form = factor(Attrition_Flag) ~.,
+  data = train,
+  trControl = trainControl(method = "cv",
+                           number = 10,
+                           classProbs = TRUE,
+                           sampling = "smote"),
+  method = "gbm",
+  tuneLength = 10,
+  verbose = FALSE
+)
+# kable(churn_GBM3$bestTune)
+# plot(churn_GBM3)
+
+# test6
+churn_GBM_pred3 <- predict(churn_GBM3, test, type = "prob")
+churn_GBM_test_pred3 <- cbind(churn_GBM_pred3, test)
+churn_GBM_test_pred3 <- churn_GBM_test_pred3 %>% 
+  mutate(prediction = if_else(AttritedCustomer > ExistingCustomer, 
+                              "AttritedCustomer", "ExistingCustomer"))
+table(churn_GBM_test_pred3$prediction)
+
+# result6
+churn_matrix6 <- confusionMatrix(factor(churn_GBM_test_pred3$prediction), 
+                                 factor(churn_GBM_test_pred3$Attrition_Flag), 
+                                 positive = "AttritedCustomer")
+churn_matrix6
+
+ggplot(as.data.frame(churn_matrix6$table)) +
+  geom_raster(aes(x = Reference, y = Prediction, fill = Freq)) +
+  geom_text(aes(x = Reference, y = Prediction, label = Freq)) +
+  scale_fill_gradient2(low = "darkred", high = "firebrick",
+                       na.value = "grey", name = "Freq") +
+  scale_x_discrete(name = "Actual Class") +
+  scale_y_discrete(name = "Predicted Class") +
+  ggtitle("Joy") +
+  theme(plot.title = element_text(hjust = .5, size = 10, face = "bold"))
+
+# feature importance
+# summary(churn_GBM)
+var_imp5 <- varImp(churn_GBM3, n.trees = 500)$importance %>% 
+  arrange(desc(Overall))
+kable(head(var_imp5))
+
+ggplot(var_imp4, aes(x = reorder(rownames(var_imp5), Overall), y = Overall)) +
+  geom_point(color = "powderblue", size = 6, alpha = 1) +
+  geom_segment(aes(x = rownames(var_imp5), xend = rownames(var_imp5), 
+                   y = 0, yend = Overall), color = "plum1") +
+  xlab("Variable") +
+  ylab("Overall Importance") +
+  theme_light() +  
+  coord_flip()
+```
+
+### viii. 🌜Neural Network🕊️
+> Original Dataset with Total Missing Value Replaced  
+> The model has 0.9351 of accuracy and 0.7446 in kappa, and recall is 0.7277😕.  
+
+```{r NNET}
+# train7
+churn_NNET <- train(
+  form = factor(Attrition_Flag) ~.,
+  data = train,
+  trControl = trainControl(method = "cv",
+                           number = 10,
+                           classProb =TRUE),
+  method = "nnet",
+  preProcess = c("center", "scale"),
+  tuneLength = 5,
+  trace= FALSE
+)
+plot(churn_NNET)
+
+# test7
+churn_NNET_pred <- predict(churn_NNET, test, type = "prob")
+churn_NNET_test_pred <- cbind(churn_NNET_pred, test)
+churn_NNET_test_pred <- churn_NNET_test_pred %>% 
+  mutate(prediction = if_else(AttritedCustomer > ExistingCustomer, 
+                              "AttritedCustomer", "ExistingCustomer"))
+table(churn_NNET_test_pred$prediction)
+
+roc_NNET <- pROC::roc(factor(churn_NNET_test_pred$Attrition_Flag), 
+                      churn_NNET_test_pred$ExistingCustomer)
+plot(roc_NNET)
+
+# result7
+churn_matrix7 <- confusionMatrix(factor(churn_NNET_test_pred$prediction), 
+                                 factor(churn_NNET_test_pred$Attrition_Flag), 
+                                 positive = "AttritedCustomer")
+churn_matrix7
+
+ggplot(as.data.frame(churn_matrix7$table)) +
+  geom_raster(aes(x = Reference, y = Prediction, fill = Freq)) +
+  geom_text(aes(x = Reference, y = Prediction, label = Freq)) +
+  scale_fill_gradient2(low = "darkred", high = "orchid",
+                       na.value = "grey", name = "Freq") +
+  scale_x_discrete(name = "Actual Class") +
+  scale_y_discrete(name = "Predicted Class") +
+  ggtitle("Somewhere in My Memory") +
+  theme(plot.title = element_text(hjust = .5, size = 10, face = "bold"))
+```
+
+
+
+
+
+
+## VI. Result
+> Overall, 🌳random forest model has better performance 🏆 than gradient boosting tree🌲, especially after replacing total missing values and using SMOTE to fix 🔧 the imbalanced dataset issue. 
+
+```{r comparison}
+comparison <- matrix(c(0.9583, 0.8350, 0.7938, 0.9583, 0.8339, 0.7862, 0.9610, 
+                       0.8452, 0.7985, 0.9514, 0.8282, 0.9108, 0.9662, 0.8695, 
+                       0.8477, 0.7422, 0.0264, 0.1754, 0.9640, 0.8685, 0.9092, 
+                       0.9351, 0.7446, 0.7277), ncol = 3, byrow = TRUE)
+colnames(comparison) <- c("Accuracy", "Kappa", "Recall")
+rownames(comparison) <- c("i.RF TOTAL NA", "ii.RF TOTAL NA & VAR", "iii.RF TRAIN NA", 
+                          "iv.RF TOTAL NA & SMOTE", "v.GBT TOTAL NA", "vi.GBT TRAIN NA", "vii.GBT TOTAL NA & SMOTE", "viii.NNET TOTAL NA")
+comparison <- as.data.frame.matrix(comparison)
+comparison
+```
+> The original model from kaggle has 62% of recall, so my models did improve the performance of predicting churned customers. So it can help companies to identify potential customer churn. The neural network model is no good or messed up somthing. Based on the variable importance rates, customers' transaction numbers and amounts, change in transaction amount, and total product held by customers are the most important predicting variables in those models. The demographic factors are not important in those models though.  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
