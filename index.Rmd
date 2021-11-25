@@ -1,6 +1,6 @@
 ---
 title: "Siwei Jiang"
-image: "stillme.jpg"
+image: "images/stillme.jpg"
 links:
   - label: Github
     url: "https://github.com/siwei-jiang"
@@ -13,8 +13,8 @@ output:
   postcards::jolla
 ---
 
-Change me later:)
-
+Hello, I am a master student studying accounting in Mississippi State University. Hope one day I can be a 🧭mountaineer🧗🚵🌋🌄️🗻🚞
+["Because IT's there"](https://en.wikipedia.org/wiki/George_Mallory){target="_blank"}
 <!-- Tools > Project Options > Git -->
 
 ```{css, echo=FALSE}
@@ -22,4 +22,3 @@ h1, body {
   color: #bdaeea;
 }
 ```
-

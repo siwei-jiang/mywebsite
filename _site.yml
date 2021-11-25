@@ -2,16 +2,15 @@ name: "."
 title: "Siwei Jiang"
 description: |
 output_dir: "docs"
+base_url: https://github.com/siwei-jiang/mywebsite
 theme: postcards.css
 navbar:
   search: false
+  logo:
+    image: images/meme.png
   right:
     - icon: fa fa-home
       href: index.html
-    - icon: fa fa-user
-      href: about.html
-    - icon: fa fa-file-o
-      href: blog.html
     - icon: fa fa-github
       href: https://github.com/siwei-jiang
     - icon: fa fa-linkedin
