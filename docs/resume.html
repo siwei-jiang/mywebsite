@@ -1895,6 +1895,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   .d-contents {
     --heading-size:    20px;
     --contents-size:   14px;
+    --heading-color:   #bdaeea; 
   }
 
   /*-- ARTICLE APPENDIX --*/
@@ -1910,7 +1911,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   .distill-site-header {
     --title-size:       18px;
-    --text-color:       rgba(255, 255, 255, 0.8);
+    --text-color:       white;
     --text-size:        15px;
     --hover-color:      #aeccea;
     --bkgd-color:       #bdaeea;
@@ -1926,17 +1927,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   /*-- Additional custom styles --*/
   /* Add any additional CSS rules below                      */
 
-  body {
-      width: 100vw;
-      height: 100vh;
-      margin: 0;
-      background: linear-gradient(
-          130deg, 
-          #5A59A3, 
-          #C66060
-      ) no-repeat  fixed;
-  }
-
   /* Buttons on home page */
 
   .btn-outline-dark {
@@ -1947,6 +1937,42 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   .btn-outline-dark:hover {
       background-color: #bdaeea;
+  }
+
+  .panelset {
+     --panel-tab-foreground: #bdaeea;
+     --panel-tab-background: #aeccea;
+     --panel-tab-active-foreground: #bdaeea;
+     --panel-tab-active-background: #aeccea;
+     --panel-tab-active-border-color: #bdaeea;
+     --panel-tab-hover-foreground: #bdaeea;
+     --panel-tab-hover-background: #aeccea;
+     --panel-tab-hover-border-color: #aeccea;
+     --panel-tab-inactive-opacity: 0.5;
+     --panel-tabs-border-bottom: #ddd;
+     --panel-tab-font-family: monospace;
+  }
+
+  body {
+    color: #bdaeea;
+  }
+  h1, h2, h3 {
+    color: #bdaeea;
+  }
+
+  /* unvisited link */
+  a:link {
+    color: #aeccea;
+  }
+
+  /* visited link */
+  a:visited {
+    color: #aeccea;
+  }
+
+  /* mouse over link */
+  a:hover {
+    color: #aeccea;
   }
   </style>
   <style type="text/css">
@@ -2132,17 +2158,14 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <header class="header header--fixed" role="banner">
 <nav class="distill-site-nav distill-site-header">
 <div class="nav-left">
+<a class="logo">
+<img src="images/meme.png" alt="Logo"/>
+</a>
 <a href="index.html" class="title">Siwei Jiang</a>
 </div>
 <div class="nav-right">
 <a href="index.html">
 <i class="fa fa-home" aria-hidden="true"></i>
-</a>
-<a href="about.html">
-<i class="fa fa-user" aria-hidden="true"></i>
-</a>
-<a href="blog.html">
-<i class="fa fa-file-o" aria-hidden="true"></i>
 </a>
 <a href="https://github.com/siwei-jiang">
 <i class="fa fa-github" aria-hidden="true"></i>
@@ -2160,7 +2183,7 @@ Project
 <div class="nav-dropdown-content">
 <a href="rsquared.html">Rsquared</a>
 <a href="ml.html">Machine Learning</a>
-<a href="final.html">Final Project</a>
+<a href="final_project.html">Final Project</a>
 </div>
 </div>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>

@@ -45,6 +45,7 @@ d-byline {
 .d-contents {
   --heading-size:    20px;
   --contents-size:   14px;
+  --heading-color:   #bdaeea; 
 }
 
 /*-- ARTICLE APPENDIX --*/
@@ -60,7 +61,7 @@ d-appendix {
 
 .distill-site-header {
   --title-size:       18px;
-  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-color:       white;
   --text-size:        15px;
   --hover-color:      #aeccea;
   --bkgd-color:       #bdaeea;
@@ -76,17 +77,6 @@ d-appendix {
 /*-- Additional custom styles --*/
 /* Add any additional CSS rules below                      */
 
-body {
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    background: linear-gradient(
-        130deg, 
-        #5A59A3, 
-        #C66060
-    ) no-repeat  fixed;
-}
-
 /* Buttons on home page */
 
 .btn-outline-dark {
@@ -97,5 +87,41 @@ body {
 
 .btn-outline-dark:hover {
     background-color: #bdaeea;
+}
+
+.panelset {
+   --panel-tab-foreground: #bdaeea;
+   --panel-tab-background: #aeccea;
+   --panel-tab-active-foreground: #bdaeea;
+   --panel-tab-active-background: #aeccea;
+   --panel-tab-active-border-color: #bdaeea;
+   --panel-tab-hover-foreground: #bdaeea;
+   --panel-tab-hover-background: #aeccea;
+   --panel-tab-hover-border-color: #aeccea;
+   --panel-tab-inactive-opacity: 0.5;
+   --panel-tabs-border-bottom: #ddd;
+   --panel-tab-font-family: monospace;
+}
+
+body {
+  color: #bdaeea;
+}
+h1, h2, h3 {
+  color: #bdaeea;
+}
+
+/* unvisited link */
+a:link {
+  color: #aeccea;
+}
+
+/* visited link */
+a:visited {
+  color: #aeccea;
+}
+
+/* mouse over link */
+a:hover {
+  color: #aeccea;
 }
 

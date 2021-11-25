@@ -493,6 +493,7 @@
           .d-contents {
             --heading-size:    20px;
             --contents-size:   14px;
+            --heading-color:   #bdaeea; 
           }
 
           /*-- ARTICLE APPENDIX --*/
@@ -508,7 +509,7 @@
 
           .distill-site-header {
             --title-size:       18px;
-            --text-color:       rgba(255, 255, 255, 0.8);
+            --text-color:       white;
             --text-size:        15px;
             --hover-color:      #aeccea;
             --bkgd-color:       #bdaeea;
@@ -524,17 +525,6 @@
           /*-- Additional custom styles --*/
           /* Add any additional CSS rules below                      */
 
-          body {
-              width: 100vw;
-              height: 100vh;
-              margin: 0;
-              background: linear-gradient(
-                  130deg, 
-                  #5A59A3, 
-                  #C66060
-              ) no-repeat  fixed;
-          }
-
           /* Buttons on home page */
 
           .btn-outline-dark {
@@ -545,6 +535,42 @@
 
           .btn-outline-dark:hover {
               background-color: #bdaeea;
+          }
+
+          .panelset {
+             --panel-tab-foreground: #bdaeea;
+             --panel-tab-background: #aeccea;
+             --panel-tab-active-foreground: #bdaeea;
+             --panel-tab-active-background: #aeccea;
+             --panel-tab-active-border-color: #bdaeea;
+             --panel-tab-hover-foreground: #bdaeea;
+             --panel-tab-hover-background: #aeccea;
+             --panel-tab-hover-border-color: #aeccea;
+             --panel-tab-inactive-opacity: 0.5;
+             --panel-tabs-border-bottom: #ddd;
+             --panel-tab-font-family: monospace;
+          }
+
+          body {
+            color: #bdaeea;
+          }
+          h1, h2, h3 {
+            color: #bdaeea;
+          }
+
+          /* unvisited link */
+          a:link {
+            color: #aeccea;
+          }
+
+          /* visited link */
+          a:visited {
+            color: #aeccea;
+          }
+
+          /* mouse over link */
+          a:hover {
+            color: #aeccea;
           }
           </style>
           <style type="text/css">
@@ -711,17 +737,14 @@
           <header class="header header--fixed" role="banner">
           <nav class="distill-site-nav distill-site-header">
           <div class="nav-left">
+          <a class="logo">
+          <img src="images/meme.png" alt="Logo"/>
+          </a>
           <a href="index.html" class="title">Siwei Jiang</a>
           </div>
           <div class="nav-right">
           <a href="index.html">
           <i class="fa fa-home" aria-hidden="true"></i>
-          </a>
-          <a href="about.html">
-          <i class="fa fa-user" aria-hidden="true"></i>
-          </a>
-          <a href="blog.html">
-          <i class="fa fa-file-o" aria-hidden="true"></i>
           </a>
           <a href="https://github.com/siwei-jiang">
           <i class="fa fa-github" aria-hidden="true"></i>
@@ -739,7 +762,7 @@
           <div class="nav-dropdown-content">
           <a href="rsquared.html">Rsquared</a>
           <a href="ml.html">Machine Learning</a>
-          <a href="final.html">Final Project</a>
+          <a href="final_project.html">Final Project</a>
           </div>
           </div>
           <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
@@ -753,14 +776,13 @@
     <div class="container min-vh-100">
       <div class="row min-vh-100 justify-content-center align-items-center">
         <div class="col-12 text-center">
-          <img src=stillme.jpg style="height:10rem" class="rounded-circle">
+          <img src=images/stillme.jpg style="height:10rem" class="rounded-circle">
           <div class="mt-3">
             <h1>Siwei Jiang</h1>
           </div>
           <div class="row justify-content-center align-items-center">
             <div class="col-6 mt-3 text-center d-none d-sm-block">
-              <p>Change me later:)</p>
-              <!-- Tools > Project Options > Git -->
+              <p>Hello, I am a master student studying accounting in Mississippi State University. Hope one day I can be a 🧭mountaineer🧗🚵🌋🌄️🗻🚞 <a href="https://en.wikipedia.org/wiki/George_Mallory" target="_blank">“Because IT’s there”</a> <!-- Tools > Project Options > Git --></p>
               <style type="text/css">
               h1, body {
                 color: #bdaeea;
@@ -768,8 +790,7 @@
               </style>
             </div>
             <div class="col-11 mt-3 text-center d-block d-sm-none">
-              <p>Change me later:)</p>
-              <!-- Tools > Project Options > Git -->
+              <p>Hello, I am a master student studying accounting in Mississippi State University. Hope one day I can be a 🧭mountaineer🧗🚵🌋🌄️🗻🚞 <a href="https://en.wikipedia.org/wiki/George_Mallory" target="_blank">“Because IT’s there”</a> <!-- Tools > Project Options > Git --></p>
               <style type="text/css">
               h1, body {
                 color: #bdaeea;

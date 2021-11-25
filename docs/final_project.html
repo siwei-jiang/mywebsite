@@ -88,30 +88,30 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_meta_tags-->
   <title>Siwei Jiang: Final Project</title>
 
-  <meta property="description" itemprop="description" content="This report is the final project for my accounitng analysis class, and the codes are borrowed from my professor, Dr. Hunt&#39;s [course website](https://professor-hunt.github.io/ACC8143/)."/>
+  <meta property="description" itemprop="description" content="This report is the final project for my accounitng analysis class, and the codes are borrowed from my professor, Dr. Hunt&#39;s [course website](https://professor-hunt.github.io/ACC8143/){target=&quot;_blank&quot;}."/>
 
 
   <!--  https://schema.org/Article -->
-  <meta property="article:published" itemprop="datePublished" content="2021-11-22"/>
-  <meta property="article:created" itemprop="dateCreated" content="2021-11-22"/>
+  <meta property="article:published" itemprop="datePublished" content="2021-11-24"/>
+  <meta property="article:created" itemprop="dateCreated" content="2021-11-24"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
   <meta property="og:title" content="Siwei Jiang: Final Project"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="This report is the final project for my accounitng analysis class, and the codes are borrowed from my professor, Dr. Hunt&#39;s [course website](https://professor-hunt.github.io/ACC8143/)."/>
+  <meta property="og:description" content="This report is the final project for my accounitng analysis class, and the codes are borrowed from my professor, Dr. Hunt&#39;s [course website](https://professor-hunt.github.io/ACC8143/){target=&quot;_blank&quot;}."/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="Siwei Jiang"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
   <meta property="twitter:title" content="Siwei Jiang: Final Project"/>
-  <meta property="twitter:description" content="This report is the final project for my accounitng analysis class, and the codes are borrowed from my professor, Dr. Hunt&#39;s [course website](https://professor-hunt.github.io/ACC8143/)."/>
+  <meta property="twitter:description" content="This report is the final project for my accounitng analysis class, and the codes are borrowed from my professor, Dr. Hunt&#39;s [course website](https://professor-hunt.github.io/ACC8143/){target=&quot;_blank&quot;}."/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Final Project"]},{"type":"character","attributes":{},"value":["This report is the final project for my accounitng analysis class, and the codes are borrowed from my professor, Dr. Hunt's [course website](https://professor-hunt.github.io/ACC8143/).\n"]},{"type":"character","attributes":{},"value":["2021-11-22"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth","toc_float","code_folding"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]},{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]}]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Final Project"]},{"type":"character","attributes":{},"value":["This report is the final project for my accounitng analysis class, and the codes are borrowed from my professor, Dr. Hunt's [course website](https://professor-hunt.github.io/ACC8143/){target=\"_blank\"}.\n"]},{"type":"character","attributes":{},"value":["2021-11-24"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth","toc_float","code_folding"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[3]},{"type":"logical","attributes":{},"value":[true]},{"type":"logical","attributes":{},"value":[true]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -1901,6 +1901,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   .d-contents {
     --heading-size:    20px;
     --contents-size:   14px;
+    --heading-color:   #bdaeea; 
   }
 
   /*-- ARTICLE APPENDIX --*/
@@ -1916,7 +1917,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   .distill-site-header {
     --title-size:       18px;
-    --text-color:       rgba(255, 255, 255, 0.8);
+    --text-color:       white;
     --text-size:        15px;
     --hover-color:      #aeccea;
     --bkgd-color:       #bdaeea;
@@ -1932,17 +1933,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   /*-- Additional custom styles --*/
   /* Add any additional CSS rules below                      */
 
-  body {
-      width: 100vw;
-      height: 100vh;
-      margin: 0;
-      background: linear-gradient(
-          130deg; 
-          #c6e2ff;
-          #bdaeea;
-      ) no-repeat  fixed;
-  }
-
   /* Buttons on home page */
 
   .btn-outline-dark {
@@ -1956,14 +1946,14 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   }
 
   .panelset {
-     --panel-tab-foreground: currentColor;
-     --panel-tab-background: #bdaeea;
-     --panel-tab-active-foreground: currentColor;
-     --panel-tab-active-background: #bdaeea;
-     --panel-tab-active-border-color: currentColor;
-     --panel-tab-hover-foreground: currentColor;
-     --panel-tab-hover-background: #bdaeea;
-     --panel-tab-hover-border-color: currentColor;
+     --panel-tab-foreground: #bdaeea;
+     --panel-tab-background: #aeccea;
+     --panel-tab-active-foreground: #bdaeea;
+     --panel-tab-active-background: #aeccea;
+     --panel-tab-active-border-color: #bdaeea;
+     --panel-tab-hover-foreground: #bdaeea;
+     --panel-tab-hover-background: #aeccea;
+     --panel-tab-hover-border-color: #aeccea;
      --panel-tab-inactive-opacity: 0.5;
      --panel-tabs-border-bottom: #ddd;
      --panel-tab-font-family: monospace;
@@ -1974,7 +1964,23 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   }
   h1, h2, h3 {
     color: #bdaeea;
-  }</style>
+  }
+
+  /* unvisited link */
+  a:link {
+    color: #aeccea;
+  }
+
+  /* visited link */
+  a:visited {
+    color: #aeccea;
+  }
+
+  /* mouse over link */
+  a:hover {
+    color: #aeccea;
+  }
+  </style>
   <style type="text/css">
   /* base style */
 
@@ -2152,7 +2158,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Final Project","description":"This report is the final project for my accounitng analysis class, and the codes are borrowed from my professor, Dr. Hunt's [course website](https://professor-hunt.github.io/ACC8143/).","authors":[],"publishedDate":"2021-11-22T00:00:00.000-06:00"}
+{"title":"Final Project","description":"This report is the final project for my accounitng analysis class, and the codes are borrowed from my professor, Dr. Hunt's [course website](https://professor-hunt.github.io/ACC8143/){target=\"_blank\"}.","authors":[],"publishedDate":"2021-11-24T00:00:00.000-06:00"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2160,17 +2166,14 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <header class="header header--fixed" role="banner">
 <nav class="distill-site-nav distill-site-header">
 <div class="nav-left">
+<a class="logo">
+<img src="images/meme.png" alt="Logo"/>
+</a>
 <a href="index.html" class="title">Siwei Jiang</a>
 </div>
 <div class="nav-right">
 <a href="index.html">
 <i class="fa fa-home" aria-hidden="true"></i>
-</a>
-<a href="about.html">
-<i class="fa fa-user" aria-hidden="true"></i>
-</a>
-<a href="blog.html">
-<i class="fa fa-file-o" aria-hidden="true"></i>
 </a>
 <a href="https://github.com/siwei-jiang">
 <i class="fa fa-github" aria-hidden="true"></i>
@@ -2203,34 +2206,42 @@ Project
 <h1>Final Project</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>This report is the final project for my accounitng analysis class, and the codes are borrowed from my professor, Dr. Hunt’s <a href="https://professor-hunt.github.io/ACC8143/">course website</a>.</p></p>
+<p><p>This report is the final project for my accounitng analysis class, and the codes are borrowed from my professor, Dr. Hunt’s <a href="https://professor-hunt.github.io/ACC8143/" target="_blank">course website</a>.</p></p>
 </div>
 
 
 <div class="d-article">
-<div class="d-contents">
+<div class="d-contents d-contents-float">
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
 <li><a href="#i.-about-the-dataset">I. About the Dataset</a></li>
 <li><a href="#ii.-descriptive-stats">II. Descriptive Stats</a></li>
-<li><a href="#iii.-describe-the-model">III. Describe the Model</a></li>
-<li><a href="#iv.-describe-the-process-and-results">IV. Describe the Process and Results</a></li>
-<li><a href="#v.-code">V. Code</a></li>
+<li><a href="#iii.-the-models">III. The Models</a></li>
+<li><a href="#iv.-the-process-and-results">IV. The Process and Results</a></li>
+<li><a href="#v.-code">V. Code</a>
+<ul>
+<li><a href="#i.-random-forest-total-na">i. 🎄Random Forest Total NA⭐</a></li>
+<li><a href="#ii.-random-forest-na-var">ii. 🌴Random Forest NA &amp; Var🍃</a></li>
+<li><a href="#iii.-random-forest-train-na">iii. 🔔Random Forest Train NA✨</a></li>
+<li><a href="#iv.-random-forest-total-na-smote">iv. ⛄Random Forest Total NA &amp; SMOTE❄️</a></li>
+<li><a href="#v.-gradient-boosting-tree-total-na">v. 🧦🎁Gradient Boosting Tree Total NA🎅🍪🥛</a></li>
+<li><a href="#vi.-gradient-boosting-tree-train-na">vi. 🔔Gradient Boosting Tree Train NA✨</a></li>
+<li><a href="#vii.-gradient-boosting-tree-total-na-smote">vii. 🦌Gradient Boosting Tree Total NA &amp; SMOTE🥕</a></li>
+<li><a href="#viii.-neural-network">viii. 🌜Neural Network🕊️</a></li>
+</ul></li>
 <li><a href="#vi.-result">VI. Result</a></li>
 </ul>
 </nav>
 </div>
 <h2 id="i.-about-the-dataset">I. About the Dataset</h2>
-<blockquote>
-<p>Describtion: This dataset is<br />
-Source: I obtained this dataset from Kaggle, and Sakshi Goyal provided it. Purpose: Predicting churned customers, so recall is an important model fit measurement.</p>
-</blockquote>
+<p>I obtained this dataset from Kaggle<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, and Sakshi Goyal uploaded it a year ago (2020). This dataset is about a bank’s customer churn issue. The manager💼 of the bank is interested in predicting which customer will leave this bank💸. By doing so, the bank can target those customers with special products and services to increase their satisfaction and customer retention🌞.</p>
+<p>It contains 10,127 observations and 23 variables. Because I had some issues with Income Category values, so I add another column that used a scale of 1 through 5 to represent each income category. My data analyses are based on 20 variables, which excluded the Client Number and two Naive Bayes Classifiers😶.</p>
+<p>The purpose of this project is to predict churned customers, so recall is an important model fit measurement📐. I also include accuracy and kappa as measurements of model fitness. I choose kappa because customer churn is only around 16% of total customers. Although some studies state kappa is not a good measure for classification model<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, I think it is good enough for this project😎 I include a comparison table📊 in the conclusion section for each models’ performance.</p>
 <h2 id="ii.-descriptive-stats">II. Descriptive Stats</h2>
-<blockquote>
-<p>This dataset has 9,664 missing values, which is 4.77% of the 212,667 total values.</p>
-<p>After using kNN to replace all the missing data by calculating their nearest 10 neighbours 🏠🏡 values, the new dataset contains 0️⃣ missing values.</p>
-</blockquote>
+<p>This dataset has 9,664 missing values, which is 4.77% of the 202,540 total values. Most of those missing values are belong to categorical variables.<br />
+After using kNN to replace all the missing data by calculating their nearest 10 neighbors 🏠🏡 values, the new dataset contains 0️⃣ missing values. The distribution of the target variable is not balanced⚖️, as attrited customers only represent 16% of the total customers. I don’t know what happened to my code below🥴🌧️. It did show the correct result when I ran the chunk individually:</p>
+<p><img src="images/issue.png" /></p>
 <aside>
 <div class="layout-chunk" data-layout="l-body">
 <details>
@@ -2238,17 +2249,15 @@ Source: I obtained this dataset from Kaggle, and Sakshi Goyal provided it. Purpo
 Show code
 </summary>
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># missing values</span>
-<span class='co'># summary(BankChurners)</span>
-<span class='va'>BankChurners1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/gdata/man/unknown.html'>unknownToNA</a></span><span class='op'>(</span><span class='va'>BankChurners</span>, unknown <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>""</span>, <span class='st'>"Unknown"</span><span class='op'>)</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>BankChurners1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/gdata/man/unknown.html'>unknownToNA</a></span><span class='op'>(</span><span class='va'>BankChurners</span>, unknown <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>""</span>, <span class='st'>"Unknown"</span><span class='op'>)</span><span class='op'>)</span>
 <span class='co'># summary(BankChurners1)</span>
-<span class='va'>na_cnt</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/table.html'>table</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/NA.html'>is.na</a></span><span class='op'>(</span><span class='va'>BankChurners1</span><span class='op'>)</span><span class='op'>)</span>
-<span class='va'>na_pct</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/proportions.html'>prop.table</a></span><span class='op'>(</span><span class='va'>na_cnt</span><span class='op'>)</span>
-<span class='fu'><a href='https://rdrr.io/r/base/cbind.html'>cbind</a></span><span class='op'>(</span><span class='va'>na_cnt</span>, <span class='va'>na_pct</span><span class='op'>)</span>
+<span class='va'>NA_cnt</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/table.html'>table</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/NA.html'>is.na</a></span><span class='op'>(</span><span class='va'>BankChurners1</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>NA_pct</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/proportions.html'>prop.table</a></span><span class='op'>(</span><span class='va'>NA_cnt</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/base/cbind.html'>cbind</a></span><span class='op'>(</span><span class='va'>NA_cnt</span>, <span class='va'>NA_pct</span><span class='op'>)</span>
 </code></pre>
 </div>
 </details>
-<pre><code>      na_cnt     na_pct
+<pre><code>      NA_cnt     NA_pct
 FALSE 192876 0.95228597
 TRUE    9664 0.04771403</code></pre>
 <details>
@@ -2257,7 +2266,6 @@ Show code
 </summary>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># replace all missing values </span>
-
 <span class='va'>BankChurners2</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/DMwR/man/kNN.html'>kNN</a></span><span class='op'>(</span><span class='va'>BankChurners1</span>, 
                      variable <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Dependent_count"</span>, <span class='st'>"Education_Level"</span>, 
                                   <span class='st'>"Marital_Status"</span>, <span class='st'>"Income_Level"</span>, 
@@ -2265,28 +2273,40 @@ Show code
                                   <span class='st'>"Total_Revolving_Bal"</span>, <span class='st'>"Total_Amt_Chng_Q4_Q1"</span>,
                                   <span class='st'>"Total_Ct_Chng_Q4_Q1"</span>, <span class='st'>"Avg_Utilization_Ratio"</span><span class='op'>)</span>,
                      k <span class='op'>=</span> <span class='fl'>10</span><span class='op'>)</span>
-<span class='co'># summary(BankChurners2)</span>
-<span class='va'>BankChurners2</span> <span class='op'>&lt;-</span> <span class='va'>BankChurners2</span><span class='op'>[</span>,<span class='op'>-</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>21</span><span class='op'>:</span><span class='fl'>30</span><span class='op'>)</span><span class='op'>]</span>
-<span class='fu'><a href='https://rdrr.io/r/base/table.html'>table</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/NA.html'>is.na</a></span><span class='op'>(</span><span class='va'>BankChurners2</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
 </div>
 </details>
-<pre><code>
- FALSE 
-202540 </code></pre>
-</div>
-</aside>
-<blockquote>
-<p>The distribution of the tagert variable is not balanced ⚖️, as attrited customers only represents 16% of the total customers.</p>
-</blockquote>
-<aside>
-<div class="layout-chunk" data-layout="l-body">
+<pre><code>Error in colnames(train): argument &quot;train&quot; is missing, with no default</code></pre>
 <details>
 <summary>
 Show code
 </summary>
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>counts</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/table.html'>table</a></span><span class='op'>(</span><span class='va'>BankChurners1</span><span class='op'>$</span><span class='va'>Attrition_Flag</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>BankChurners2</span> <span class='op'>&lt;-</span> <span class='va'>BankChurners2</span><span class='op'>[</span>,<span class='op'>-</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>21</span><span class='op'>:</span><span class='fl'>30</span><span class='op'>)</span><span class='op'>]</span>
+</code></pre>
+</div>
+</details>
+<pre><code>Error: Can&#39;t negate columns that don&#39;t exist.
+x Locations 22, 23, 24, 25, 26, etc. don&#39;t exist.
+i There are only 21 columns.</code></pre>
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/table.html'>table</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/NA.html'>is.na</a></span><span class='op'>(</span><span class='va'>BankChurners2</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+</details>
+<pre><code>
+ FALSE 
+212667 </code></pre>
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>counts</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/table.html'>table</a></span><span class='op'>(</span><span class='va'>BankChurners2</span><span class='op'>$</span><span class='va'>Attrition_Flag</span><span class='op'>)</span>
 <span class='va'>proportions</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/proportions.html'>prop.table</a></span><span class='op'>(</span><span class='va'>counts</span><span class='op'>)</span>
 <span class='fu'><a href='https://rdrr.io/r/base/cbind.html'>cbind</a></span><span class='op'>(</span><span class='va'>counts</span>, <span class='va'>proportions</span><span class='op'>)</span>
 </code></pre>
@@ -2299,7 +2319,7 @@ AttritedCustomer   1627   0.1606596</code></pre>
 </aside>
 <div class="panelset">
 <div class="panel">
-<p><span class="panel-name">Attrition vs Transaction 2️⃣</span> Attrited customer has less variability and less spread regarding the total number of transactions.We can see that 50% of customer churn has less than 50 transaction counts and no of those customers have more than 100 transactions.</p>
+<p><span class="panel-name">Transaction Count</span> Attrited customer has less variability and less spread regarding the total number of transactions. We can see that 50% of customer churn has less than 50 transaction counts and no of those customers have more than 100 transactions.</p>
 <div class="layout-chunk" data-layout="l-body">
 <details>
 <summary>
@@ -2322,7 +2342,7 @@ Show code
 </div>
 </div>
 <div class="panel">
-<p><span class="panel-name">Attrition vs Transaction 💸</span> Both existing and attrited Customer are right skewed due to outliers regarding their total transaction amounts.</p>
+<p><span class="panel-name">Transaction Amt💵</span> Both existing and attrited Customers are right-skewed due to outliers regarding their total transaction amounts.</p>
 <div class="layout-chunk" data-layout="l-body">
 <details>
 <summary>
@@ -2345,7 +2365,31 @@ Show code
 </div>
 </div>
 <div class="panel">
-<p><span class="panel-name">Income vs Gender♂♀</span> Females’ income level are concentrated at low levels such as level 1 and 2 while males have much higher income level distributions.</p>
+<p><span class="panel-name">🌠Credit Limit</span> The majority of attrited customers have lower than $5000 credit.</p>
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>BankChurners1</span>,
+       mapping <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>Credit_Limit</span>,
+                     fill <span class='op'>=</span> <span class='va'>Attrition_Flag</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_histogram.html'>geom_histogram</a></span><span class='op'>(</span>color <span class='op'>=</span> <span class='st'>"#e9ecef"</span>, 
+                 alpha <span class='op'>=</span> <span class='fl'>1</span>,
+                 position <span class='op'>=</span> <span class='st'>"stack"</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_manual.html'>scale_fill_manual</a></span><span class='op'>(</span>values<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"#adb8ff"</span>, <span class='st'>"#e8b5ff"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://rdrr.io/pkg/hrbrthemes/man/theme_ipsum.html'>theme_ipsum</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>"Histogram: Credit Limit vs Attrition"</span>,
+       tag <span class='op'>=</span> <span class='st'>"Fig. 4"</span><span class='op'>)</span>
+</code></pre>
+</div>
+</details>
+<p><img src="final_project_files/figure-html5/plot4-1.png" width="624" /></p>
+</div>
+</div>
+<div class="panel">
+<p><span class="panel-name">Income vs Gender</span> Females’ income levels are concentrated at low levels such as levels 1 and 2 while males have much higher income level distributions.</p>
 <div class="layout-chunk" data-layout="l-body">
 <details>
 <summary>
@@ -2365,7 +2409,6 @@ Show code
 </div>
 </details>
 <p><img src="final_project_files/figure-html5/plot3-1.png" width="624" /></p>
-</div>
 </div>
 <aside>
 <div class="layout-chunk" data-layout="l-body">
@@ -2434,46 +2477,22 @@ $120K +
 </table>
 </div>
 </aside>
-<div class="panel">
-<p><span class="panel-name">Attrition vs Credit Limit</span> The majority of attrited customers have lower than $5000 credit.</p>
-<div class="layout-chunk" data-layout="l-body">
-<details>
-<summary>
-Show code
-</summary>
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>BankChurners1</span>,
-       mapping <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>Credit_Limit</span>,
-                     fill <span class='op'>=</span> <span class='va'>Attrition_Flag</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
-  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_histogram.html'>geom_histogram</a></span><span class='op'>(</span>color <span class='op'>=</span> <span class='st'>"#e9ecef"</span>, 
-                 alpha <span class='op'>=</span> <span class='fl'>1</span>,
-                 position <span class='op'>=</span> <span class='st'>"stack"</span><span class='op'>)</span> <span class='op'>+</span>
-  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_manual.html'>scale_fill_manual</a></span><span class='op'>(</span>values<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"#adb8ff"</span>, <span class='st'>"#e8b5ff"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
-  <span class='fu'><a href='https://rdrr.io/pkg/hrbrthemes/man/theme_ipsum.html'>theme_ipsum</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
-  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>"Histogram: Credit Limit vs Attrition"</span>,
-       tag <span class='op'>=</span> <span class='st'>"Fig. 4"</span><span class='op'>)</span>
-</code></pre>
-</div>
-</details>
-<p><img src="final_project_files/figure-html5/plot4-1.png" width="624" /></p>
 </div>
 </div>
-</div>
-<h2 id="iii.-describe-the-model">III. Describe the Model</h2>
-<blockquote>
-<p>Random Forest:<br />
-Gradient Boosting Tree:</p>
-</blockquote>
-<h2 id="iv.-describe-the-process-and-results">IV. Describe the Process and Results</h2>
-<blockquote>
-<p>Process: I split the dataset into the training set and testing set based on a 6:4 ratio. Then use three machine learning, 🌳random forest, gradient boosting tree🌲, and 💫 netural network🔮 to train🚋 each dataset. After importing the original dataset, I use kNN function with k = 10 to replace those missing values. For comparison, I did replace missing values only in the trainig set and leave the testing set as it is, and it has better performance.</p>
-</blockquote>
+<h2 id="iii.-the-models">III. The Models</h2>
+<ol type="1">
+<li>Random Forest🌳: Decision trees are sensitive to changes, introducing randomness to each split of trees, reduces the over-fitting issue. Also, random forest uses bagging method to make decisions based on a majority vote from each individual tree.</li>
+<li>Gradient Boosting Tree🌲: Gradient boosting is normally better💪 than random forest due to its arbitrary cost functions for classification purpose<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.</li>
+<li>Neural Network🔮: Neural network is very effective and efficient in making inferences and detecting patterns from complex datasets. It uses the input information to optimize the weight of those inputs and then generates outputs. It also minimizes the errors ❌ of those outputs to improve those processed inputs until the errors become small enough🔄. The final result is based on minimized errors❓</li>
+</ol>
+<h2 id="iv.-the-process-and-results">IV. The Process and Results</h2>
+<p>I split the dataset into the training set and testing set based on a 6:4 ratio. Then use three machine learning, 🌳random forest, gradient boosting tree🌲, and 💫neural network🔮 to train🚋 each dataset. After importing the original dataset, I use the kNN function with k = 10 to replace those missing values. For comparison, I replace missing values only in the training set and leave the testing set as it is, and it has better performance.</p>
 <h2 id="v.-code">V. Code</h2>
 <h3 id="i.-random-forest-total-na">i. 🎄Random Forest Total NA⭐</h3>
 <blockquote>
-<p>Original Dataset with Total Missing Value Replaced<br />
-The model has 0.9583 of accuracy 🎯 and 0.835 in kappa, this huge drop probably is due to the imbalanced distribution of the attrition. The recall is 0.7938, which means that this model will missclassify 2 atrrited customers of every 10 customers as existing customers.</p>
+<p>Original Dataset with Total Missing Value Replaced</p>
 </blockquote>
+<p>The model has 0.9583 of accuracy🎯 and 0.835 in kappa, this huge drop probably is due to the imbalanced distribution of the attrition. The recall is 0.7938, which means that this model will misclassify 2 attrited customers of every 10 customers as existing customers.</p>
 <div class="layout-chunk" data-layout="l-body">
 <details>
 <summary>
@@ -2588,10 +2607,7 @@ Show code
 Show code
 </summary>
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>BankChurners_drop_var</span> <span class='op'>&lt;-</span> <span class='va'>BankChurners2</span><span class='op'>[</span><span class='op'>-</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>3</span><span class='op'>:</span><span class='fl'>8</span><span class='op'>)</span><span class='op'>]</span>
-
-
-<span class='co'># test1</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># test1</span>
 <span class='va'>churn_RF_pred1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/predict.html'>predict</a></span><span class='op'>(</span><span class='va'>churn_RF1</span>, <span class='va'>test</span>, type <span class='op'>=</span> <span class='st'>"prob"</span><span class='op'>)</span>
 <span class='va'>churn_RF_test_pred1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/cbind.html'>cbind</a></span><span class='op'>(</span><span class='va'>churn_RF_pred1</span>, <span class='va'>test</span><span class='op'>)</span>
 <span class='va'>churn_RF_test_pred1</span> <span class='op'>&lt;-</span> <span class='va'>churn_RF_test_pred1</span> <span class='op'>%&gt;%</span> 
@@ -2665,11 +2681,11 @@ Show code
 </details>
 <p><img src="final_project_files/figure-html5/RF1-2.png" width="624" /></p>
 </div>
-<h3 id="ii.-random-forest-na-var">ii. 🎄Random Forest NA &amp; Var🌟</h3>
+<h3 id="ii.-random-forest-na-var">ii. 🌴Random Forest NA &amp; Var🍃</h3>
 <blockquote>
-<p>Dataset with 14 variables and Total Missing Value Replaced<br />
-Eduaction level🎓, marital status💏, card category💳, income level💰, dependent count👶, and gender 👦 👩 are the least important variables that used for the final prediction. After dropping those 6 variables, the model performance is simlimar to the previous model’s. The accuracy is the same with 0.0011 and 0.0076 drop in kappa and recall respecativelly.</p>
+<p>Dataset with 14 variables and Total Missing Value Replaced</p>
 </blockquote>
+<p>Education level🎓, marital status💏, card category💳, income level💰, dependent count👶, and gender👦 👩 are the least important variables that used for the final prediction. After dropping those 6 variables, the model performance is similar to the previous model’s. The accuracy is the same with 0.0011 and 0.0076 drop in kappa and recall respectively.</p>
 <div class="layout-chunk" data-layout="l-body">
 <details>
 <summary>
@@ -2677,6 +2693,7 @@ Show code
 </summary>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># data split drop 6 var</span>
+<span class='va'>BankChurners_drop_var</span> <span class='op'>&lt;-</span> <span class='va'>BankChurners2</span><span class='op'>[</span><span class='op'>-</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>3</span><span class='op'>:</span><span class='fl'>8</span><span class='op'>)</span><span class='op'>]</span>
 <span class='va'>index_var</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/caret/man/createDataPartition.html'>createDataPartition</a></span><span class='op'>(</span><span class='va'>BankChurners_drop_var</span><span class='op'>$</span><span class='va'>Attrition_Flag</span>, 
                              p <span class='op'>=</span> <span class='fl'>.6</span>, list <span class='op'>=</span> <span class='cn'>FALSE</span>, times <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>
 <span class='va'>train_var</span> <span class='op'>&lt;-</span> <span class='va'>BankChurners_drop_var</span><span class='op'>[</span><span class='va'>index</span>,<span class='op'>]</span>
@@ -2750,9 +2767,9 @@ Prediction         ExistingCustomer AttritedCustomer
 </div>
 <h3 id="iii.-random-forest-train-na">iii. 🔔Random Forest Train NA✨</h3>
 <blockquote>
-<p>Original Dataset with Training Set Missing Value Replaced<br />
-Only replaced missing values in the training set. The model has 0.961 of accuracy and 0.8452 in kappa, which improved 📈 compared to the previous model. The recall is 0.7985, which means that this model will missclassify 1 atrrited customers of every 10 customers as existing customers.</p>
+<p>Original Dataset with Training Set Missing Value Replaced</p>
 </blockquote>
+<p>Only replaced missing values in the training set. The model has 0.961 in accuracy and 0.8452 in kappa, which improved 📈 compared to the previous model. The recall is 0.7985, which means that this model will misclassify 1 attrited customer of every 10 customers as existing customers.</p>
 <div class="layout-chunk" data-layout="l-body">
 <details>
 <summary>
@@ -2884,9 +2901,9 @@ Show code
 </div>
 <h3 id="iv.-random-forest-total-na-smote">iv. ⛄Random Forest Total NA &amp; SMOTE❄️</h3>
 <blockquote>
-<p>Original Dataset with Total Missing Value Replaced and Resamping in the Training Set<br />
-The model has 0.9514 of accuracy and 0.8282 in kappa, which a little bit worse 📉 than the previous models. The recall is 0.9108, and lower than the previous model that without resampling.</p>
+<p>Original Dataset with Total Missing Value Replaced and Resampling in the Training Set</p>
 </blockquote>
+<p>The model has 0.9514 of accuracy and 0.8282 in kappa, which is a little bit worse 📉 than the previous models. The recall is 0.9108, the highest score among other models.</p>
 <div class="layout-chunk" data-layout="l-body">
 <details>
 <summary>
@@ -3074,11 +3091,11 @@ Show code
 </details>
 <p><img src="final_project_files/figure-html5/RF3-2.png" width="624" /></p>
 </div>
-<h3 id="v.-gradient-boosting-tree-total-na">v. 🎁Gradient Boosting Tree Total NA🎅🍪🥛</h3>
+<h3 id="v.-gradient-boosting-tree-total-na">v. 🧦🎁Gradient Boosting Tree Total NA🎅🍪🥛</h3>
 <blockquote>
-<p>Original Dataset with Total Missing Value Replaced<br />
-The model has 0.9662 of accuracy and 0.8695 in kappa. The recall is 0.8477. Gradient boosting tree has better perforamce compared to random forest under the same condition.</p>
+<p>Original Dataset with Total Missing Value Replaced</p>
 </blockquote>
+<p>The model has 0.9662 of accuracy and 0.8695 in kappa. The recall is 0.8477. Gradient boosting tree has a better performance compared to the random forest under the same condition.</p>
 <div class="layout-chunk" data-layout="l-body">
 <details>
 <summary>
@@ -3325,9 +3342,9 @@ Show code
 </div>
 <h3 id="vi.-gradient-boosting-tree-train-na">vi. 🔔Gradient Boosting Tree Train NA✨</h3>
 <blockquote>
-<p>Original Dataset with Training Set Missing Value Replaced<br />
-Only replaced missing values in the training set. The model has 0.961 of accuracy and 0.8452 in kappa, which improved 📈 compared to the previous model. The recall is 0.7985, which means that this model will missclassify 1 atrrited customers of every 10 customers as existing customers.</p>
+<p>Original Dataset with Training Set Missing Value Replaced and only replaced missing values in the training set</p>
 </blockquote>
+<p>The model has 0.7422 of accuracy and 0.0264 in kappa, and recall is 0.17538, which is the worst model😮 (P-Value [Acc &gt; NIR] : 1, Mcnemar’s Test P-Value : 0.4034).</p>
 <div class="layout-chunk" data-layout="l-body">
 <details>
 <summary>
@@ -3484,11 +3501,11 @@ Show code
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/as.data.frame.html'>as.data.frame</a></span><span class='op'>(</span><span class='va'>churn_matrix5</span><span class='op'>$</span><span class='va'>table</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
   <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_tile.html'>geom_raster</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>Reference</span>, y <span class='op'>=</span> <span class='va'>Prediction</span>, fill <span class='op'>=</span> <span class='va'>Freq</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
   <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_text.html'>geom_text</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>Reference</span>, y <span class='op'>=</span> <span class='va'>Prediction</span>, label <span class='op'>=</span> <span class='va'>Freq</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
-  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_gradient.html'>scale_fill_gradient2</a></span><span class='op'>(</span>low <span class='op'>=</span> <span class='st'>"darkred"</span>, high <span class='op'>=</span> <span class='st'>"pink"</span>,
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_gradient.html'>scale_fill_gradient2</a></span><span class='op'>(</span>low <span class='op'>=</span> <span class='st'>"darkred"</span>, high <span class='op'>=</span> <span class='st'>"lavender"</span>,
                        na.value <span class='op'>=</span> <span class='st'>"grey"</span>, name <span class='op'>=</span> <span class='st'>"Freq"</span><span class='op'>)</span> <span class='op'>+</span>
   <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_discrete.html'>scale_x_discrete</a></span><span class='op'>(</span>name <span class='op'>=</span> <span class='st'>"Actual Class"</span><span class='op'>)</span> <span class='op'>+</span>
   <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_discrete.html'>scale_y_discrete</a></span><span class='op'>(</span>name <span class='op'>=</span> <span class='st'>"Predicted Class"</span><span class='op'>)</span> <span class='op'>+</span>
-  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>ggtitle</a></span><span class='op'>(</span><span class='st'>"Christmas is Coming"</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>ggtitle</a></span><span class='op'>(</span><span class='st'>"Fruit Cake"</span><span class='op'>)</span> <span class='op'>+</span>
   <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/theme.html'>theme</a></span><span class='op'>(</span>plot.title <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_text</a></span><span class='op'>(</span>hjust <span class='op'>=</span> <span class='fl'>.5</span>, size <span class='op'>=</span> <span class='fl'>10</span>, face <span class='op'>=</span> <span class='st'>"bold"</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
 </div>
@@ -3497,9 +3514,9 @@ Show code
 </div>
 <h3 id="vii.-gradient-boosting-tree-total-na-smote">vii. 🦌Gradient Boosting Tree Total NA &amp; SMOTE🥕</h3>
 <blockquote>
-<p>Original Dataset with Total Missing Value Replaced and Resamping in the Training Set<br />
-The model has 0.9664 of accuracy and 0.8778 in kappa, which are similar to the previous result. The recall is 0.9200 🎉 and it is the highest scroe among all the models 🍾! (Mcnemar’s Test P-Value : 0.007855 🅿️)</p>
+<p>Original Dataset with Total Missing Value Replaced and Resampling in the Training Set</p>
 </blockquote>
+<p>The model has 0.964 of accuracy and 0.8685 in kappa, which is similar to the previous result. The recall is 0.9092 🎉 (Mcnemar’s Test P-Value : 0.02545 🅿)</p>
 <div class="layout-chunk" data-layout="l-body">
 <details>
 <summary>
@@ -3690,11 +3707,11 @@ Show code
 </details>
 <p><img src="final_project_files/figure-html5/GBM3-2.png" width="624" /></p>
 </div>
-<h3 id="viii.-netural-network">viii. 🌜Netural Network🕊️</h3>
+<h3 id="viii.-neural-network">viii. 🌜Neural Network🕊️</h3>
 <blockquote>
-<p>Original Dataset with Total Missing Value Replaced<br />
-The model has 0.8059 of accuracy and 0.6119 in kappa, which are similar to the previous result. The recall is 0.8058; however, the overall p-value is 1 😕.</p>
+<p>Original Dataset with Total Missing Value Replaced</p>
 </blockquote>
+<p>The model has 0.9351 of accuracy and 0.7446 in kappa, and recall is 0.7277😕. The ROC curve looks great🏄</p>
 <div class="layout-chunk" data-layout="l-body">
 <details>
 <summary>
@@ -3741,7 +3758,8 @@ AttritedCustomer ExistingCustomer
 Show code
 </summary>
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>roc_NNET</span> <span class='op'>&lt;-</span> <span class='fu'>pROC</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/pROC/man/roc.html'>roc</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='va'>churn_NNET_test_pred</span><span class='op'>$</span><span class='va'>Attrition_Flag</span><span class='op'>)</span>, <span class='va'>churn_NNET_test_pred</span><span class='op'>$</span><span class='va'>ExistingCustomer</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>roc_NNET</span> <span class='op'>&lt;-</span> <span class='fu'>pROC</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/pROC/man/roc.html'>roc</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='va'>churn_NNET_test_pred</span><span class='op'>$</span><span class='va'>Attrition_Flag</span><span class='op'>)</span>, 
+                      <span class='va'>churn_NNET_test_pred</span><span class='op'>$</span><span class='va'>ExistingCustomer</span><span class='op'>)</span>
 <span class='fu'><a href='https://rdrr.io/pkg/bnstruct/man/plot.html'>plot</a></span><span class='op'>(</span><span class='va'>roc_NNET</span><span class='op'>)</span>
 </code></pre>
 </div>
@@ -3795,7 +3813,7 @@ Show code
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/as.data.frame.html'>as.data.frame</a></span><span class='op'>(</span><span class='va'>churn_matrix7</span><span class='op'>$</span><span class='va'>table</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
   <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_tile.html'>geom_raster</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>Reference</span>, y <span class='op'>=</span> <span class='va'>Prediction</span>, fill <span class='op'>=</span> <span class='va'>Freq</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
   <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_text.html'>geom_text</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>Reference</span>, y <span class='op'>=</span> <span class='va'>Prediction</span>, label <span class='op'>=</span> <span class='va'>Freq</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
-  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_gradient.html'>scale_fill_gradient2</a></span><span class='op'>(</span>low <span class='op'>=</span> <span class='st'>"darkred"</span>, high <span class='op'>=</span> <span class='st'>"orchid"</span>,
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_gradient.html'>scale_fill_gradient2</a></span><span class='op'>(</span>low <span class='op'>=</span> <span class='st'>"darkred"</span>, high <span class='op'>=</span> <span class='st'>"plum1"</span>,
                        na.value <span class='op'>=</span> <span class='st'>"grey"</span>, name <span class='op'>=</span> <span class='st'>"Freq"</span><span class='op'>)</span> <span class='op'>+</span>
   <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_discrete.html'>scale_x_discrete</a></span><span class='op'>(</span>name <span class='op'>=</span> <span class='st'>"Actual Class"</span><span class='op'>)</span> <span class='op'>+</span>
   <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_discrete.html'>scale_y_discrete</a></span><span class='op'>(</span>name <span class='op'>=</span> <span class='st'>"Predicted Class"</span><span class='op'>)</span> <span class='op'>+</span>
@@ -3807,22 +3825,21 @@ Show code
 <p><img src="final_project_files/figure-html5/nnet-3.png" width="624" /></p>
 </div>
 <h2 id="vi.-result">VI. Result</h2>
-<blockquote>
-<p>Overall, 🌳random forest model has better performance 🏆 than gradient boosting tree🌲, especially after replacing total missing values and using SMOTE to fix 🔧 the imbalanced dataset issue.</p>
-</blockquote>
+<p>Overall, 🌳random forest model has better performance🏆 than gradient boosting tree🌲, especially after replacing total missing values and using SMOTE to fix 🔧 the imbalanced dataset issue. (<strong>iv.RF TOTAL NA &amp; SMOTE</strong>)</p>
 <div class="layout-chunk" data-layout="l-body">
 <details>
 <summary>
 Show code
 </summary>
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>comparison</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0.9583</span>, <span class='fl'>0.8350</span>, <span class='fl'>0.7938</span>, <span class='fl'>0.9583</span>, <span class='fl'>0.8339</span>, <span class='fl'>0.7862</span>, <span class='fl'>0.9610</span>, 
-                       <span class='fl'>0.8452</span>, <span class='fl'>0.7985</span>, <span class='fl'>0.9514</span>, <span class='fl'>0.8282</span>, <span class='fl'>0.9108</span>, <span class='fl'>0.9662</span>, <span class='fl'>0.8695</span>, 
-                       <span class='fl'>0.8477</span>, <span class='fl'>0.0000</span>, <span class='fl'>0.0000</span>, <span class='fl'>0.0000</span>, <span class='fl'>0.9664</span>, <span class='fl'>0.8778</span>, <span class='fl'>0.9200</span>, 
-                       <span class='fl'>0.0000</span>, <span class='fl'>0.0000</span>, <span class='fl'>0.0000</span><span class='op'>)</span>, ncol <span class='op'>=</span> <span class='fl'>3</span>, byrow <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>comparison</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0.9583</span>, <span class='fl'>0.8350</span>, <span class='fl'>0.7938</span>, <span class='fl'>0.9583</span>, <span class='fl'>0.8339</span>, <span class='fl'>0.7862</span>, <span class='fl'>0.9610</span>, <span class='fl'>0.8452</span>, 
+                       <span class='fl'>0.7985</span>, <span class='fl'>0.9514</span>, <span class='fl'>0.8282</span>, <span class='fl'>0.9108</span>, <span class='fl'>0.9662</span>, <span class='fl'>0.8695</span>, <span class='fl'>0.8477</span>, <span class='fl'>0.7422</span>, 
+                       <span class='fl'>0.0264</span>, <span class='fl'>0.1754</span>, <span class='fl'>0.9640</span>, <span class='fl'>0.8685</span>, <span class='fl'>0.9092</span>, <span class='fl'>0.9351</span>, <span class='fl'>0.7446</span>, <span class='fl'>0.7277</span><span class='op'>)</span>,
+                     ncol <span class='op'>=</span> <span class='fl'>3</span>, byrow <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
 <span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span><span class='op'>(</span><span class='va'>comparison</span><span class='op'>)</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Accuracy"</span>, <span class='st'>"Kappa"</span>, <span class='st'>"Recall"</span><span class='op'>)</span>
 <span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span><span class='op'>(</span><span class='va'>comparison</span><span class='op'>)</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"i.RF TOTAL NA"</span>, <span class='st'>"ii.RF TOTAL NA &amp; VAR"</span>, <span class='st'>"iii.RF TRAIN NA"</span>, 
-                          <span class='st'>"iv.RF TOTAL NA &amp; SMOTE"</span>, <span class='st'>"v.GBT TOTAL NA"</span>, <span class='st'>"vi.GBT TRAIN NA"</span>, <span class='st'>"vii.GBT TOTAL NA &amp; SMOTE"</span>, <span class='st'>"viii.NNET TOTAL NA"</span><span class='op'>)</span>
+                          <span class='st'>"iv.RF TOTAL NA &amp; SMOTE"</span>, <span class='st'>"v.GBT TOTAL NA"</span>, <span class='st'>"vi.GBT TRAIN NA"</span>, 
+                          <span class='st'>"vii.GBT TOTAL NA &amp; SMOTE"</span>, <span class='st'>"viii.NNET TOTAL NA"</span><span class='op'>)</span>
 <span class='va'>comparison</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/as.data.frame.html'>as.data.frame.matrix</a></span><span class='op'>(</span><span class='va'>comparison</span><span class='op'>)</span>
 <span class='va'>comparison</span>
 </code></pre>
@@ -3834,14 +3851,20 @@ ii.RF TOTAL NA &amp; VAR       0.9583 0.8339 0.7862
 iii.RF TRAIN NA            0.9610 0.8452 0.7985
 iv.RF TOTAL NA &amp; SMOTE     0.9514 0.8282 0.9108
 v.GBT TOTAL NA             0.9662 0.8695 0.8477
-vi.GBT TRAIN NA            0.0000 0.0000 0.0000
-vii.GBT TOTAL NA &amp; SMOTE   0.9664 0.8778 0.9200
-viii.NNET TOTAL NA         0.0000 0.0000 0.0000</code></pre>
+vi.GBT TRAIN NA            0.7422 0.0264 0.1754
+vii.GBT TOTAL NA &amp; SMOTE   0.9640 0.8685 0.9092
+viii.NNET TOTAL NA         0.9351 0.7446 0.7277</code></pre>
 </div>
-<blockquote>
-<p>The original model from kaggle has 62% of recall, so my models did improve the performance of predicting churned customers. So it can help companies to identify potential customer churn. The netural network model is no good or messed up somthing. Based on the variable importance rates, customers’ transaction numbers and amounts, change in transaction amount, and total product held by customers are the most important predicting variables in those models. The demographic factors are not important in those models though.</p>
-</blockquote>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<p>The original model from Kaggle has 62% of recall, so 🤠my models did improve the performance of predicting churned customers🥳. So it can help companies to identify potential customer churn. The neural network model is no good or messed up something. Based on the variable importance rates, customers’ transaction numbers and amounts, changes in transaction amount, and total product held by customers are the most important⭐ predicting variables in those models. The demographic factors are not important in those models though.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<section class="footnotes" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p><a href="https://www.kaggle.com/sakshigoyal7/credit-card-customers" class="uri">https://www.kaggle.com/sakshigoyal7/credit-card-customers</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p><a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0222916" class="uri">https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0222916</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3" role="doc-endnote"><p><a href="https://en.wikipedia.org/wiki/Gradient_boosting" class="uri">https://en.wikipedia.org/wiki/Gradient_boosting</a><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

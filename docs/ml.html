@@ -86,26 +86,29 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>Siwei Jiang: ML</title>
+  <title>Siwei Jiang: Machine Learning</title>
 
+  <meta property="description" itemprop="description" content="[Support Vector Machines](https://professor-hunt.github.io/ACC8143/Support_Vector_Machine.html){target=&quot;_blank&quot;}"/>
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Siwei Jiang: ML"/>
+  <meta property="og:title" content="Siwei Jiang: Machine Learning"/>
   <meta property="og:type" content="article"/>
+  <meta property="og:description" content="[Support Vector Machines](https://professor-hunt.github.io/ACC8143/Support_Vector_Machine.html){target=&quot;_blank&quot;}"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="Siwei Jiang"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Siwei Jiang: ML"/>
+  <meta property="twitter:title" content="Siwei Jiang: Machine Learning"/>
+  <meta property="twitter:description" content="[Support Vector Machines](https://professor-hunt.github.io/ACC8143/Support_Vector_Machine.html){target=&quot;_blank&quot;}"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","output"]}},"value":[{"type":"character","attributes":{},"value":["ML"]},{"type":"NULL"},{"type":"character","attributes":{},"value":["distill::distill_article"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","output"]}},"value":[{"type":"character","attributes":{},"value":["Machine Learning"]},{"type":"character","attributes":{},"value":["[Support Vector Machines](https://professor-hunt.github.io/ACC8143/Support_Vector_Machine.html){target=\"_blank\"} \n"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth","toc_float","code_folding"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]},{"type":"logical","attributes":{},"value":[true]},{"type":"logical","attributes":{},"value":[true]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -1895,6 +1898,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   .d-contents {
     --heading-size:    20px;
     --contents-size:   14px;
+    --heading-color:   #bdaeea; 
   }
 
   /*-- ARTICLE APPENDIX --*/
@@ -1910,7 +1914,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   .distill-site-header {
     --title-size:       18px;
-    --text-color:       rgba(255, 255, 255, 0.8);
+    --text-color:       white;
     --text-size:        15px;
     --hover-color:      #aeccea;
     --bkgd-color:       #bdaeea;
@@ -1926,17 +1930,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   /*-- Additional custom styles --*/
   /* Add any additional CSS rules below                      */
 
-  body {
-      width: 100vw;
-      height: 100vh;
-      margin: 0;
-      background: linear-gradient(
-          130deg, 
-          #5A59A3, 
-          #C66060
-      ) no-repeat  fixed;
-  }
-
   /* Buttons on home page */
 
   .btn-outline-dark {
@@ -1947,6 +1940,42 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   .btn-outline-dark:hover {
       background-color: #bdaeea;
+  }
+
+  .panelset {
+     --panel-tab-foreground: #bdaeea;
+     --panel-tab-background: #aeccea;
+     --panel-tab-active-foreground: #bdaeea;
+     --panel-tab-active-background: #aeccea;
+     --panel-tab-active-border-color: #bdaeea;
+     --panel-tab-hover-foreground: #bdaeea;
+     --panel-tab-hover-background: #aeccea;
+     --panel-tab-hover-border-color: #aeccea;
+     --panel-tab-inactive-opacity: 0.5;
+     --panel-tabs-border-bottom: #ddd;
+     --panel-tab-font-family: monospace;
+  }
+
+  body {
+    color: #bdaeea;
+  }
+  h1, h2, h3 {
+    color: #bdaeea;
+  }
+
+  /* unvisited link */
+  a:link {
+    color: #aeccea;
+  }
+
+  /* visited link */
+  a:visited {
+    color: #aeccea;
+  }
+
+  /* mouse over link */
+  a:hover {
+    color: #aeccea;
   }
   </style>
   <style type="text/css">
@@ -2124,7 +2153,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"ML","authors":[]}
+{"title":"Machine Learning","description":"[Support Vector Machines](https://professor-hunt.github.io/ACC8143/Support_Vector_Machine.html){target=\"_blank\"}","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2132,17 +2161,14 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <header class="header header--fixed" role="banner">
 <nav class="distill-site-nav distill-site-header">
 <div class="nav-left">
+<a class="logo">
+<img src="images/meme.png" alt="Logo"/>
+</a>
 <a href="index.html" class="title">Siwei Jiang</a>
 </div>
 <div class="nav-right">
 <a href="index.html">
 <i class="fa fa-home" aria-hidden="true"></i>
-</a>
-<a href="about.html">
-<i class="fa fa-user" aria-hidden="true"></i>
-</a>
-<a href="blog.html">
-<i class="fa fa-file-o" aria-hidden="true"></i>
 </a>
 <a href="https://github.com/siwei-jiang">
 <i class="fa fa-github" aria-hidden="true"></i>
@@ -2160,7 +2186,7 @@ Project
 <div class="nav-dropdown-content">
 <a href="rsquared.html">Rsquared</a>
 <a href="ml.html">Machine Learning</a>
-<a href="final.html">Final Project</a>
+<a href="final_project.html">Final Project</a>
 </div>
 </div>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
@@ -2172,19 +2198,338 @@ Project
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>ML</h1>
+<h1>Machine Learning</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-
+<p><p><a href="https://professor-hunt.github.io/ACC8143/Support_Vector_Machine.html" target="_blank">Support Vector Machines</a></p></p>
 </div>
 
 
 <div class="d-article">
-<h1 id="use-hw">use hw</h1>
-<h1 id="describe-the-model">describe the model</h1>
-<h1 id="describe-the-process-and-results">describe the process and results</h1>
-<h1 id="code">code</h1>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#i.-the-model">I. The Model</a></li>
+<li><a href="#ii.-the-process-and-results">II. The Process and Results</a></li>
+<li><a href="#iii.-application">III. Application</a></li>
+<li><a href="#iv.-code">IV. Code</a>
+<ul>
+<li><a href="#i.-data-split-7525">i. Data Split 75:25</a></li>
+<li><a href="#ii.-data-split-5050">ii. Data Split 50:50</a></li>
+<li><a href="#iii.-kernel-svmpoly">iii. Kernel: svmPoly</a></li>
+</ul></li>
+</ul>
+</nav>
+</div>
+<h1 id="i.-the-model">I. The Model</h1>
+<p>👩‍💻A Support Vector Machine (SVM) model is a supervised👀 machine learning model used for classification. It is simple but very useful. It uses a tool🔨 called hyperplane to separate data into different groups. It has different methods for both linear and non-linear data. And the methods that are used here are <strong>svmLinear</strong> and <strong>svmPloy</strong>.</p>
+<h1 id="ii.-the-process-and-results">II. The Process and Results</h1>
+<p>Since SVM is a supervised model, the first step is to split the dataset into training and testing sets and assume the dataset is clean♻️. After the dataset split, we run🏃 the SVM in the training set and use the trained data to predict the testing set. Finally, we use a 📐📏confusion matrix to show how well is our prediction in terms of accuracy, recall, Specificity, etc.</p>
+<p>We are 🔭interested in the effect of data split ratios on the model performance, so we compare two new ratios, 75:25 and 50:50 with the original ratio of 60:40 conducted by Dr.Hunt. We also implement both linear and poly methods on the dataset to see the difference in their performance.</p>
+<p>The result for both splits and poly method are better📈 than the original model performance, which means that data split does have an impact on the model fitness. 🎊Because we know that two classes of variables have some overlaps, so it is expected that poly will be a better fit for the dataset. However, we did not test statistical significance for those changes🙊.</p>
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>comparison</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0.9333</span>, <span class='fl'>0.9000</span>, <span class='fl'>0.7938</span>, <span class='fl'>0.8500</span>, <span class='fl'>0.9444</span>, <span class='fl'>0.9167</span>, <span class='fl'>0.8333</span>, <span class='fl'>1.0000</span>,
+                       <span class='fl'>0.9467</span>, <span class='fl'>0.9200</span>, <span class='fl'>0.9600</span>, <span class='fl'>0.8800</span>, <span class='fl'>0.9667</span>, <span class='fl'>0.9500</span>, <span class='fl'>0.9000</span>, <span class='fl'>1.0000</span><span class='op'>)</span>,
+                    ncol <span class='op'>=</span> <span class='fl'>4</span>, byrow <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span><span class='op'>(</span><span class='va'>comparison</span><span class='op'>)</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Accuracy"</span>, <span class='st'>"Kappa"</span>, <span class='st'>"Recall-Versi"</span>, <span class='st'>"Recall-Virgi"</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span><span class='op'>(</span><span class='va'>comparison</span><span class='op'>)</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Linear 60:40"</span>, <span class='st'>"Linear 75:25"</span>, <span class='st'>"Linear 50:50"</span>, <span class='st'>"NonLin 60:40"</span><span class='op'>)</span>
+<span class='va'>comparison</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/as.data.frame.html'>as.data.frame.matrix</a></span><span class='op'>(</span><span class='va'>comparison</span><span class='op'>)</span>
+<span class='va'>comparison</span>
+</code></pre>
+</div>
+</details>
+<pre><code>             Accuracy  Kappa Recall-Versi Recall-Virgi
+Linear 60:40   0.9333 0.9000       0.7938         0.85
+Linear 75:25   0.9444 0.9167       0.8333         1.00
+Linear 50:50   0.9467 0.9200       0.9600         0.88
+NonLin 60:40   0.9667 0.9500       0.9000         1.00</code></pre>
+</div>
+<h1 id="iii.-application">III. Application</h1>
+<p>The SVM model can be used for identifying abnormalities such as fraudulent transactions, material misstatements, bankruptcies, abnormal reserves, etc. Auditors can utilize this machine learning model with other algorithms as well as financial ratios to improve their accuracy and efficiency.</p>
+<h1 id="iv.-code">IV. Code</h1>
+<h2 id="i.-data-split-7525">i. Data Split 75:25</h2>
+<p>Accuracy and Kappa both increased a little✨ bit</p>
+<h3 id="data-preparation">Data Preparation</h3>
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># data split</span>
+<span class='va'>iris1</span> <span class='op'>&lt;-</span> <span class='va'>iris</span>
+<span class='va'>train_index</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/caret/man/createDataPartition.html'>createDataPartition</a></span><span class='op'>(</span><span class='va'>iris1</span><span class='op'>$</span><span class='va'>Species</span>, p <span class='op'>=</span> <span class='fl'>.75</span>, list <span class='op'>=</span> <span class='cn'>FALSE</span>, times <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>
+
+<span class='va'>iris_train</span> <span class='op'>&lt;-</span> <span class='va'>iris1</span><span class='op'>[</span><span class='va'>train_index</span>,<span class='op'>]</span>
+<span class='va'>iris_test</span> <span class='op'>&lt;-</span> <span class='va'>iris1</span><span class='op'>[</span><span class='op'>-</span><span class='va'>train_index</span>,<span class='op'>]</span>
+</code></pre>
+</div>
+</details>
+</div>
+<h3 id="model">Model</h3>
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># train</span>
+<span class='va'>iris_svm_train</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/caret/man/train.html'>train</a></span><span class='op'>(</span>
+  form <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='va'>Species</span><span class='op'>)</span> <span class='op'>~</span><span class='va'>.</span>,
+  data <span class='op'>=</span> <span class='va'>iris_train</span>,
+  trControl <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/caret/man/trainControl.html'>trainControl</a></span><span class='op'>(</span>method <span class='op'>=</span> <span class='st'>"cv"</span>,
+                           number <span class='op'>=</span> <span class='fl'>10</span>,
+                           classProbs <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>,
+  method <span class='op'>=</span> <span class='st'>"svmLinear"</span>,
+  preProcess <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"center"</span>, <span class='st'>"scale"</span><span class='op'>)</span>,
+  tuneLength <span class='op'>=</span> <span class='fl'>10</span>
+<span class='op'>)</span>
+<span class='co'># iris_svm_train</span>
+<span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>iris_svm_train</span><span class='op'>)</span>
+</code></pre>
+</div>
+</details>
+<pre><code>Length  Class   Mode 
+     1   ksvm     S4 </code></pre>
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># predict</span>
+<span class='va'>iris_svm_predict</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/predict.html'>predict</a></span><span class='op'>(</span><span class='va'>iris_svm_train</span>, <span class='va'>iris_test</span>, type <span class='op'>=</span> <span class='st'>"prob"</span><span class='op'>)</span>
+
+<span class='va'>iris_svm_predict</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/cbind.html'>cbind</a></span><span class='op'>(</span><span class='va'>iris_svm_predict</span>, <span class='va'>iris_test</span><span class='op'>)</span>
+<span class='va'>iris_svm_predict</span> <span class='op'>&lt;-</span> <span class='va'>iris_svm_predict</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>mutate</span><span class='op'>(</span>prediction <span class='op'>=</span> <span class='fu'>if_else</span><span class='op'>(</span><span class='va'>setosa</span> <span class='op'>&gt;</span> <span class='va'>versicolor</span> <span class='op'>&amp;</span> <span class='va'>setosa</span> <span class='op'>&gt;</span> <span class='va'>virginica</span>, <span class='st'>"setosa"</span>,
+                              <span class='fu'>if_else</span><span class='op'>(</span><span class='va'>versicolor</span> <span class='op'>&gt;</span> <span class='va'>setosa</span> <span class='op'>&amp;</span> <span class='va'>versicolor</span> <span class='op'>&gt;</span> <span class='va'>virginica</span>, <span class='st'>"versicolor"</span>,
+                                      <span class='fu'>if_else</span><span class='op'>(</span><span class='va'>virginica</span> <span class='op'>&gt;</span> <span class='va'>setosa</span> <span class='op'>&amp;</span> <span class='va'>virginica</span> <span class='op'>&gt;</span> <span class='va'>versicolor</span>, <span class='st'>"virginica"</span>, <span class='st'>"PROBLEM"</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
+<span class='co'># table(iris_svm_predict$prediction)</span>
+<span class='fu'><a href='https://rdrr.io/pkg/caret/man/confusionMatrix.html'>confusionMatrix</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='va'>iris_svm_predict</span><span class='op'>$</span><span class='va'>prediction</span><span class='op'>)</span>, <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='va'>iris_svm_predict</span><span class='op'>$</span><span class='va'>Species</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+</details>
+<pre><code>Confusion Matrix and Statistics
+
+            Reference
+Prediction   setosa versicolor virginica
+  setosa         12          0         0
+  versicolor      0         10         0
+  virginica       0          2        12
+
+Overall Statistics
+                                          
+               Accuracy : 0.9444          
+                 95% CI : (0.8134, 0.9932)
+    No Information Rate : 0.3333          
+    P-Value [Acc &gt; NIR] : 1.728e-14       
+                                          
+                  Kappa : 0.9167          
+                                          
+ Mcnemar&#39;s Test P-Value : NA              
+
+Statistics by Class:
+
+                     Class: setosa Class: versicolor Class: virginica
+Sensitivity                 1.0000            0.8333           1.0000
+Specificity                 1.0000            1.0000           0.9167
+Pos Pred Value              1.0000            1.0000           0.8571
+Neg Pred Value              1.0000            0.9231           1.0000
+Prevalence                  0.3333            0.3333           0.3333
+Detection Rate              0.3333            0.2778           0.3333
+Detection Prevalence        0.3333            0.2778           0.3889
+Balanced Accuracy           1.0000            0.9167           0.9583</code></pre>
+</div>
+<h3 id="plot-svm">Plot SVM</h3>
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>sv1</span> <span class='op'>&lt;-</span> <span class='va'>iris_train</span><span class='op'>[</span><span class='va'>iris_svm_train</span><span class='op'>$</span><span class='va'>finalModel</span><span class='op'>@</span><span class='va'>SVindex</span>,<span class='op'>]</span>
+
+<span class='fu'>ggplot</span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>iris_test</span>, mapping <span class='op'>=</span> <span class='fu'>aes</span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>Sepal.Width</span>, y<span class='op'>=</span> <span class='va'>Petal.Width</span>, color <span class='op'>=</span> <span class='va'>Species</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>geom_point</span><span class='op'>(</span>alpha <span class='op'>=</span> <span class='fl'>.5</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>geom_point</span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>iris_svm_predict</span>, mapping <span class='op'>=</span> <span class='fu'>aes</span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>Sepal.Width</span>, y <span class='op'>=</span> <span class='va'>Petal.Width</span>, color <span class='op'>=</span> <span class='va'>prediction</span><span class='op'>)</span>, 
+             shape <span class='op'>=</span> <span class='fl'>6</span>, size <span class='op'>=</span> <span class='fl'>3</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>geom_point</span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>sv1</span>, mapping <span class='op'>=</span> <span class='fu'>aes</span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>Sepal.Width</span>, y <span class='op'>=</span> <span class='va'>Petal.Width</span><span class='op'>)</span>, shape <span class='op'>=</span> <span class='fl'>4</span>, size <span class='op'>=</span> <span class='fl'>4</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>theme</span><span class='op'>(</span>legend.title <span class='op'>=</span> <span class='fu'>element_blank</span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>ggtitle</span><span class='op'>(</span><span class='st'>"Support Vector Machine"</span><span class='op'>)</span>
+</code></pre>
+</div>
+</details>
+<p><img src="ml_files/figure-html5/plot-1.png" width="624" /></p>
+</div>
+<h2 id="ii.-data-split-5050">ii. Data Split 50:50</h2>
+<p>Accuracy and Kappa both increased a little. Versicolor’s recall increased a lot👏</p>
+<h3 id="model-1">Model</h3>
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># data split</span>
+<span class='va'>train_index</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/caret/man/createDataPartition.html'>createDataPartition</a></span><span class='op'>(</span><span class='va'>iris1</span><span class='op'>$</span><span class='va'>Species</span>, p <span class='op'>=</span> <span class='fl'>.5</span>, list <span class='op'>=</span> <span class='cn'>FALSE</span>, times <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>
+
+<span class='va'>iris_train</span> <span class='op'>&lt;-</span> <span class='va'>iris1</span><span class='op'>[</span><span class='va'>train_index</span>,<span class='op'>]</span>
+<span class='va'>iris_test</span> <span class='op'>&lt;-</span> <span class='va'>iris1</span><span class='op'>[</span><span class='op'>-</span><span class='va'>train_index</span>,<span class='op'>]</span>
+
+<span class='co'># train</span>
+<span class='va'>iris_svm_train</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/caret/man/train.html'>train</a></span><span class='op'>(</span>
+  form <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='va'>Species</span><span class='op'>)</span> <span class='op'>~</span><span class='va'>.</span>,
+  data <span class='op'>=</span> <span class='va'>iris_train</span>,
+  trControl <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/caret/man/trainControl.html'>trainControl</a></span><span class='op'>(</span>method <span class='op'>=</span> <span class='st'>"cv"</span>,
+                           number <span class='op'>=</span> <span class='fl'>10</span>,
+                           classProbs <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>,
+  method <span class='op'>=</span> <span class='st'>"svmLinear"</span>,
+  preProcess <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"center"</span>, <span class='st'>"scale"</span><span class='op'>)</span>,
+  tuneLength <span class='op'>=</span> <span class='fl'>10</span>
+<span class='op'>)</span>
+<span class='co'># iris_svm_train</span>
+<span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>iris_svm_train</span><span class='op'>)</span>
+</code></pre>
+</div>
+</details>
+<pre><code>Length  Class   Mode 
+     1   ksvm     S4 </code></pre>
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># predict</span>
+<span class='va'>iris_svm_predict</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/predict.html'>predict</a></span><span class='op'>(</span><span class='va'>iris_svm_train</span>, <span class='va'>iris_test</span>, type <span class='op'>=</span> <span class='st'>"prob"</span><span class='op'>)</span>
+
+<span class='va'>iris_svm_predict</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/cbind.html'>cbind</a></span><span class='op'>(</span><span class='va'>iris_svm_predict</span>, <span class='va'>iris_test</span><span class='op'>)</span>
+<span class='va'>iris_svm_predict</span> <span class='op'>&lt;-</span> <span class='va'>iris_svm_predict</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>mutate</span><span class='op'>(</span>prediction <span class='op'>=</span> <span class='fu'>if_else</span><span class='op'>(</span><span class='va'>setosa</span> <span class='op'>&gt;</span> <span class='va'>versicolor</span> <span class='op'>&amp;</span> <span class='va'>setosa</span> <span class='op'>&gt;</span> <span class='va'>virginica</span>, <span class='st'>"setosa"</span>,
+                              <span class='fu'>if_else</span><span class='op'>(</span><span class='va'>versicolor</span> <span class='op'>&gt;</span> <span class='va'>setosa</span> <span class='op'>&amp;</span> <span class='va'>versicolor</span> <span class='op'>&gt;</span> <span class='va'>virginica</span>, <span class='st'>"versicolor"</span>,
+                                      <span class='fu'>if_else</span><span class='op'>(</span><span class='va'>virginica</span> <span class='op'>&gt;</span> <span class='va'>setosa</span> <span class='op'>&amp;</span> <span class='va'>virginica</span> <span class='op'>&gt;</span> <span class='va'>versicolor</span>, <span class='st'>"virginica"</span>, <span class='st'>"PROBLEM"</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
+<span class='co'># table(iris_svm_predict$prediction)</span>
+<span class='fu'><a href='https://rdrr.io/pkg/caret/man/confusionMatrix.html'>confusionMatrix</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='va'>iris_svm_predict</span><span class='op'>$</span><span class='va'>prediction</span><span class='op'>)</span>, <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='va'>iris_test</span><span class='op'>$</span><span class='va'>Species</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+</details>
+<pre><code>Confusion Matrix and Statistics
+
+            Reference
+Prediction   setosa versicolor virginica
+  setosa         25          0         0
+  versicolor      0         24         3
+  virginica       0          1        22
+
+Overall Statistics
+                                         
+               Accuracy : 0.9467         
+                 95% CI : (0.869, 0.9853)
+    No Information Rate : 0.3333         
+    P-Value [Acc &gt; NIR] : &lt; 2.2e-16      
+                                         
+                  Kappa : 0.92           
+                                         
+ Mcnemar&#39;s Test P-Value : NA             
+
+Statistics by Class:
+
+                     Class: setosa Class: versicolor Class: virginica
+Sensitivity                 1.0000            0.9600           0.8800
+Specificity                 1.0000            0.9400           0.9800
+Pos Pred Value              1.0000            0.8889           0.9565
+Neg Pred Value              1.0000            0.9792           0.9423
+Prevalence                  0.3333            0.3333           0.3333
+Detection Rate              0.3333            0.3200           0.2933
+Detection Prevalence        0.3333            0.3600           0.3067
+Balanced Accuracy           1.0000            0.9500           0.9300</code></pre>
+</div>
+<h2 id="iii.-kernel-svmpoly">iii. Kernel: svmPoly</h2>
+<p>Has the 🏆best overall and individual class performance</p>
+<h3 id="model-2">Model</h3>
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>train_index</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/caret/man/createDataPartition.html'>createDataPartition</a></span><span class='op'>(</span><span class='va'>iris1</span><span class='op'>$</span><span class='va'>Species</span>, p <span class='op'>=</span> <span class='fl'>.6</span>, list <span class='op'>=</span> <span class='cn'>FALSE</span>, times <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>
+
+<span class='va'>iris_train</span> <span class='op'>&lt;-</span> <span class='va'>iris1</span><span class='op'>[</span><span class='va'>train_index</span>,<span class='op'>]</span>
+<span class='va'>iris_test</span> <span class='op'>&lt;-</span> <span class='va'>iris1</span><span class='op'>[</span><span class='op'>-</span><span class='va'>train_index</span>,<span class='op'>]</span>
+
+<span class='co'># train</span>
+<span class='va'>iris_svm_train</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/caret/man/train.html'>train</a></span><span class='op'>(</span>
+  form <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='va'>Species</span><span class='op'>)</span> <span class='op'>~</span><span class='va'>.</span>,
+  data <span class='op'>=</span> <span class='va'>iris_train</span>,
+  trControl <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/caret/man/trainControl.html'>trainControl</a></span><span class='op'>(</span>method <span class='op'>=</span> <span class='st'>"cv"</span>,
+                           number <span class='op'>=</span> <span class='fl'>10</span>,
+                           classProbs <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>,
+  method <span class='op'>=</span> <span class='st'>"svmPoly"</span>,
+  preProcess <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"center"</span>, <span class='st'>"scale"</span><span class='op'>)</span>,
+  tuneLength <span class='op'>=</span> <span class='fl'>10</span>
+<span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>iris_svm_train</span><span class='op'>)</span>
+</code></pre>
+</div>
+</details>
+<pre><code>Length  Class   Mode 
+     1   ksvm     S4 </code></pre>
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># predict</span>
+<span class='va'>iris_svm_predict</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/predict.html'>predict</a></span><span class='op'>(</span><span class='va'>iris_svm_train</span>, <span class='va'>iris_test</span>, type <span class='op'>=</span> <span class='st'>"prob"</span><span class='op'>)</span>
+<span class='va'>iris_svm_predict</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/cbind.html'>cbind</a></span><span class='op'>(</span><span class='va'>iris_svm_predict</span>, <span class='va'>iris_test</span><span class='op'>)</span>
+
+<span class='va'>iris_svm_predict</span> <span class='op'>&lt;-</span> <span class='va'>iris_svm_predict</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>mutate</span><span class='op'>(</span>prediction <span class='op'>=</span> <span class='fu'>if_else</span><span class='op'>(</span><span class='va'>setosa</span> <span class='op'>&gt;</span> <span class='va'>versicolor</span> <span class='op'>&amp;</span> <span class='va'>setosa</span> <span class='op'>&gt;</span> <span class='va'>virginica</span>, <span class='st'>"setosa"</span>,
+                              <span class='fu'>if_else</span><span class='op'>(</span><span class='va'>versicolor</span> <span class='op'>&gt;</span><span class='va'>setosa</span> <span class='op'>&amp;</span> <span class='va'>versicolor</span> <span class='op'>&gt;</span> <span class='va'>virginica</span>, <span class='st'>"versicolor"</span>,
+                                      <span class='fu'>if_else</span><span class='op'>(</span><span class='va'>virginica</span> <span class='op'>&gt;</span> <span class='va'>setosa</span> <span class='op'>&amp;</span> <span class='va'>virginica</span> <span class='op'>&gt;</span> <span class='va'>versicolor</span>, <span class='st'>"virginica"</span>, <span class='st'>"PROBLEM"</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
+<span class='co'># table(iris_svm_predict$prediction)</span>
+<span class='fu'><a href='https://rdrr.io/pkg/caret/man/confusionMatrix.html'>confusionMatrix</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='va'>iris_svm_predict</span><span class='op'>$</span><span class='va'>prediction</span><span class='op'>)</span>, <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='va'>iris_test</span><span class='op'>$</span><span class='va'>Species</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+</details>
+<pre><code>Confusion Matrix and Statistics
+
+            Reference
+Prediction   setosa versicolor virginica
+  setosa         20          0         0
+  versicolor      0         18         0
+  virginica       0          2        20
+
+Overall Statistics
+                                          
+               Accuracy : 0.9667          
+                 95% CI : (0.8847, 0.9959)
+    No Information Rate : 0.3333          
+    P-Value [Acc &gt; NIR] : &lt; 2.2e-16       
+                                          
+                  Kappa : 0.95            
+                                          
+ Mcnemar&#39;s Test P-Value : NA              
+
+Statistics by Class:
+
+                     Class: setosa Class: versicolor Class: virginica
+Sensitivity                 1.0000            0.9000           1.0000
+Specificity                 1.0000            1.0000           0.9500
+Pos Pred Value              1.0000            1.0000           0.9091
+Neg Pred Value              1.0000            0.9524           1.0000
+Prevalence                  0.3333            0.3333           0.3333
+Detection Rate              0.3333            0.3000           0.3333
+Detection Prevalence        0.3333            0.3000           0.3667
+Balanced Accuracy           1.0000            0.9500           0.9750</code></pre>
+</div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
