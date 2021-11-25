@@ -254,7 +254,7 @@ ggplot(as.data.frame(churn_matrix1$table)) +
 ### ii. 🌴Random Forest NA & Var🍃
 > Dataset with 14 variables and Total Missing Value Replaced  
 
-Education level🎓, marital status💏, card category💳, income level💰, dependent count👶, and gender👦 👩 are the least important variables that used for the final prediction. After dropping those 6 variables, the model performance is similar to the previous model's. The accuracy is the same with 0.0011 and 0.0076 drop in kappa and recall respectively.  
+Education level🎓, marital status💑, card category💳, income level💰, dependent count👶, and gender👦 👩 are the least important variables that used for the final prediction. After dropping those 6 variables, the model performance is similar to the previous model's. The accuracy is the same with 0.0011 and 0.0076 drop in kappa and recall respectively.  
 
 ```{r RF1_drop_var}
 # data split drop 6 var
