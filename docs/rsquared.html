@@ -91,8 +91,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--  https://schema.org/Article -->
-  <meta property="article:published" itemprop="datePublished" content="2021-11-24"/>
-  <meta property="article:created" itemprop="dateCreated" content="2021-11-24"/>
+  <meta property="article:published" itemprop="datePublished" content="2021-11-27"/>
+  <meta property="article:created" itemprop="dateCreated" content="2021-11-27"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
   <meta property="og:title" content="Siwei Jiang: R-squared"/>
@@ -108,7 +108,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","date","output"]}},"value":[{"type":"character","attributes":{},"value":["R-squared"]},{"type":"NULL"},{"type":"character","attributes":{},"value":["2021-11-24"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth","toc_float"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]},{"type":"logical","attributes":{},"value":[true]}]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","date","output"]}},"value":[{"type":"character","attributes":{},"value":["R-squared"]},{"type":"NULL"},{"type":"character","attributes":{},"value":["2021-11-27"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -1916,19 +1916,19 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     --title-size:       18px;
     --text-color:       white;
     --text-size:        15px;
-    --hover-color:      #aeccea;
+    --hover-color:      #fcd7f2;
     --bkgd-color:       #bdaeea;
   }
 
   .distill-site-footer {
-    --text-color:       rgba(255, 255, 255, 0.8);
+    --text-color:       white;
     --text-size:        15px;
-    --hover-color:      #aeccea;
+    --hover-color:      #fcd7f2;
     --bkgd-color:       #bdaeea;
   }
 
   /*-- Additional custom styles --*/
-  /* Add any additional CSS rules below                      */
+  /* Add any additional CSS rules below */
 
   /* Buttons on home page */
 
@@ -1975,9 +1975,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   /* mouse over link */
   a:hover {
-    color: #aeccea;
-  }
-  </style>
+    color: #fcd7f2;
+  }</style>
   <style type="text/css">
   /* base style */
 
@@ -2153,7 +2152,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"R-squared","authors":[],"publishedDate":"2021-11-24T00:00:00.000-06:00"}
+{"title":"R-squared","authors":[],"publishedDate":"2021-11-27T00:00:00.000-06:00"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2282,7 +2281,7 @@ R^{2} =  \frac{\sum (\hat{y} – \bar{\hat{y}})^{2}}{\sum (y – \bar{y})^{2}}
 <span class='va'>sigmas</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span><span class='op'>(</span><span class='fl'>0.5</span>,<span class='fl'>20</span>,length.out <span class='op'>=</span> <span class='fl'>20</span><span class='op'>)</span>
  <span class='co'># apply our function to a series of sigma values</span>
 <span class='va'>rout</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/lapply.html'>sapply</a></span><span class='op'>(</span><span class='va'>sigmas</span>, <span class='va'>r2.0</span><span class='op'>)</span>            
-<span class='fu'><a href='https://rdrr.io/pkg/bnstruct/man/plot.html'>plot</a></span><span class='op'>(</span><span class='va'>rout</span> <span class='op'>~</span> <span class='va'>sigmas</span>, type<span class='op'>=</span><span class='st'>"b"</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>rout</span> <span class='op'>~</span> <span class='va'>sigmas</span>, type<span class='op'>=</span><span class='st'>"b"</span><span class='op'>)</span>
 </code></pre>
 </div>
 <p><img src="rsquared_files/figure-html5/unnamed-chunk-3-1.png" width="624" /></p>
@@ -2298,7 +2297,7 @@ R^{2} =  \frac{\sum (\hat{y} – \bar{\hat{y}})^{2}}{\sum (y – \bar{y})^{2}}
 <span class='co'># non-linear data generation</span>
 <span class='va'>y</span> <span class='op'>&lt;-</span> <span class='op'>(</span><span class='va'>x</span><span class='op'>-</span><span class='fl'>1</span><span class='op'>)</span><span class='op'>^</span><span class='fl'>2</span> <span class='op'>*</span> <span class='fu'><a href='https://rdrr.io/r/stats/Uniform.html'>runif</a></span><span class='op'>(</span><span class='fl'>50</span>, min<span class='op'>=</span><span class='fl'>0.8</span>, max<span class='op'>=</span><span class='fl'>1.2</span><span class='op'>)</span> 
 <span class='co'># clearly non-linear</span>
-<span class='fu'><a href='https://rdrr.io/pkg/bnstruct/man/plot.html'>plot</a></span><span class='op'>(</span><span class='va'>x</span>,<span class='va'>y</span><span class='op'>)</span>             
+<span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>x</span>,<span class='va'>y</span><span class='op'>)</span>             
 </code></pre>
 </div>
 <p><img src="rsquared_files/figure-html5/unnamed-chunk-4-1.png" width="624" /></p>
@@ -2364,7 +2363,7 @@ R^{2} =  \frac{\sum (\hat{y} – \bar{\hat{y}})^{2}}{\sum (y – \bar{y})^{2}}
 </div>
 <pre><code>[1] 0.003281718</code></pre>
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/pkg/bnstruct/man/plot.html'>plot</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>y</span> <span class='op'>~</span> <span class='va'>x</span><span class='op'>)</span>, which<span class='op'>=</span><span class='fl'>3</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>y</span> <span class='op'>~</span> <span class='va'>x</span><span class='op'>)</span>, which<span class='op'>=</span><span class='fl'>3</span><span class='op'>)</span>
 </code></pre>
 </div>
 <p><img src="rsquared_files/figure-html5/unnamed-chunk-8-1.png" width="624" /></p>
@@ -2372,7 +2371,7 @@ R^{2} =  \frac{\sum (\hat{y} – \bar{\hat{y}})^{2}}{\sum (y – \bar{y})^{2}}
 <p>R-squared is very low and our residuals vs. fitted plot reveals outliers and non-constant variance. A common fix for this is to log transform the data. Let’s try that and see what happens:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/pkg/bnstruct/man/plot.html'>plot</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/Log.html'>log</a></span><span class='op'>(</span><span class='va'>y</span><span class='op'>)</span><span class='op'>~</span><span class='va'>x</span><span class='op'>)</span>,which <span class='op'>=</span> <span class='fl'>3</span><span class='op'>)</span> 
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/Log.html'>log</a></span><span class='op'>(</span><span class='va'>y</span><span class='op'>)</span><span class='op'>~</span><span class='va'>x</span><span class='op'>)</span>,which <span class='op'>=</span> <span class='fl'>3</span><span class='op'>)</span> 
 </code></pre>
 </div>
 <p><img src="rsquared_files/figure-html5/unnamed-chunk-9-1.png" width="624" /></p>

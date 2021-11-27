@@ -92,8 +92,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--  https://schema.org/Article -->
-  <meta property="article:published" itemprop="datePublished" content="2021-11-24"/>
-  <meta property="article:created" itemprop="dateCreated" content="2021-11-24"/>
+  <meta property="article:published" itemprop="datePublished" content="2021-11-27"/>
+  <meta property="article:created" itemprop="dateCreated" content="2021-11-27"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
   <meta property="og:title" content="Siwei Jiang: Final Project"/>
@@ -111,7 +111,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Final Project"]},{"type":"character","attributes":{},"value":["This report is the final project for my accounitng analysis class, and the codes are borrowed from my professor, Dr. Hunt's [course website](https://professor-hunt.github.io/ACC8143/){target=\"_blank\"}.\n"]},{"type":"character","attributes":{},"value":["2021-11-24"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth","toc_float","code_folding"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[3]},{"type":"logical","attributes":{},"value":[true]},{"type":"logical","attributes":{},"value":[true]}]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Final Project"]},{"type":"character","attributes":{},"value":["This report is the final project for my accounitng analysis class, and the codes are borrowed from my professor, Dr. Hunt's [course website](https://professor-hunt.github.io/ACC8143/){target=\"_blank\"}.\n"]},{"type":"character","attributes":{},"value":["2021-11-27"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth","toc_float","code_folding"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[3]},{"type":"logical","attributes":{},"value":[true]},{"type":"logical","attributes":{},"value":[true]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -1919,19 +1919,19 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     --title-size:       18px;
     --text-color:       white;
     --text-size:        15px;
-    --hover-color:      #aeccea;
+    --hover-color:      #fcd7f2;
     --bkgd-color:       #bdaeea;
   }
 
   .distill-site-footer {
-    --text-color:       rgba(255, 255, 255, 0.8);
+    --text-color:       white;
     --text-size:        15px;
-    --hover-color:      #aeccea;
+    --hover-color:      #fcd7f2;
     --bkgd-color:       #bdaeea;
   }
 
   /*-- Additional custom styles --*/
-  /* Add any additional CSS rules below                      */
+  /* Add any additional CSS rules below */
 
   /* Buttons on home page */
 
@@ -1978,9 +1978,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   /* mouse over link */
   a:hover {
-    color: #aeccea;
-  }
-  </style>
+    color: #fcd7f2;
+  }</style>
   <style type="text/css">
   /* base style */
 
@@ -2139,6 +2138,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
   <link href="site_libs/panelset-0.2.6/panelset.css" rel="stylesheet" />
   <script src="site_libs/panelset-0.2.6/panelset.js"></script>
+  <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2158,7 +2159,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Final Project","description":"This report is the final project for my accounitng analysis class, and the codes are borrowed from my professor, Dr. Hunt's [course website](https://professor-hunt.github.io/ACC8143/){target=\"_blank\"}.","authors":[],"publishedDate":"2021-11-24T00:00:00.000-06:00"}
+{"title":"Final Project","description":"This report is the final project for my accounitng analysis class, and the codes are borrowed from my professor, Dr. Hunt's [course website](https://professor-hunt.github.io/ACC8143/){target=\"_blank\"}.","authors":[],"publishedDate":"2021-11-27T00:00:00.000-06:00"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2218,7 +2219,7 @@ Project
 <li><a href="#i.-about-the-dataset">I. About the Dataset</a></li>
 <li><a href="#ii.-descriptive-stats">II. Descriptive Stats</a></li>
 <li><a href="#iii.-the-models">III. The Models</a></li>
-<li><a href="#iv.-the-process-and-results">IV. The Process and Results</a></li>
+<li><a href="#iv.-the-process">IV. The Process</a></li>
 <li><a href="#v.-code">V. Code</a>
 <ul>
 <li><a href="#i.-random-forest-total-na">i. 🎄Random Forest Total NA⭐</a></li>
@@ -2235,13 +2236,12 @@ Project
 </nav>
 </div>
 <h2 id="i.-about-the-dataset">I. About the Dataset</h2>
-<p>I obtained this dataset from Kaggle<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, and Sakshi Goyal uploaded it a year ago (2020). This dataset is about a bank’s customer churn issue. The manager💼 of the bank is interested in predicting which customer will leave this bank💸. By doing so, the bank can target those customers with special products and services to increase their satisfaction and customer retention🌞.</p>
+<p>I obtained this dataset from Kaggle<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, and Sakshi Goyal uploaded it a year ago (2020). This dataset is about a 🏦bank’s customer churn issue. The manager💼 of the bank is interested in predicting which customer will leave this bank💸. By doing so, the bank can target those customers with special products and services to increase their satisfaction and customer retention🌞.</p>
 <p>It contains 10,127 observations and 23 variables. Because I had some issues with Income Category values, so I add another column that used a scale of 1 through 5 to represent each income category. My data analyses are based on 20 variables, which excluded the Client Number and two Naive Bayes Classifiers😶.</p>
-<p>The purpose of this project is to predict churned customers, so recall is an important model fit measurement📐. I also include accuracy and kappa as measurements of model fitness. I choose kappa because customer churn is only around 16% of total customers. Although some studies state kappa is not a good measure for classification model<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, I think it is good enough for this project😎 I include a comparison table📊 in the conclusion section for each models’ performance.</p>
+<p>The purpose of this project is to predict churned customers, so recall is an important model fit measurement📐. I also include accuracy and kappa as measurements of model fitness. I choose kappa because customer churn is only around 16% of total customers. Although some studies state kappa is not a good measure for classification model<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, I think it is good enough for this project😎 I include a comparison table📊 in the Result section for each models’ performance.</p>
 <h2 id="ii.-descriptive-stats">II. Descriptive Stats</h2>
-<p>This dataset has 9,664 missing values, which is 4.77% of the 202,540 total values. Most of those missing values are belong to categorical variables.<br />
-After using kNN to replace all the missing data by calculating their nearest 10 neighbors 🏠🏡 values, the new dataset contains 0️⃣ missing values. The distribution of the target variable is not balanced⚖️, as attrited customers only represent 16% of the total customers. I don’t know what happened to my code below🥴🌧️. It did show the correct result when I ran the chunk individually:</p>
-<p><img src="images/issue.png" /></p>
+<p>This dataset has 9,664 missing values, which is 4.77% of the 202,540 total values. Most of those missing values are belong to categorical variables.</p>
+<p>After using kNN to replace all the missing data by calculating their nearest 10 neighbors 🏠🏡 values, the new dataset contains 0️⃣ missing values. The distribution of the target variable is not balanced⚖️, as attrited customers only represent 16% of the total customers.</p>
 <aside>
 <div class="layout-chunk" data-layout="l-body">
 <details>
@@ -2266,41 +2266,21 @@ Show code
 </summary>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># replace all missing values </span>
-<span class='va'>BankChurners2</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/DMwR/man/kNN.html'>kNN</a></span><span class='op'>(</span><span class='va'>BankChurners1</span>, 
+<span class='va'>BankChurners2</span> <span class='op'>&lt;-</span> <span class='fu'>VIM</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/VIM/man/kNN.html'>kNN</a></span><span class='op'>(</span><span class='va'>BankChurners1</span>, 
                      variable <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Dependent_count"</span>, <span class='st'>"Education_Level"</span>, 
                                   <span class='st'>"Marital_Status"</span>, <span class='st'>"Income_Level"</span>, 
                                   <span class='st'>"Months_Inactive_12_mon"</span>, <span class='st'>"Contacts_Count_12_mon"</span>,
                                   <span class='st'>"Total_Revolving_Bal"</span>, <span class='st'>"Total_Amt_Chng_Q4_Q1"</span>,
                                   <span class='st'>"Total_Ct_Chng_Q4_Q1"</span>, <span class='st'>"Avg_Utilization_Ratio"</span><span class='op'>)</span>,
                      k <span class='op'>=</span> <span class='fl'>10</span><span class='op'>)</span>
-</code></pre>
-</div>
-</details>
-<pre><code>Error in colnames(train): argument &quot;train&quot; is missing, with no default</code></pre>
-<details>
-<summary>
-Show code
-</summary>
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>BankChurners2</span> <span class='op'>&lt;-</span> <span class='va'>BankChurners2</span><span class='op'>[</span>,<span class='op'>-</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>21</span><span class='op'>:</span><span class='fl'>30</span><span class='op'>)</span><span class='op'>]</span>
-</code></pre>
-</div>
-</details>
-<pre><code>Error: Can&#39;t negate columns that don&#39;t exist.
-x Locations 22, 23, 24, 25, 26, etc. don&#39;t exist.
-i There are only 21 columns.</code></pre>
-<details>
-<summary>
-Show code
-</summary>
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/table.html'>table</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/NA.html'>is.na</a></span><span class='op'>(</span><span class='va'>BankChurners2</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>BankChurners2</span> <span class='op'>&lt;-</span> <span class='va'>BankChurners2</span><span class='op'>[</span>,<span class='op'>-</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>21</span><span class='op'>:</span><span class='fl'>30</span><span class='op'>)</span><span class='op'>]</span>
+<span class='fu'><a href='https://rdrr.io/r/base/table.html'>table</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/NA.html'>is.na</a></span><span class='op'>(</span><span class='va'>BankChurners2</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
 </div>
 </details>
 <pre><code>
  FALSE 
-212667 </code></pre>
+202540 </code></pre>
 <details>
 <summary>
 Show code
@@ -2485,14 +2465,109 @@ $120K +
 <li>Gradient Boosting Tree🌲: Gradient boosting is normally better💪 than random forest due to its arbitrary cost functions for classification purpose<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.</li>
 <li>Neural Network🔮: Neural network is very effective and efficient in making inferences and detecting patterns from complex datasets. It uses the input information to optimize the weight of those inputs and then generates outputs. It also minimizes the errors ❌ of those outputs to improve those processed inputs until the errors become small enough🔄. The final result is based on minimized errors❓</li>
 </ol>
-<h2 id="iv.-the-process-and-results">IV. The Process and Results</h2>
-<p>I split the dataset into the training set and testing set based on a 6:4 ratio. Then use three machine learning, 🌳random forest, gradient boosting tree🌲, and 💫neural network🔮 to train🚋 each dataset. After importing the original dataset, I use the kNN function with k = 10 to replace those missing values. For comparison, I replace missing values only in the training set and leave the testing set as it is, and it has better performance.</p>
+<h2 id="iv.-the-process">IV. The Process</h2>
+<p>I split the dataset into the training set and testing set based on 4 different ratios, and 7:3 ratio has the best result, so I use this ratio for rest of models: 🌳random forest, gradient boosting tree🌲, and 💫neural network🔮 to train🚋 each dataset. After importing the original dataset, I use the kNN function with k = 10 to replace those missing values. For comparison, I replace missing values only in the training set and leave the testing set as it is. Both random forest and gradient boosting trees have better performance in terms of recall after re-sampling in the training sets. Nerual network model turns out to has the worst performance.</p>
 <h2 id="v.-code">V. Code</h2>
 <h3 id="i.-random-forest-total-na">i. 🎄Random Forest Total NA⭐</h3>
 <blockquote>
 <p>Original Dataset with Total Missing Value Replaced</p>
 </blockquote>
-<p>The model has 0.9583 of accuracy🎯 and 0.835 in kappa, this huge drop probably is due to the imbalanced distribution of the attrition. The recall is 0.7938, which means that this model will misclassify 2 attrited customers of every 10 customers as existing customers.</p>
+<p>I use 4 different ratio to split the dataset into a training set and a testing set. The 7:3 ratio has the best performance. The model has 0.9661 of accuracy🎯 and 0.8683 in kappa, this huge drop probably is due to the imbalanced distribution of the attrition. The recall is 0.8381, which means that this model will misclassify 2 attrited customers of every 10 customers as existing customers.</p>
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>comparison</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0.9599</span>, <span class='fl'>0.8437</span>, <span class='fl'>0.8155</span>, <span class='fl'>0.9590</span>, <span class='fl'>0.8406</span>, <span class='fl'>0.8154</span>, <span class='fl'>0.9661</span>, <span class='fl'>0.8683</span>, <span class='fl'>0.8381</span>, <span class='fl'>0.9580</span>, <span class='fl'>0.8359</span>, <span class='fl'>0.8062</span><span class='op'>)</span>,
+                    ncol <span class='op'>=</span> <span class='fl'>3</span>, byrow <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span><span class='op'>(</span><span class='va'>comparison</span><span class='op'>)</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Accuracy"</span>, <span class='st'>"Kappa"</span>, <span class='st'>"Recall"</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span><span class='op'>(</span><span class='va'>comparison</span><span class='op'>)</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"5:5"</span>, <span class='st'>"6:4"</span>, <span class='st'>"7:3"</span>, <span class='st'>"8:2"</span><span class='op'>)</span>
+<span class='va'>comparison</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/as.data.frame.html'>as.data.frame.matrix</a></span><span class='op'>(</span><span class='va'>comparison</span><span class='op'>)</span> 
+<span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='va'>comparison</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/row_spec.html'>row_spec</a></span><span class='op'>(</span><span class='fl'>3</span>, color <span class='op'>=</span> <span class='st'>"white"</span>, background <span class='op'>=</span> <span class='st'>"#bdaeea"</span><span class='op'>)</span>
+</code></pre>
+</div>
+</details>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+Accuracy
+</th>
+<th style="text-align:right;">
+Kappa
+</th>
+<th style="text-align:right;">
+Recall
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+5:5
+</td>
+<td style="text-align:right;">
+0.9599
+</td>
+<td style="text-align:right;">
+0.8437
+</td>
+<td style="text-align:right;">
+0.8155
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6:4
+</td>
+<td style="text-align:right;">
+0.9590
+</td>
+<td style="text-align:right;">
+0.8406
+</td>
+<td style="text-align:right;">
+0.8154
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: white !important;background-color: #bdaeea !important;">
+7:3
+</td>
+<td style="text-align:right;color: white !important;background-color: #bdaeea !important;">
+0.9661
+</td>
+<td style="text-align:right;color: white !important;background-color: #bdaeea !important;">
+0.8683
+</td>
+<td style="text-align:right;color: white !important;background-color: #bdaeea !important;">
+0.8381
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+8:2
+</td>
+<td style="text-align:right;">
+0.9580
+</td>
+<td style="text-align:right;">
+0.8359
+</td>
+<td style="text-align:right;">
+0.8062
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="panelset">
+<div class="panel">
+<p><span class="panel-name">5:5</span> Data split in 5:5 ratio.</p>
 <div class="layout-chunk" data-layout="l-body">
 <details>
 <summary>
@@ -2501,7 +2576,7 @@ Show code
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># data split</span>
 <span class='va'>index</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/caret/man/createDataPartition.html'>createDataPartition</a></span><span class='op'>(</span><span class='va'>BankChurners2</span><span class='op'>$</span><span class='va'>Attrition_Flag</span>, 
-                             p <span class='op'>=</span> <span class='fl'>.6</span>, list <span class='op'>=</span> <span class='cn'>FALSE</span>, times <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>
+                             p <span class='op'>=</span> <span class='fl'>.5</span>, list <span class='op'>=</span> <span class='cn'>FALSE</span>, times <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>
 <span class='va'>train</span> <span class='op'>&lt;-</span> <span class='va'>BankChurners2</span><span class='op'>[</span><span class='va'>index</span>,<span class='op'>]</span>
 <span class='va'>test</span> <span class='op'>&lt;-</span> <span class='va'>BankChurners2</span><span class='op'>[</span><span class='op'>-</span><span class='va'>index</span>,<span class='op'>]</span>
 
@@ -2548,7 +2623,7 @@ Total_Trans_Amt
 Total_Trans_Ct
 </td>
 <td style="text-align:right;">
-85.04356
+92.28458
 </td>
 </tr>
 <tr>
@@ -2556,7 +2631,7 @@ Total_Trans_Ct
 Total_Ct_Chng_Q4_Q1
 </td>
 <td style="text-align:right;">
-55.58274
+54.31663
 </td>
 </tr>
 <tr>
@@ -2564,7 +2639,7 @@ Total_Ct_Chng_Q4_Q1
 Total_Relationship_Count
 </td>
 <td style="text-align:right;">
-41.44428
+45.33162
 </td>
 </tr>
 <tr>
@@ -2572,15 +2647,15 @@ Total_Relationship_Count
 Total_Amt_Chng_Q4_Q1
 </td>
 <td style="text-align:right;">
-31.43386
+30.42752
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-Total_Revolving_Bal
+Customer_Age
 </td>
 <td style="text-align:right;">
-26.31622
+18.22175
 </td>
 </tr>
 </tbody>
@@ -2601,7 +2676,7 @@ Show code
 </code></pre>
 </div>
 </details>
-<img src="final_project_files/figure-html5/RF1-1.png" width="624" />
+<img src="final_project_files/figure-html5/RF11-1.png" width="624" />
 <details>
 <summary>
 Show code
@@ -2619,7 +2694,7 @@ Show code
 </details>
 <pre><code>
 AttritedCustomer ExistingCustomer 
-             551             3499 </code></pre>
+             716             4347 </code></pre>
 <details>
 <summary>
 Show code
@@ -2637,26 +2712,26 @@ Show code
 
                   Reference
 Prediction         ExistingCustomer AttritedCustomer
-  ExistingCustomer             3365              134
-  AttritedCustomer               35              516
+  ExistingCustomer             4197              150
+  AttritedCustomer               53              663
                                           
-               Accuracy : 0.9583          
-                 95% CI : (0.9517, 0.9642)
-    No Information Rate : 0.8395          
+               Accuracy : 0.9599          
+                 95% CI : (0.9541, 0.9651)
+    No Information Rate : 0.8394          
     P-Value [Acc &gt; NIR] : &lt; 2.2e-16       
                                           
-                  Kappa : 0.835           
+                  Kappa : 0.8437          
                                           
- Mcnemar&#39;s Test P-Value : 4.755e-14       
+ Mcnemar&#39;s Test P-Value : 1.607e-11       
                                           
-            Sensitivity : 0.7938          
-            Specificity : 0.9897          
-         Pos Pred Value : 0.9365          
-         Neg Pred Value : 0.9617          
-             Prevalence : 0.1605          
-         Detection Rate : 0.1274          
-   Detection Prevalence : 0.1360          
-      Balanced Accuracy : 0.8918          
+            Sensitivity : 0.8155          
+            Specificity : 0.9875          
+         Pos Pred Value : 0.9260          
+         Neg Pred Value : 0.9655          
+             Prevalence : 0.1606          
+         Detection Rate : 0.1310          
+   Detection Prevalence : 0.1414          
+      Balanced Accuracy : 0.9015          
                                           
        &#39;Positive&#39; Class : AttritedCustomer
                                           </code></pre>
@@ -2679,13 +2754,244 @@ Show code
 </code></pre>
 </div>
 </details>
-<p><img src="final_project_files/figure-html5/RF1-2.png" width="624" /></p>
+<p><img src="final_project_files/figure-html5/RF11-2.png" width="624" /></p>
+</div>
+</div>
+<div class="panel">
+<p><span class="panel-name">6:4</span> Data split in 6:4 ratio.</p>
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># data split</span>
+<span class='va'>index</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/caret/man/createDataPartition.html'>createDataPartition</a></span><span class='op'>(</span><span class='va'>BankChurners2</span><span class='op'>$</span><span class='va'>Attrition_Flag</span>, 
+                             p <span class='op'>=</span> <span class='fl'>.6</span>, list <span class='op'>=</span> <span class='cn'>FALSE</span>, times <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>
+<span class='va'>train</span> <span class='op'>&lt;-</span> <span class='va'>BankChurners2</span><span class='op'>[</span><span class='va'>index</span>,<span class='op'>]</span>
+<span class='va'>test</span> <span class='op'>&lt;-</span> <span class='va'>BankChurners2</span><span class='op'>[</span><span class='op'>-</span><span class='va'>index</span>,<span class='op'>]</span>
+
+<span class='co'># train1</span>
+<span class='va'>churn_RF1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/caret/man/train.html'>train</a></span><span class='op'>(</span>
+  form <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='va'>Attrition_Flag</span><span class='op'>)</span> <span class='op'>~</span><span class='va'>.</span>,
+  data <span class='op'>=</span> <span class='va'>train</span>,
+  trControl <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/caret/man/trainControl.html'>trainControl</a></span><span class='op'>(</span>method <span class='op'>=</span> <span class='st'>"cv"</span>,
+                           number <span class='op'>=</span> <span class='fl'>10</span>,
+                           classProbs <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>,
+  method <span class='op'>=</span> <span class='st'>"rf"</span>,
+  tuneLength <span class='op'>=</span> <span class='fl'>10</span>
+<span class='op'>)</span>
+<span class='co'># churn_RF1</span>
+
+<span class='co'># test1</span>
+<span class='va'>churn_RF_pred1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/predict.html'>predict</a></span><span class='op'>(</span><span class='va'>churn_RF1</span>, <span class='va'>test</span>, type <span class='op'>=</span> <span class='st'>"prob"</span><span class='op'>)</span>
+<span class='va'>churn_RF_test_pred1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/cbind.html'>cbind</a></span><span class='op'>(</span><span class='va'>churn_RF_pred1</span>, <span class='va'>test</span><span class='op'>)</span>
+<span class='va'>churn_RF_test_pred1</span> <span class='op'>&lt;-</span> <span class='va'>churn_RF_test_pred1</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>prediction <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/if_else.html'>if_else</a></span><span class='op'>(</span><span class='va'>AttritedCustomer</span> <span class='op'>&gt;</span> <span class='va'>ExistingCustomer</span>, 
+                              <span class='st'>"AttritedCustomer"</span>, <span class='st'>"ExistingCustomer"</span><span class='op'>)</span><span class='op'>)</span>
+
+<span class='co'># result1</span>
+<span class='va'>churn_matrix1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/caret/man/confusionMatrix.html'>confusionMatrix</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='va'>churn_RF_test_pred1</span><span class='op'>$</span><span class='va'>prediction</span><span class='op'>)</span>, 
+                                 <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='va'>churn_RF_test_pred1</span><span class='op'>$</span><span class='va'>Attrition_Flag</span><span class='op'>)</span>, 
+                                 positive <span class='op'>=</span> <span class='st'>"AttritedCustomer"</span><span class='op'>)</span>
+<span class='va'>churn_matrix1</span>
+</code></pre>
+</div>
+</details>
+<pre><code>Confusion Matrix and Statistics
+
+                  Reference
+Prediction         ExistingCustomer AttritedCustomer
+  ExistingCustomer             3354              120
+  AttritedCustomer               46              530
+                                          
+               Accuracy : 0.959           
+                 95% CI : (0.9524, 0.9649)
+    No Information Rate : 0.8395          
+    P-Value [Acc &gt; NIR] : &lt; 2.2e-16       
+                                          
+                  Kappa : 0.8406          
+                                          
+ Mcnemar&#39;s Test P-Value : 1.463e-08       
+                                          
+            Sensitivity : 0.8154          
+            Specificity : 0.9865          
+         Pos Pred Value : 0.9201          
+         Neg Pred Value : 0.9655          
+             Prevalence : 0.1605          
+         Detection Rate : 0.1309          
+   Detection Prevalence : 0.1422          
+      Balanced Accuracy : 0.9009          
+                                          
+       &#39;Positive&#39; Class : AttritedCustomer
+                                          </code></pre>
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Accuracy : 0.9632  Kappa : 0.8586 Sensitivity : 0.8431</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="panel">
+<p><span class="panel-name">7:3</span> Data split in 7:3 ratio.</p>
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># data split</span>
+<span class='va'>index</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/caret/man/createDataPartition.html'>createDataPartition</a></span><span class='op'>(</span><span class='va'>BankChurners2</span><span class='op'>$</span><span class='va'>Attrition_Flag</span>, 
+                             p <span class='op'>=</span> <span class='fl'>.7</span>, list <span class='op'>=</span> <span class='cn'>FALSE</span>, times <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>
+<span class='va'>train</span> <span class='op'>&lt;-</span> <span class='va'>BankChurners2</span><span class='op'>[</span><span class='va'>index</span>,<span class='op'>]</span>
+<span class='va'>test</span> <span class='op'>&lt;-</span> <span class='va'>BankChurners2</span><span class='op'>[</span><span class='op'>-</span><span class='va'>index</span>,<span class='op'>]</span>
+
+<span class='co'># train1</span>
+<span class='va'>churn_RF1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/caret/man/train.html'>train</a></span><span class='op'>(</span>
+  form <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='va'>Attrition_Flag</span><span class='op'>)</span> <span class='op'>~</span><span class='va'>.</span>,
+  data <span class='op'>=</span> <span class='va'>train</span>,
+  trControl <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/caret/man/trainControl.html'>trainControl</a></span><span class='op'>(</span>method <span class='op'>=</span> <span class='st'>"cv"</span>,
+                           number <span class='op'>=</span> <span class='fl'>10</span>,
+                           classProbs <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>,
+  method <span class='op'>=</span> <span class='st'>"rf"</span>,
+  tuneLength <span class='op'>=</span> <span class='fl'>10</span>
+<span class='op'>)</span>
+<span class='co'># churn_RF1</span>
+
+<span class='co'># test1</span>
+<span class='va'>churn_RF_pred1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/predict.html'>predict</a></span><span class='op'>(</span><span class='va'>churn_RF1</span>, <span class='va'>test</span>, type <span class='op'>=</span> <span class='st'>"prob"</span><span class='op'>)</span>
+<span class='va'>churn_RF_test_pred1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/cbind.html'>cbind</a></span><span class='op'>(</span><span class='va'>churn_RF_pred1</span>, <span class='va'>test</span><span class='op'>)</span>
+<span class='va'>churn_RF_test_pred1</span> <span class='op'>&lt;-</span> <span class='va'>churn_RF_test_pred1</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>prediction <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/if_else.html'>if_else</a></span><span class='op'>(</span><span class='va'>AttritedCustomer</span> <span class='op'>&gt;</span> <span class='va'>ExistingCustomer</span>, 
+                              <span class='st'>"AttritedCustomer"</span>, <span class='st'>"ExistingCustomer"</span><span class='op'>)</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/base/table.html'>table</a></span><span class='op'>(</span><span class='va'>churn_RF_test_pred1</span><span class='op'>$</span><span class='va'>prediction</span><span class='op'>)</span>
+</code></pre>
+</div>
+</details>
+<pre><code>
+AttritedCustomer ExistingCustomer 
+             433             2605 </code></pre>
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># result1</span>
+<span class='va'>churn_matrix1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/caret/man/confusionMatrix.html'>confusionMatrix</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='va'>churn_RF_test_pred1</span><span class='op'>$</span><span class='va'>prediction</span><span class='op'>)</span>, 
+                                 <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='va'>churn_RF_test_pred1</span><span class='op'>$</span><span class='va'>Attrition_Flag</span><span class='op'>)</span>, 
+                                 positive <span class='op'>=</span> <span class='st'>"AttritedCustomer"</span><span class='op'>)</span>
+<span class='va'>churn_matrix1</span>
+</code></pre>
+</div>
+</details>
+<pre><code>Confusion Matrix and Statistics
+
+                  Reference
+Prediction         ExistingCustomer AttritedCustomer
+  ExistingCustomer             2526               79
+  AttritedCustomer               24              409
+                                          
+               Accuracy : 0.9661          
+                 95% CI : (0.959, 0.9722) 
+    No Information Rate : 0.8394          
+    P-Value [Acc &gt; NIR] : &lt; 2.2e-16       
+                                          
+                  Kappa : 0.8683          
+                                          
+ Mcnemar&#39;s Test P-Value : 1.033e-07       
+                                          
+            Sensitivity : 0.8381          
+            Specificity : 0.9906          
+         Pos Pred Value : 0.9446          
+         Neg Pred Value : 0.9697          
+             Prevalence : 0.1606          
+         Detection Rate : 0.1346          
+   Detection Prevalence : 0.1425          
+      Balanced Accuracy : 0.9144          
+                                          
+       &#39;Positive&#39; Class : AttritedCustomer
+                                          </code></pre>
+</div>
+</div>
+<div class="panel">
+<p><span class="panel-name">8:2</span> Data split in 8:2 ratio.</p>
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># data split</span>
+<span class='va'>index</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/caret/man/createDataPartition.html'>createDataPartition</a></span><span class='op'>(</span><span class='va'>BankChurners2</span><span class='op'>$</span><span class='va'>Attrition_Flag</span>, 
+                             p <span class='op'>=</span> <span class='fl'>.8</span>, list <span class='op'>=</span> <span class='cn'>FALSE</span>, times <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>
+<span class='va'>train</span> <span class='op'>&lt;-</span> <span class='va'>BankChurners2</span><span class='op'>[</span><span class='va'>index</span>,<span class='op'>]</span>
+<span class='va'>test</span> <span class='op'>&lt;-</span> <span class='va'>BankChurners2</span><span class='op'>[</span><span class='op'>-</span><span class='va'>index</span>,<span class='op'>]</span>
+
+<span class='co'># train1</span>
+<span class='va'>churn_RF1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/caret/man/train.html'>train</a></span><span class='op'>(</span>
+  form <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='va'>Attrition_Flag</span><span class='op'>)</span> <span class='op'>~</span><span class='va'>.</span>,
+  data <span class='op'>=</span> <span class='va'>train</span>,
+  trControl <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/caret/man/trainControl.html'>trainControl</a></span><span class='op'>(</span>method <span class='op'>=</span> <span class='st'>"cv"</span>,
+                           number <span class='op'>=</span> <span class='fl'>10</span>,
+                           classProbs <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>,
+  method <span class='op'>=</span> <span class='st'>"rf"</span>,
+  tuneLength <span class='op'>=</span> <span class='fl'>10</span>
+<span class='op'>)</span>
+
+<span class='co'># test1</span>
+<span class='va'>churn_RF_pred1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/predict.html'>predict</a></span><span class='op'>(</span><span class='va'>churn_RF1</span>, <span class='va'>test</span>, type <span class='op'>=</span> <span class='st'>"prob"</span><span class='op'>)</span>
+<span class='va'>churn_RF_test_pred1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/cbind.html'>cbind</a></span><span class='op'>(</span><span class='va'>churn_RF_pred1</span>, <span class='va'>test</span><span class='op'>)</span>
+<span class='va'>churn_RF_test_pred1</span> <span class='op'>&lt;-</span> <span class='va'>churn_RF_test_pred1</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>prediction <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/if_else.html'>if_else</a></span><span class='op'>(</span><span class='va'>AttritedCustomer</span> <span class='op'>&gt;</span> <span class='va'>ExistingCustomer</span>, 
+                              <span class='st'>"AttritedCustomer"</span>, <span class='st'>"ExistingCustomer"</span><span class='op'>)</span><span class='op'>)</span>
+
+<span class='co'># result1</span>
+<span class='va'>churn_matrix1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/caret/man/confusionMatrix.html'>confusionMatrix</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='va'>churn_RF_test_pred1</span><span class='op'>$</span><span class='va'>prediction</span><span class='op'>)</span>, 
+                                 <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='va'>churn_RF_test_pred1</span><span class='op'>$</span><span class='va'>Attrition_Flag</span><span class='op'>)</span>, 
+                                 positive <span class='op'>=</span> <span class='st'>"AttritedCustomer"</span><span class='op'>)</span>
+<span class='va'>churn_matrix1</span>
+</code></pre>
+</div>
+</details>
+<pre><code>Confusion Matrix and Statistics
+
+                  Reference
+Prediction         ExistingCustomer AttritedCustomer
+  ExistingCustomer             1678               63
+  AttritedCustomer               22              262
+                                          
+               Accuracy : 0.958           
+                 95% CI : (0.9484, 0.9663)
+    No Information Rate : 0.8395          
+    P-Value [Acc &gt; NIR] : &lt; 2.2e-16       
+                                          
+                  Kappa : 0.8359          
+                                          
+ Mcnemar&#39;s Test P-Value : 1.434e-05       
+                                          
+            Sensitivity : 0.8062          
+            Specificity : 0.9871          
+         Pos Pred Value : 0.9225          
+         Neg Pred Value : 0.9638          
+             Prevalence : 0.1605          
+         Detection Rate : 0.1294          
+   Detection Prevalence : 0.1402          
+      Balanced Accuracy : 0.8966          
+                                          
+       &#39;Positive&#39; Class : AttritedCustomer
+                                          </code></pre>
+</div>
+</div>
 </div>
 <h3 id="ii.-random-forest-na-var">ii. 🌴Random Forest NA &amp; Var🍃</h3>
 <blockquote>
 <p>Dataset with 14 variables and Total Missing Value Replaced</p>
 </blockquote>
-<p>Education level🎓, marital status💏, card category💳, income level💰, dependent count👶, and gender👦 👩 are the least important variables that used for the final prediction. After dropping those 6 variables, the model performance is similar to the previous model’s. The accuracy is the same with 0.0011 and 0.0076 drop in kappa and recall respectively.</p>
+<p>Education level🎓, marital status💑, card category💳, income level💰, dependent count👶, and gender👦 👩 are the least important variables that used for the final prediction. After dropping those 6 variables, the model performance decreased a little bit compared to the previous model’s.</p>
 <div class="layout-chunk" data-layout="l-body">
 <details>
 <summary>
@@ -2695,7 +3001,7 @@ Show code
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># data split drop 6 var</span>
 <span class='va'>BankChurners_drop_var</span> <span class='op'>&lt;-</span> <span class='va'>BankChurners2</span><span class='op'>[</span><span class='op'>-</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>3</span><span class='op'>:</span><span class='fl'>8</span><span class='op'>)</span><span class='op'>]</span>
 <span class='va'>index_var</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/caret/man/createDataPartition.html'>createDataPartition</a></span><span class='op'>(</span><span class='va'>BankChurners_drop_var</span><span class='op'>$</span><span class='va'>Attrition_Flag</span>, 
-                             p <span class='op'>=</span> <span class='fl'>.6</span>, list <span class='op'>=</span> <span class='cn'>FALSE</span>, times <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>
+                             p <span class='op'>=</span> <span class='fl'>.7</span>, list <span class='op'>=</span> <span class='cn'>FALSE</span>, times <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>
 <span class='va'>train_var</span> <span class='op'>&lt;-</span> <span class='va'>BankChurners_drop_var</span><span class='op'>[</span><span class='va'>index</span>,<span class='op'>]</span>
 <span class='va'>test_var</span> <span class='op'>&lt;-</span> <span class='va'>BankChurners_drop_var</span><span class='op'>[</span><span class='op'>-</span><span class='va'>index</span>,<span class='op'>]</span>
 
@@ -2723,7 +3029,7 @@ Show code
 </details>
 <pre><code>
 AttritedCustomer ExistingCustomer 
-             541             3509 </code></pre>
+             299             1726 </code></pre>
 <details>
 <summary>
 Show code
@@ -2741,26 +3047,26 @@ Show code
 
                   Reference
 Prediction         ExistingCustomer AttritedCustomer
-  ExistingCustomer             3370              139
-  AttritedCustomer               30              511
+  ExistingCustomer             1671               55
+  AttritedCustomer               29              270
                                           
-               Accuracy : 0.9583          
-                 95% CI : (0.9517, 0.9642)
+               Accuracy : 0.9585          
+                 95% CI : (0.9489, 0.9668)
     No Information Rate : 0.8395          
     P-Value [Acc &gt; NIR] : &lt; 2.2e-16       
                                           
-                  Kappa : 0.8339          
+                  Kappa : 0.8409          
                                           
- Mcnemar&#39;s Test P-Value : &lt; 2.2e-16       
+ Mcnemar&#39;s Test P-Value : 0.006377        
                                           
-            Sensitivity : 0.7862          
-            Specificity : 0.9912          
-         Pos Pred Value : 0.9445          
-         Neg Pred Value : 0.9604          
+            Sensitivity : 0.8308          
+            Specificity : 0.9829          
+         Pos Pred Value : 0.9030          
+         Neg Pred Value : 0.9681          
              Prevalence : 0.1605          
-         Detection Rate : 0.1262          
-   Detection Prevalence : 0.1336          
-      Balanced Accuracy : 0.8887          
+         Detection Rate : 0.1333          
+   Detection Prevalence : 0.1477          
+      Balanced Accuracy : 0.9069          
                                           
        &#39;Positive&#39; Class : AttritedCustomer
                                           </code></pre>
@@ -2769,7 +3075,7 @@ Prediction         ExistingCustomer AttritedCustomer
 <blockquote>
 <p>Original Dataset with Training Set Missing Value Replaced</p>
 </blockquote>
-<p>Only replaced missing values in the training set. The model has 0.961 in accuracy and 0.8452 in kappa, which improved 📈 compared to the previous model. The recall is 0.7985, which means that this model will misclassify 1 attrited customer of every 10 customers as existing customers.</p>
+<p>Only replaced missing values in the training set. The model has 0.9575 in accuracy and 0.8341 in kappa, which improved 📈 compared to the previous model. The recall is 0.8062, which means that this model will misclassify 1 attrited customer of every 10 customers as existing customers.</p>
 <div class="layout-chunk" data-layout="l-body">
 <details>
 <summary>
@@ -2778,7 +3084,7 @@ Show code
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># data split</span>
 <span class='va'>index2</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/caret/man/createDataPartition.html'>createDataPartition</a></span><span class='op'>(</span><span class='va'>BankChurners1</span><span class='op'>$</span><span class='va'>Attrition_Flag</span>, 
-                             p <span class='op'>=</span> <span class='fl'>.6</span>, list <span class='op'>=</span> <span class='cn'>FALSE</span>, times <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>
+                             p <span class='op'>=</span> <span class='fl'>.7</span>, list <span class='op'>=</span> <span class='cn'>FALSE</span>, times <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>
 <span class='va'>train2</span> <span class='op'>&lt;-</span> <span class='va'>BankChurners1</span><span class='op'>[</span><span class='va'>index</span>,<span class='op'>]</span>
 <span class='va'>test2</span> <span class='op'>&lt;-</span> <span class='va'>BankChurners1</span><span class='op'>[</span><span class='op'>-</span><span class='va'>index</span>,<span class='op'>]</span>
 <span class='fu'><a href='https://rdrr.io/r/base/table.html'>table</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/NA.html'>is.na</a></span><span class='op'>(</span><span class='va'>train2</span><span class='op'>)</span><span class='op'>)</span>
@@ -2787,14 +3093,14 @@ Show code
 </details>
 <pre><code>
  FALSE   TRUE 
-115784   5756 </code></pre>
+154407   7633 </code></pre>
 <details>
 <summary>
 Show code
 </summary>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># replace missing values in the training set</span>
-<span class='va'>train2</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/DMwR/man/kNN.html'>kNN</a></span><span class='op'>(</span><span class='va'>train2</span>, 
+<span class='va'>train2</span> <span class='op'>&lt;-</span> <span class='fu'>VIM</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/VIM/man/kNN.html'>kNN</a></span><span class='op'>(</span><span class='va'>train2</span>, 
               variable <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Dependent_count"</span>, <span class='st'>"Education_Level"</span>, 
                           <span class='st'>"Marital_Status"</span>, <span class='st'>"Income_Level"</span>, 
                           <span class='st'>"Months_Inactive_12_mon"</span>, <span class='st'>"Contacts_Count_12_mon"</span>,
@@ -2809,7 +3115,7 @@ Show code
 </details>
 <pre><code>
  FALSE 
-121540 </code></pre>
+162040 </code></pre>
 <details>
 <summary>
 Show code
@@ -2839,7 +3145,7 @@ Show code
 </details>
 <pre><code>
 AttritedCustomer ExistingCustomer 
-             546             3504 </code></pre>
+             285             1740 </code></pre>
 <details>
 <summary>
 Show code
@@ -2857,26 +3163,26 @@ Show code
 
                   Reference
 Prediction         ExistingCustomer AttritedCustomer
-  ExistingCustomer             3373              131
-  AttritedCustomer               27              519
+  ExistingCustomer             1677               63
+  AttritedCustomer               23              262
                                           
-               Accuracy : 0.961           
-                 95% CI : (0.9546, 0.9667)
+               Accuracy : 0.9575          
+                 95% CI : (0.9478, 0.9659)
     No Information Rate : 0.8395          
     P-Value [Acc &gt; NIR] : &lt; 2.2e-16       
                                           
-                  Kappa : 0.8452          
+                  Kappa : 0.8341          
                                           
- Mcnemar&#39;s Test P-Value : 2.522e-16       
+ Mcnemar&#39;s Test P-Value : 2.605e-05       
                                           
-            Sensitivity : 0.7985          
-            Specificity : 0.9921          
-         Pos Pred Value : 0.9505          
-         Neg Pred Value : 0.9626          
+            Sensitivity : 0.8062          
+            Specificity : 0.9865          
+         Pos Pred Value : 0.9193          
+         Neg Pred Value : 0.9638          
              Prevalence : 0.1605          
-         Detection Rate : 0.1281          
-   Detection Prevalence : 0.1348          
-      Balanced Accuracy : 0.8953          
+         Detection Rate : 0.1294          
+   Detection Prevalence : 0.1407          
+      Balanced Accuracy : 0.8963          
                                           
        &#39;Positive&#39; Class : AttritedCustomer
                                           </code></pre>
@@ -2903,7 +3209,7 @@ Show code
 <blockquote>
 <p>Original Dataset with Total Missing Value Replaced and Resampling in the Training Set</p>
 </blockquote>
-<p>The model has 0.9514 of accuracy and 0.8282 in kappa, which is a little bit worse 📉 than the previous models. The recall is 0.9108, the highest score among other models.</p>
+<p>The model has 0.9549 of accuracy and 0.8423 in kappa, which is similar to the previous model. The recall is 0.9344, the highest score among other models.</p>
 <div class="layout-chunk" data-layout="l-body">
 <details>
 <summary>
@@ -2912,7 +3218,7 @@ Show code
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># data split</span>
 <span class='va'>index</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/caret/man/createDataPartition.html'>createDataPartition</a></span><span class='op'>(</span><span class='va'>BankChurners2</span><span class='op'>$</span><span class='va'>Attrition_Flag</span>, 
-                             p <span class='op'>=</span> <span class='fl'>.6</span>, list <span class='op'>=</span> <span class='cn'>FALSE</span>, times <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>
+                             p <span class='op'>=</span> <span class='fl'>.7</span>, list <span class='op'>=</span> <span class='cn'>FALSE</span>, times <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>
 <span class='va'>train</span> <span class='op'>&lt;-</span> <span class='va'>BankChurners2</span><span class='op'>[</span><span class='va'>index</span>,<span class='op'>]</span>
 <span class='va'>test</span> <span class='op'>&lt;-</span> <span class='va'>BankChurners2</span><span class='op'>[</span><span class='op'>-</span><span class='va'>index</span>,<span class='op'>]</span>
 
@@ -2960,7 +3266,7 @@ Total_Trans_Ct
 Total_Trans_Amt
 </td>
 <td style="text-align:right;">
-66.22535
+88.60614
 </td>
 </tr>
 <tr>
@@ -2968,7 +3274,7 @@ Total_Trans_Amt
 Total_Ct_Chng_Q4_Q1
 </td>
 <td style="text-align:right;">
-28.35897
+48.03891
 </td>
 </tr>
 <tr>
@@ -2976,15 +3282,7 @@ Total_Ct_Chng_Q4_Q1
 Total_Relationship_Count
 </td>
 <td style="text-align:right;">
-26.13339
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Total_Amt_Chng_Q4_Q1
-</td>
-<td style="text-align:right;">
-15.42166
+28.33508
 </td>
 </tr>
 <tr>
@@ -2992,7 +3290,15 @@ Total_Amt_Chng_Q4_Q1
 Months_Inactive_12_mon
 </td>
 <td style="text-align:right;">
-13.65752
+26.29738
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Total_Amt_Chng_Q4_Q1
+</td>
+<td style="text-align:right;">
+20.91937
 </td>
 </tr>
 </tbody>
@@ -3031,7 +3337,7 @@ Show code
 </details>
 <pre><code>
 AttritedCustomer ExistingCustomer 
-             731             3319 </code></pre>
+             561             2477 </code></pre>
 <details>
 <summary>
 Show code
@@ -3049,26 +3355,26 @@ Show code
 
                   Reference
 Prediction         ExistingCustomer AttritedCustomer
-  ExistingCustomer             3261               58
-  AttritedCustomer              139              592
+  ExistingCustomer             2445               32
+  AttritedCustomer              105              456
                                           
-               Accuracy : 0.9514          
-                 95% CI : (0.9443, 0.9578)
-    No Information Rate : 0.8395          
-    P-Value [Acc &gt; NIR] : &lt; 2e-16         
+               Accuracy : 0.9549          
+                 95% CI : (0.9469, 0.962) 
+    No Information Rate : 0.8394          
+    P-Value [Acc &gt; NIR] : &lt; 2.2e-16       
                                           
-                  Kappa : 0.8282          
+                  Kappa : 0.8423          
                                           
- Mcnemar&#39;s Test P-Value : 1.2e-08         
+ Mcnemar&#39;s Test P-Value : 7.681e-10       
                                           
-            Sensitivity : 0.9108          
-            Specificity : 0.9591          
-         Pos Pred Value : 0.8098          
-         Neg Pred Value : 0.9825          
-             Prevalence : 0.1605          
-         Detection Rate : 0.1462          
-   Detection Prevalence : 0.1805          
-      Balanced Accuracy : 0.9349          
+            Sensitivity : 0.9344          
+            Specificity : 0.9588          
+         Pos Pred Value : 0.8128          
+         Neg Pred Value : 0.9871          
+             Prevalence : 0.1606          
+         Detection Rate : 0.1501          
+   Detection Prevalence : 0.1847          
+      Balanced Accuracy : 0.9466          
                                           
        &#39;Positive&#39; Class : AttritedCustomer
                                           </code></pre>
@@ -3095,7 +3401,7 @@ Show code
 <blockquote>
 <p>Original Dataset with Total Missing Value Replaced</p>
 </blockquote>
-<p>The model has 0.9662 of accuracy and 0.8695 in kappa. The recall is 0.8477. Gradient boosting tree has a better performance compared to the random forest under the same condition.</p>
+<p>The model has 0.9681 of accuracy and 0.8781 in kappa. The recall is 0.8648 Gradient boosting tree has a better performance compared to the random forest under the same condition.</p>
 <div class="layout-chunk" data-layout="l-body">
 <details>
 <summary>
@@ -3104,7 +3410,7 @@ Show code
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># data split</span>
 <span class='va'>index</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/caret/man/createDataPartition.html'>createDataPartition</a></span><span class='op'>(</span><span class='va'>BankChurners2</span><span class='op'>$</span><span class='va'>Attrition_Flag</span>, 
-                             p <span class='op'>=</span> <span class='fl'>.6</span>, list <span class='op'>=</span> <span class='cn'>FALSE</span>, times <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>
+                             p <span class='op'>=</span> <span class='fl'>.7</span>, list <span class='op'>=</span> <span class='cn'>FALSE</span>, times <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>
 <span class='va'>train</span> <span class='op'>&lt;-</span> <span class='va'>BankChurners2</span><span class='op'>[</span><span class='va'>index</span>,<span class='op'>]</span>
 <span class='va'>test</span> <span class='op'>&lt;-</span> <span class='va'>BankChurners2</span><span class='op'>[</span><span class='op'>-</span><span class='va'>index</span>,<span class='op'>]</span>
 
@@ -3145,13 +3451,13 @@ n.minobsinnode
 <tbody>
 <tr>
 <td style="text-align:left;">
-30
+58
 </td>
 <td style="text-align:right;">
-500
+400
 </td>
 <td style="text-align:right;">
-3
+6
 </td>
 <td style="text-align:right;">
 0.1
@@ -3189,7 +3495,7 @@ Show code
 </details>
 <pre><code>
 AttritedCustomer ExistingCustomer 
-             589             3461 </code></pre>
+             453             2585 </code></pre>
 <details>
 <summary>
 Show code
@@ -3207,26 +3513,26 @@ Show code
 
                   Reference
 Prediction         ExistingCustomer AttritedCustomer
-  ExistingCustomer             3362               99
-  AttritedCustomer               38              551
+  ExistingCustomer             2519               66
+  AttritedCustomer               31              422
                                           
-               Accuracy : 0.9662          
-                 95% CI : (0.9601, 0.9715)
-    No Information Rate : 0.8395          
+               Accuracy : 0.9681          
+                 95% CI : (0.9612, 0.974) 
+    No Information Rate : 0.8394          
     P-Value [Acc &gt; NIR] : &lt; 2.2e-16       
                                           
-                  Kappa : 0.8695          
+                  Kappa : 0.8781          
                                           
- Mcnemar&#39;s Test P-Value : 2.957e-07       
+ Mcnemar&#39;s Test P-Value : 0.0005561       
                                           
-            Sensitivity : 0.8477          
-            Specificity : 0.9888          
-         Pos Pred Value : 0.9355          
-         Neg Pred Value : 0.9714          
-             Prevalence : 0.1605          
-         Detection Rate : 0.1360          
-   Detection Prevalence : 0.1454          
-      Balanced Accuracy : 0.9183          
+            Sensitivity : 0.8648          
+            Specificity : 0.9878          
+         Pos Pred Value : 0.9316          
+         Neg Pred Value : 0.9745          
+             Prevalence : 0.1606          
+         Detection Rate : 0.1389          
+   Detection Prevalence : 0.1491          
+      Balanced Accuracy : 0.9263          
                                           
        &#39;Positive&#39; Class : AttritedCustomer
                                           </code></pre>
@@ -3285,15 +3591,7 @@ Total_Trans_Ct
 Total_Trans_Amt
 </td>
 <td style="text-align:right;">
-93.28910
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Total_Ct_Chng_Q4_Q1
-</td>
-<td style="text-align:right;">
-53.42534
+76.73888
 </td>
 </tr>
 <tr>
@@ -3301,7 +3599,15 @@ Total_Ct_Chng_Q4_Q1
 Total_Relationship_Count
 </td>
 <td style="text-align:right;">
-38.31983
+37.50356
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Total_Ct_Chng_Q4_Q1
+</td>
+<td style="text-align:right;">
+36.73745
 </td>
 </tr>
 <tr>
@@ -3309,15 +3615,15 @@ Total_Relationship_Count
 Total_Amt_Chng_Q4_Q1
 </td>
 <td style="text-align:right;">
-21.63934
+22.00470
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-Total_Revolving_Bal
+Customer_Age
 </td>
 <td style="text-align:right;">
-21.32732
+13.55025
 </td>
 </tr>
 </tbody>
@@ -3344,33 +3650,53 @@ Show code
 <blockquote>
 <p>Original Dataset with Training Set Missing Value Replaced and only replaced missing values in the training set</p>
 </blockquote>
-<p>The model has 0.7422 of accuracy and 0.0264 in kappa, and recall is 0.17538, which is the worst model😮 (P-Value [Acc &gt; NIR] : 1, Mcnemar’s Test P-Value : 0.4034).</p>
+<p>The model has 0.9691 of accuracy and 0.8805 in kappa, and recall is 0.8545</p>
 <div class="layout-chunk" data-layout="l-body">
 <details>
 <summary>
 Show code
 </summary>
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># # data split</span>
-<span class='co'># index2 &lt;- createDataPartition(BankChurners1$Attrition_Flag, </span>
-<span class='co'>#                              p = .6, list = FALSE, times = 1)</span>
-<span class='co'># train2 &lt;- BankChurners1[index,]</span>
-<span class='co'># test2 &lt;- BankChurners1[-index,]</span>
-<span class='co'># table(is.na(train2))</span>
-<span class='co'># </span>
-<span class='co'># # replace missing values in the training set</span>
-<span class='co'># train2 &lt;- kNN(train2, </span>
-<span class='co'>#               variable = c("Dependent_count", "Education_Level", </span>
-<span class='co'>#                           "Marital_Status", "Income_Level", </span>
-<span class='co'>#                           "Months_Inactive_12_mon", "Contacts_Count_12_mon",</span>
-<span class='co'>#                           "Total_Revolving_Bal", "Total_Amt_Chng_Q4_Q1",</span>
-<span class='co'>#                           "Total_Ct_Chng_Q4_Q1", "Avg_Utilization_Ratio"),</span>
-<span class='co'>#              k = 10)</span>
-<span class='co'># # summary(train2)</span>
-<span class='co'># train2 &lt;- train2[,-c(21:30)]</span>
-<span class='co'># table(is.na(train2))</span>
-
-<span class='co'># train5</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># data split</span>
+<span class='va'>index2</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/caret/man/createDataPartition.html'>createDataPartition</a></span><span class='op'>(</span><span class='va'>BankChurners1</span><span class='op'>$</span><span class='va'>Attrition_Flag</span>, 
+                              p <span class='op'>=</span> <span class='fl'>.7</span>, list <span class='op'>=</span> <span class='cn'>FALSE</span>, times <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>
+ <span class='va'>train2</span> <span class='op'>&lt;-</span> <span class='va'>BankChurners1</span><span class='op'>[</span><span class='va'>index</span>,<span class='op'>]</span>
+ <span class='va'>test2</span> <span class='op'>&lt;-</span> <span class='va'>BankChurners1</span><span class='op'>[</span><span class='op'>-</span><span class='va'>index</span>,<span class='op'>]</span>
+ <span class='fu'><a href='https://rdrr.io/r/base/table.html'>table</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/NA.html'>is.na</a></span><span class='op'>(</span><span class='va'>train2</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+</details>
+<pre><code>
+ FALSE   TRUE 
+134959   6821 </code></pre>
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># replace missing values in the training set</span>
+<span class='va'>train2</span> <span class='op'>&lt;-</span> <span class='fu'>VIM</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/VIM/man/kNN.html'>kNN</a></span><span class='op'>(</span><span class='va'>train2</span>, 
+               variable <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Dependent_count"</span>, <span class='st'>"Education_Level"</span>, 
+                           <span class='st'>"Marital_Status"</span>, <span class='st'>"Income_Level"</span>, 
+                           <span class='st'>"Months_Inactive_12_mon"</span>, <span class='st'>"Contacts_Count_12_mon"</span>,
+                           <span class='st'>"Total_Revolving_Bal"</span>, <span class='st'>"Total_Amt_Chng_Q4_Q1"</span>,
+                           <span class='st'>"Total_Ct_Chng_Q4_Q1"</span>, <span class='st'>"Avg_Utilization_Ratio"</span><span class='op'>)</span>,
+              k <span class='op'>=</span> <span class='fl'>10</span><span class='op'>)</span>
+<span class='co'># summary(train2)</span>
+<span class='va'>train2</span> <span class='op'>&lt;-</span> <span class='va'>train2</span><span class='op'>[</span>,<span class='op'>-</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>21</span><span class='op'>:</span><span class='fl'>30</span><span class='op'>)</span><span class='op'>]</span>
+<span class='fu'><a href='https://rdrr.io/r/base/table.html'>table</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/NA.html'>is.na</a></span><span class='op'>(</span><span class='va'>train2</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+</details>
+<pre><code>
+ FALSE 
+141780 </code></pre>
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># train5</span>
 <span class='va'>churn_GBM2</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/caret/man/train.html'>train</a></span><span class='op'>(</span>
   form <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='va'>Attrition_Flag</span><span class='op'>)</span> <span class='op'>~</span><span class='va'>.</span>,
   data <span class='op'>=</span> <span class='va'>train2</span>,
@@ -3408,13 +3734,13 @@ n.minobsinnode
 <tbody>
 <tr>
 <td style="text-align:left;">
-49
+89
 </td>
 <td style="text-align:right;">
 450
 </td>
 <td style="text-align:right;">
-5
+9
 </td>
 <td style="text-align:right;">
 0.1
@@ -3430,7 +3756,7 @@ n.minobsinnode
 Show code
 </summary>
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/pkg/bnstruct/man/plot.html'>plot</a></span><span class='op'>(</span><span class='va'>churn_GBM2</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>churn_GBM2</span><span class='op'>)</span>
 </code></pre>
 </div>
 </details>
@@ -3452,7 +3778,7 @@ Show code
 </details>
 <pre><code>
 AttritedCustomer ExistingCustomer 
-             622             3428 </code></pre>
+             440             2598 </code></pre>
 <details>
 <summary>
 Show code
@@ -3470,26 +3796,26 @@ Show code
 
                   Reference
 Prediction         ExistingCustomer AttritedCustomer
-  ExistingCustomer             2892              536
-  AttritedCustomer              508              114
+  ExistingCustomer             2527               71
+  AttritedCustomer               23              417
                                           
-               Accuracy : 0.7422          
-                 95% CI : (0.7285, 0.7556)
-    No Information Rate : 0.8395          
-    P-Value [Acc &gt; NIR] : 1.0000          
+               Accuracy : 0.9691          
+                 95% CI : (0.9623, 0.9749)
+    No Information Rate : 0.8394          
+    P-Value [Acc &gt; NIR] : &lt; 2.2e-16       
                                           
-                  Kappa : 0.0264          
+                  Kappa : 0.8805          
                                           
- Mcnemar&#39;s Test P-Value : 0.4034          
+ Mcnemar&#39;s Test P-Value : 1.249e-06       
                                           
-            Sensitivity : 0.17538         
-            Specificity : 0.85059         
-         Pos Pred Value : 0.18328         
-         Neg Pred Value : 0.84364         
-             Prevalence : 0.16049         
-         Detection Rate : 0.02815         
-   Detection Prevalence : 0.15358         
-      Balanced Accuracy : 0.51299         
+            Sensitivity : 0.8545          
+            Specificity : 0.9910          
+         Pos Pred Value : 0.9477          
+         Neg Pred Value : 0.9727          
+             Prevalence : 0.1606          
+         Detection Rate : 0.1373          
+   Detection Prevalence : 0.1448          
+      Balanced Accuracy : 0.9227          
                                           
        &#39;Positive&#39; Class : AttritedCustomer
                                           </code></pre>
@@ -3516,7 +3842,7 @@ Show code
 <blockquote>
 <p>Original Dataset with Total Missing Value Replaced and Resampling in the Training Set</p>
 </blockquote>
-<p>The model has 0.964 of accuracy and 0.8685 in kappa, which is similar to the previous result. The recall is 0.9092 🎉 (Mcnemar’s Test P-Value : 0.02545 🅿)</p>
+<p>The model has 0.9635 of accuracy and 0.8668 in kappa, which is similar to the previous result. The recall is 0.9078 🎉 (Mcnemar’s Test P-Value : 0.02545 🅿)</p>
 <div class="layout-chunk" data-layout="l-body">
 <details>
 <summary>
@@ -3525,7 +3851,7 @@ Show code
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># data split</span>
 <span class='va'>index</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/caret/man/createDataPartition.html'>createDataPartition</a></span><span class='op'>(</span><span class='va'>BankChurners2</span><span class='op'>$</span><span class='va'>Attrition_Flag</span>, 
-                             p <span class='op'>=</span> <span class='fl'>.6</span>, list <span class='op'>=</span> <span class='cn'>FALSE</span>, times <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>
+                             p <span class='op'>=</span> <span class='fl'>.7</span>, list <span class='op'>=</span> <span class='cn'>FALSE</span>, times <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>
 <span class='va'>train</span> <span class='op'>&lt;-</span> <span class='va'>BankChurners2</span><span class='op'>[</span><span class='va'>index</span>,<span class='op'>]</span>
 <span class='va'>test</span> <span class='op'>&lt;-</span> <span class='va'>BankChurners2</span><span class='op'>[</span><span class='op'>-</span><span class='va'>index</span>,<span class='op'>]</span>
 
@@ -3556,7 +3882,7 @@ Show code
 </details>
 <pre><code>
 AttritedCustomer ExistingCustomer 
-             678             3372 </code></pre>
+             509             2529 </code></pre>
 <details>
 <summary>
 Show code
@@ -3574,26 +3900,26 @@ Show code
 
                   Reference
 Prediction         ExistingCustomer AttritedCustomer
-  ExistingCustomer             3313               59
-  AttritedCustomer               87              591
+  ExistingCustomer             2484               45
+  AttritedCustomer               66              443
                                           
-               Accuracy : 0.964           
-                 95% CI : (0.9577, 0.9695)
-    No Information Rate : 0.8395          
+               Accuracy : 0.9635          
+                 95% CI : (0.9562, 0.9698)
+    No Information Rate : 0.8394          
     P-Value [Acc &gt; NIR] : &lt; 2e-16         
                                           
-                  Kappa : 0.8685          
+                  Kappa : 0.8668          
                                           
- Mcnemar&#39;s Test P-Value : 0.02545         
+ Mcnemar&#39;s Test P-Value : 0.05765         
                                           
-            Sensitivity : 0.9092          
-            Specificity : 0.9744          
-         Pos Pred Value : 0.8717          
-         Neg Pred Value : 0.9825          
-             Prevalence : 0.1605          
-         Detection Rate : 0.1459          
-   Detection Prevalence : 0.1674          
-      Balanced Accuracy : 0.9418          
+            Sensitivity : 0.9078          
+            Specificity : 0.9741          
+         Pos Pred Value : 0.8703          
+         Neg Pred Value : 0.9822          
+             Prevalence : 0.1606          
+         Detection Rate : 0.1458          
+   Detection Prevalence : 0.1675          
+      Balanced Accuracy : 0.9410          
                                           
        &#39;Positive&#39; Class : AttritedCustomer
                                           </code></pre>
@@ -3652,15 +3978,7 @@ Total_Trans_Ct
 Total_Trans_Amt
 </td>
 <td style="text-align:right;">
-34.393152
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Total_Ct_Chng_Q4_Q1
-</td>
-<td style="text-align:right;">
-21.546379
+35.435463
 </td>
 </tr>
 <tr>
@@ -3668,7 +3986,15 @@ Total_Ct_Chng_Q4_Q1
 Total_Relationship_Count
 </td>
 <td style="text-align:right;">
-15.258424
+18.702990
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Total_Ct_Chng_Q4_Q1
+</td>
+<td style="text-align:right;">
+17.822868
 </td>
 </tr>
 <tr>
@@ -3676,7 +4002,7 @@ Total_Relationship_Count
 Months_Inactive_12_mon
 </td>
 <td style="text-align:right;">
-13.878308
+14.611434
 </td>
 </tr>
 <tr>
@@ -3684,7 +4010,7 @@ Months_Inactive_12_mon
 Total_Amt_Chng_Q4_Q1
 </td>
 <td style="text-align:right;">
-9.051446
+9.309401
 </td>
 </tr>
 </tbody>
@@ -3832,31 +4158,154 @@ Show code
 Show code
 </summary>
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>comparison</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0.9583</span>, <span class='fl'>0.8350</span>, <span class='fl'>0.7938</span>, <span class='fl'>0.9583</span>, <span class='fl'>0.8339</span>, <span class='fl'>0.7862</span>, <span class='fl'>0.9610</span>, <span class='fl'>0.8452</span>, 
-                       <span class='fl'>0.7985</span>, <span class='fl'>0.9514</span>, <span class='fl'>0.8282</span>, <span class='fl'>0.9108</span>, <span class='fl'>0.9662</span>, <span class='fl'>0.8695</span>, <span class='fl'>0.8477</span>, <span class='fl'>0.7422</span>, 
-                       <span class='fl'>0.0264</span>, <span class='fl'>0.1754</span>, <span class='fl'>0.9640</span>, <span class='fl'>0.8685</span>, <span class='fl'>0.9092</span>, <span class='fl'>0.9351</span>, <span class='fl'>0.7446</span>, <span class='fl'>0.7277</span><span class='op'>)</span>,
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>comparison</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0.9661</span>, <span class='fl'>0.8683</span>, <span class='fl'>0.8381</span>, <span class='fl'>0.9585</span>, <span class='fl'>0.8409</span>, <span class='fl'>0.8308</span>, <span class='fl'>0.9575</span>, <span class='fl'>0.8341</span>, 
+                       <span class='fl'>0.8062</span>, <span class='fl'>0.9549</span>, <span class='fl'>0.8423</span>, <span class='fl'>0.9344</span>, <span class='fl'>0.9681</span>, <span class='fl'>0.8781</span>, <span class='fl'>0.8648</span>, <span class='fl'>0.9691</span>,  
+                       <span class='fl'>0.8805</span>, <span class='fl'>0.8545</span>, <span class='fl'>0.9635</span>, <span class='fl'>0.8668</span>, <span class='fl'>0.9078</span>, <span class='fl'>0.9351</span>, <span class='fl'>0.7446</span>, <span class='fl'>0.7277</span><span class='op'>)</span>,
                      ncol <span class='op'>=</span> <span class='fl'>3</span>, byrow <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
 <span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span><span class='op'>(</span><span class='va'>comparison</span><span class='op'>)</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Accuracy"</span>, <span class='st'>"Kappa"</span>, <span class='st'>"Recall"</span><span class='op'>)</span>
 <span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span><span class='op'>(</span><span class='va'>comparison</span><span class='op'>)</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"i.RF TOTAL NA"</span>, <span class='st'>"ii.RF TOTAL NA &amp; VAR"</span>, <span class='st'>"iii.RF TRAIN NA"</span>, 
                           <span class='st'>"iv.RF TOTAL NA &amp; SMOTE"</span>, <span class='st'>"v.GBT TOTAL NA"</span>, <span class='st'>"vi.GBT TRAIN NA"</span>, 
                           <span class='st'>"vii.GBT TOTAL NA &amp; SMOTE"</span>, <span class='st'>"viii.NNET TOTAL NA"</span><span class='op'>)</span>
 <span class='va'>comparison</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/as.data.frame.html'>as.data.frame.matrix</a></span><span class='op'>(</span><span class='va'>comparison</span><span class='op'>)</span>
-<span class='va'>comparison</span>
+<span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='va'>comparison</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/row_spec.html'>row_spec</a></span><span class='op'>(</span><span class='fl'>4</span>, color <span class='op'>=</span> <span class='st'>"white"</span>, background <span class='op'>=</span> <span class='st'>"#bdaeea"</span><span class='op'>)</span>
 </code></pre>
 </div>
 </details>
-<pre><code>                         Accuracy  Kappa Recall
-i.RF TOTAL NA              0.9583 0.8350 0.7938
-ii.RF TOTAL NA &amp; VAR       0.9583 0.8339 0.7862
-iii.RF TRAIN NA            0.9610 0.8452 0.7985
-iv.RF TOTAL NA &amp; SMOTE     0.9514 0.8282 0.9108
-v.GBT TOTAL NA             0.9662 0.8695 0.8477
-vi.GBT TRAIN NA            0.7422 0.0264 0.1754
-vii.GBT TOTAL NA &amp; SMOTE   0.9640 0.8685 0.9092
-viii.NNET TOTAL NA         0.9351 0.7446 0.7277</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+Accuracy
+</th>
+<th style="text-align:right;">
+Kappa
+</th>
+<th style="text-align:right;">
+Recall
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+i.RF TOTAL NA
+</td>
+<td style="text-align:right;">
+0.9661
+</td>
+<td style="text-align:right;">
+0.8683
+</td>
+<td style="text-align:right;">
+0.8381
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ii.RF TOTAL NA &amp; VAR
+</td>
+<td style="text-align:right;">
+0.9585
+</td>
+<td style="text-align:right;">
+0.8409
+</td>
+<td style="text-align:right;">
+0.8308
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+iii.RF TRAIN NA
+</td>
+<td style="text-align:right;">
+0.9575
+</td>
+<td style="text-align:right;">
+0.8341
+</td>
+<td style="text-align:right;">
+0.8062
+</td>
+</tr>
+<tr>
+<td style="text-align:left;color: white !important;background-color: #bdaeea !important;">
+iv.RF TOTAL NA &amp; SMOTE
+</td>
+<td style="text-align:right;color: white !important;background-color: #bdaeea !important;">
+0.9549
+</td>
+<td style="text-align:right;color: white !important;background-color: #bdaeea !important;">
+0.8423
+</td>
+<td style="text-align:right;color: white !important;background-color: #bdaeea !important;">
+0.9344
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+v.GBT TOTAL NA
+</td>
+<td style="text-align:right;">
+0.9681
+</td>
+<td style="text-align:right;">
+0.8781
+</td>
+<td style="text-align:right;">
+0.8648
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+vi.GBT TRAIN NA
+</td>
+<td style="text-align:right;">
+0.9691
+</td>
+<td style="text-align:right;">
+0.8805
+</td>
+<td style="text-align:right;">
+0.8545
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+vii.GBT TOTAL NA &amp; SMOTE
+</td>
+<td style="text-align:right;">
+0.9635
+</td>
+<td style="text-align:right;">
+0.8668
+</td>
+<td style="text-align:right;">
+0.9078
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+viii.NNET TOTAL NA
+</td>
+<td style="text-align:right;">
+0.9351
+</td>
+<td style="text-align:right;">
+0.7446
+</td>
+<td style="text-align:right;">
+0.7277
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 <p>The original model from Kaggle has 62% of recall, so 🤠my models did improve the performance of predicting churned customers🥳. So it can help companies to identify potential customer churn. The neural network model is no good or messed up something. Based on the variable importance rates, customers’ transaction numbers and amounts, changes in transaction amount, and total product held by customers are the most important⭐ predicting variables in those models. The demographic factors are not important in those models though.</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
