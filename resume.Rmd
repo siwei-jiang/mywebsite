@@ -54,7 +54,8 @@ body {
 ```
 
 ## Education
-
+Master in Taxation: Adkerson School of Accountancy [Expected Graduattion Date]{style="float:right"}  
+  
 Bachelor of Business in Accounting: Adkerson School of Accountancy [May 2020]{style="float:right"}    
 Minor in Business Analytics  
 Mississippi State University, Mississippi State, MS

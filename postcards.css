@@ -63,19 +63,19 @@ d-appendix {
   --title-size:       18px;
   --text-color:       white;
   --text-size:        15px;
-  --hover-color:      #aeccea;
+  --hover-color:      #fcd7f2;
   --bkgd-color:       #bdaeea;
 }
 
 .distill-site-footer {
-  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-color:       white;
   --text-size:        15px;
-  --hover-color:      #aeccea;
+  --hover-color:      #fcd7f2;
   --bkgd-color:       #bdaeea;
 }
 
 /*-- Additional custom styles --*/
-/* Add any additional CSS rules below                      */
+/* Add any additional CSS rules below */
 
 /* Buttons on home page */
 
@@ -122,6 +122,5 @@ a:visited {
 
 /* mouse over link */
 a:hover {
-  color: #aeccea;
+  color: #fcd7f2;
 }
-

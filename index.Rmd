@@ -13,12 +13,7 @@ output:
   postcards::jolla
 ---
 
-Hello, I am a master student studying accounting in Mississippi State University. Hope one day I can be a 🧭mountaineer🧗‍♀🚵‍♀️🌋🌄️🗻🚞
+Hello, I am a master student studying accounting in Mississippi State University. Hope one day I can be a 🧭mountaineer🧗🚵️🌋🌄️🗻🚞
 ["Because IT's there"](https://en.wikipedia.org/wiki/George_Mallory){target="_blank"}
 <!-- Tools > Project Options > Git -->
 
-```{css, echo=FALSE}
-h1, body {
-  color: #bdaeea;
-}
-```

@@ -16,23 +16,18 @@ knitr::opts_chunk$set(error = TRUE, cache = TRUE, warning = FALSE)
 library(readr)
 library(readxl)
 library(gdata)
-library(DMwR)
 library(GGally)
 library(ggplot2)
 library(caret)
 library(dplyr)
 library(knitr)
-library(FactoMineR)
 library(hrbrthemes)
-library(MASS)
-library(pracma)
 library(gplots)
 library(xaringan)
 library(xaringanExtra)
 library(sknifedatar)
 library(kableExtra)
 library(gbm)
-library(bnstruct)
 library(fastAdaboost)
 library(VIM)
 xaringanExtra::use_panelset()
@@ -67,17 +62,17 @@ save(IncomeLevel, file = "IncomeLevel.Rda")
 ```
 
 ## I. About the Dataset
-I obtained this dataset from Kaggle^[https://www.kaggle.com/sakshigoyal7/credit-card-customers], and Sakshi Goyal uploaded it a year ago (2020). This dataset is about a bank's customer churn issue. The manager💼 of the bank is interested in predicting which customer will leave this bank💸. By doing so, the bank can target those customers with special products and services to increase their satisfaction and customer retention🌞.  
+I obtained this dataset from Kaggle^[https://www.kaggle.com/sakshigoyal7/credit-card-customers], and Sakshi Goyal uploaded it a year ago (2020). This dataset is about a 🏦bank's customer churn issue. The manager💼 of the bank is interested in predicting which customer will leave this bank💸. By doing so, the bank can target those customers with special products and services to increase their satisfaction and customer retention🌞.  
   
 It contains 10,127 observations and 23 variables. Because I had some issues with Income Category values, so I add another column that used a scale of 1 through 5 to represent each income category. My data analyses are based on 20 variables, which excluded the Client Number and two Naive Bayes Classifiers😶.  
   
-The purpose of this project is to predict churned customers, so recall is an important model fit measurement📐. I also include accuracy and kappa as measurements of model fitness. I choose kappa because customer churn is only around 16% of total customers. Although some studies state kappa is not a good measure for classification model^[https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0222916], I think it is good enough for this project😎 I include a comparison table📊 in the conclusion section for each models' performance. 
+The purpose of this project is to predict churned customers, so recall is an important model fit measurement📐. I also include accuracy and kappa as measurements of model fitness. I choose kappa because customer churn is only around 16% of total customers. Although some studies state kappa is not a good measure for classification model^[https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0222916], I think it is good enough for this project😎 I include a comparison table📊 in the Result section for each models' performance. 
 
 ## II. Descriptive Stats
 This dataset has 9,664 missing values, which is 4.77% of the 202,540 total values. Most of those missing values are belong to categorical variables.  
-After using kNN to replace all the missing data by calculating their nearest 10 neighbors 🏠🏡 values, the new dataset contains 0️⃣ missing values. The distribution of the target variable is not balanced⚖️, as attrited customers only represent 16% of the total customers. I don't know what happened to my code below🥴🌧️. It did show the correct result when I ran the chunk individually:
 
-![](C:\Users\Jiang\Desktop\Acct8143\mywebsite\images\issue.png)
+After using kNN to replace all the missing data by calculating their nearest 10 neighbors 🏠🏡 values, the new dataset contains 0️⃣ missing values. The distribution of the target variable is not balanced⚖️, as attrited customers only represent 16% of the total customers.
+
 
 <aside>
 ```{r NA}
@@ -88,7 +83,7 @@ NA_pct <- prop.table(NA_cnt)
 cbind(NA_cnt, NA_pct)
 
 # replace all missing values 
-BankChurners2 <- kNN(BankChurners1, 
+BankChurners2 <- VIM::kNN(BankChurners1, 
                      variable = c("Dependent_count", "Education_Level", 
                                   "Marital_Status", "Income_Level", 
                                   "Months_Inactive_12_mon", "Contacts_Count_12_mon",
@@ -102,7 +97,8 @@ counts <- table(BankChurners2$Attrition_Flag)
 proportions <- prop.table(counts)
 cbind(counts, proportions)
 ```
-</aside>
+</aside>  
+
 
 ::: panelset
 ::: panel
@@ -182,20 +178,34 @@ kable(IncomeLevel)
 2. Gradient Boosting Tree🌲:  Gradient boosting is normally better💪 than random forest due to its arbitrary cost functions for classification purpose^[https://en.wikipedia.org/wiki/Gradient_boosting].
 3. Neural Network🔮: Neural network is very effective and efficient in making inferences and detecting patterns from complex datasets. It uses the input information to optimize the weight of those inputs and then generates outputs. It also minimizes the errors ❌ of those outputs to improve those processed inputs until the errors become small enough🔄. The final result is based on minimized errors❓
 
-## IV. The Process and Results
-I split the dataset into the training set and testing set based on a 6:4 ratio. Then use three machine learning, 🌳random forest, gradient boosting tree🌲, and 💫neural network🔮 to train🚋 each dataset. After importing the original dataset, I use the kNN function with k = 10 to replace those missing values. For comparison, I replace missing values only in the training set and leave the testing set as it is, and it has better performance. 
+## IV. The Process
+I split the dataset into the training set and testing set based on 4 different ratios, and 7:3 ratio has the best result, so I use this ratio for rest of models: 🌳random forest, gradient boosting tree🌲, and 💫neural network🔮 to train🚋 each dataset. After importing the original dataset, I use the kNN function with k = 10 to replace those missing values. For comparison, I replace missing values only in the training set and leave the testing set as it is. Both random forest and gradient boosting trees have better performance in terms of recall after re-sampling in the training sets. Nerual network model turns out to has the worst performance. 
 
-## V. Code
+## V. Code 
 
 ### i. 🎄Random Forest Total NA⭐
 > Original Dataset with Total Missing Value Replaced  
 
-The model has 0.9583 of accuracy🎯 and 0.835 in kappa, this huge drop probably is due to the imbalanced distribution of the attrition. The recall is 0.7938, which means that this model will misclassify 2 attrited customers of every 10 customers as existing customers.     
+I use 4 different ratio to split the dataset into a training set and a testing set. The 7:3 ratio has the best performance. The model has 0.9661 of accuracy🎯 and 0.8683 in kappa, this huge drop probably is due to the imbalanced distribution of the attrition. The recall is 0.8381, which means that this model will misclassify 2 attrited customers of every 10 customers as existing customers.     
 
-```{r RF1}
+```{r data_split}
+comparison <- matrix(c(0.9599, 0.8437, 0.8155, 0.9590, 0.8406, 0.8154, 0.9661, 0.8683, 0.8381, 0.9580, 0.8359, 0.8062),
+                    ncol = 3, byrow = TRUE)
+colnames(comparison) <- c("Accuracy", "Kappa", "Recall")
+rownames(comparison) <- c("5:5", "6:4", "7:3", "8:2")
+comparison <- as.data.frame.matrix(comparison) 
+kable(comparison) %>% 
+  row_spec(3, color = "white", background = "#bdaeea")
+```
+
+::: panelset
+::: panel
+[5:5]{.panel-name} Data split in 5:5 ratio.
+
+```{r RF11}
 # data split
 index <- createDataPartition(BankChurners2$Attrition_Flag, 
-                             p = .6, list = FALSE, times = 1)
+                             p = .5, list = FALSE, times = 1)
 train <- BankChurners2[index,]
 test <- BankChurners2[-index,]
 
@@ -250,17 +260,131 @@ ggplot(as.data.frame(churn_matrix1$table)) +
   ggtitle("Merry Christmas") +
   theme(plot.title = element_text(hjust = .5, size = 10, face = "bold"))
 ```
+:::
+ 
+::: panel
+[6:4]{.panel-name} Data split in 6:4 ratio. 
 
-### ii. 🌴Random Forest NA & Var🍃
+```{r RF12}
+# data split
+index <- createDataPartition(BankChurners2$Attrition_Flag, 
+                             p = .6, list = FALSE, times = 1)
+train <- BankChurners2[index,]
+test <- BankChurners2[-index,]
+
+# train1
+churn_RF1 <- train(
+  form = factor(Attrition_Flag) ~.,
+  data = train,
+  trControl = trainControl(method = "cv",
+                           number = 10,
+                           classProbs = TRUE),
+  method = "rf",
+  tuneLength = 10
+)
+# churn_RF1
+
+# test1
+churn_RF_pred1 <- predict(churn_RF1, test, type = "prob")
+churn_RF_test_pred1 <- cbind(churn_RF_pred1, test)
+churn_RF_test_pred1 <- churn_RF_test_pred1 %>% 
+  mutate(prediction = if_else(AttritedCustomer > ExistingCustomer, 
+                              "AttritedCustomer", "ExistingCustomer"))
+
+# result1
+churn_matrix1 <- confusionMatrix(factor(churn_RF_test_pred1$prediction), 
+                                 factor(churn_RF_test_pred1$Attrition_Flag), 
+                                 positive = "AttritedCustomer")
+churn_matrix1
+# Accuracy : 0.9632  Kappa : 0.8586 Sensitivity : 0.8431
+```
+:::
+
+::: panel
+[7:3]{.panel-name} Data split in 7:3 ratio. 
+
+```{r RF13}
+# data split
+index <- createDataPartition(BankChurners2$Attrition_Flag, 
+                             p = .7, list = FALSE, times = 1)
+train <- BankChurners2[index,]
+test <- BankChurners2[-index,]
+
+# train1
+churn_RF1 <- train(
+  form = factor(Attrition_Flag) ~.,
+  data = train,
+  trControl = trainControl(method = "cv",
+                           number = 10,
+                           classProbs = TRUE),
+  method = "rf",
+  tuneLength = 10
+)
+# churn_RF1
+
+# test1
+churn_RF_pred1 <- predict(churn_RF1, test, type = "prob")
+churn_RF_test_pred1 <- cbind(churn_RF_pred1, test)
+churn_RF_test_pred1 <- churn_RF_test_pred1 %>% 
+  mutate(prediction = if_else(AttritedCustomer > ExistingCustomer, 
+                              "AttritedCustomer", "ExistingCustomer"))
+table(churn_RF_test_pred1$prediction)
+
+# result1
+churn_matrix1 <- confusionMatrix(factor(churn_RF_test_pred1$prediction), 
+                                 factor(churn_RF_test_pred1$Attrition_Flag), 
+                                 positive = "AttritedCustomer")
+churn_matrix1
+```
+:::
+
+::: panel
+[8:2]{.panel-name} Data split in 8:2 ratio. 
+
+```{r RF14}
+# data split
+index <- createDataPartition(BankChurners2$Attrition_Flag, 
+                             p = .8, list = FALSE, times = 1)
+train <- BankChurners2[index,]
+test <- BankChurners2[-index,]
+
+# train1
+churn_RF1 <- train(
+  form = factor(Attrition_Flag) ~.,
+  data = train,
+  trControl = trainControl(method = "cv",
+                           number = 10,
+                           classProbs = TRUE),
+  method = "rf",
+  tuneLength = 10
+)
+
+# test1
+churn_RF_pred1 <- predict(churn_RF1, test, type = "prob")
+churn_RF_test_pred1 <- cbind(churn_RF_pred1, test)
+churn_RF_test_pred1 <- churn_RF_test_pred1 %>% 
+  mutate(prediction = if_else(AttritedCustomer > ExistingCustomer, 
+                              "AttritedCustomer", "ExistingCustomer"))
+
+# result1
+churn_matrix1 <- confusionMatrix(factor(churn_RF_test_pred1$prediction), 
+                                 factor(churn_RF_test_pred1$Attrition_Flag), 
+                                 positive = "AttritedCustomer")
+churn_matrix1
+```
+:::
+:::
+
+### ii. 🌴Random Forest NA & Var🍃 
 > Dataset with 14 variables and Total Missing Value Replaced  
 
-Education level🎓, marital status💑, card category💳, income level💰, dependent count👶, and gender👦 👩 are the least important variables that used for the final prediction. After dropping those 6 variables, the model performance is similar to the previous model's. The accuracy is the same with 0.0011 and 0.0076 drop in kappa and recall respectively.  
+Education level🎓, marital status💑, card category💳, income level💰, dependent count👶, and gender👦 👩 are the least important variables that used for the final prediction. After dropping those 6 variables, the model performance decreased a little bit compared to the previous model's.  
 
 ```{r RF1_drop_var}
 # data split drop 6 var
 BankChurners_drop_var <- BankChurners2[-c(3:8)]
 index_var <- createDataPartition(BankChurners_drop_var$Attrition_Flag, 
-                             p = .6, list = FALSE, times = 1)
+                             p = .7, list = FALSE, times = 1)
 train_var <- BankChurners_drop_var[index,]
 test_var <- BankChurners_drop_var[-index,]
 
@@ -294,18 +418,18 @@ churn_matrix_var
 ### iii. 🔔Random Forest Train NA✨
 > Original Dataset with Training Set Missing Value Replaced  
 
-Only replaced missing values in the training set. The model has 0.961 in accuracy and 0.8452 in kappa, which improved 📈 compared to the previous model. The recall is 0.7985, which means that this model will misclassify 1 attrited customer of every 10 customers as existing customers.
+Only replaced missing values in the training set. The model has 0.9575 in accuracy and 0.8341 in kappa, which improved 📈 compared to the previous model. The recall is 0.8062, which means that this model will misclassify 1 attrited customer of every 10 customers as existing customers.
 
 ```{r RF2}
 # data split
 index2 <- createDataPartition(BankChurners1$Attrition_Flag, 
-                             p = .6, list = FALSE, times = 1)
+                             p = .7, list = FALSE, times = 1)
 train2 <- BankChurners1[index,]
 test2 <- BankChurners1[-index,]
 table(is.na(train2))
 
 # replace missing values in the training set
-train2 <- kNN(train2, 
+train2 <- VIM::kNN(train2, 
               variable = c("Dependent_count", "Education_Level", 
                           "Marital_Status", "Income_Level", 
                           "Months_Inactive_12_mon", "Contacts_Count_12_mon",
@@ -357,12 +481,12 @@ ggplot(as.data.frame(churn_matrix2$table)) +
 ### iv. ⛄Random Forest Total NA & SMOTE❄️
 > Original Dataset with Total Missing Value Replaced and Resampling in the Training Set  
 
-The model has 0.9514 of accuracy and 0.8282 in kappa, which is a little bit worse 📉 than the previous models. The recall is 0.9108, the highest score among other models. 
+The model has 0.9549 of accuracy and 0.8423 in kappa, which is similar to the previous model. The recall is 0.9344, the highest score among other models. 
 
 ```{r RF3}
 # data split
 index <- createDataPartition(BankChurners2$Attrition_Flag, 
-                             p = .6, list = FALSE, times = 1)
+                             p = .7, list = FALSE, times = 1)
 train <- BankChurners2[index,]
 test <- BankChurners2[-index,]
 
@@ -422,12 +546,12 @@ ggplot(as.data.frame(churn_matrix3$table)) +
 ### v. 🧦🎁Gradient Boosting Tree Total NA🎅🍪🥛
 > Original Dataset with Total Missing Value Replaced  
 
-The model has 0.9662 of accuracy and 0.8695 in kappa. The recall is 0.8477. Gradient boosting tree has a better performance compared to the random forest under the same condition.            
+The model has 0.9681 of accuracy and 0.8781 in kappa. The recall is 0.8648 Gradient boosting tree has a better performance compared to the random forest under the same condition.            
 
 ```{r GBM1}
 # data split
 index <- createDataPartition(BankChurners2$Attrition_Flag, 
-                             p = .6, list = FALSE, times = 1)
+                             p = .7, list = FALSE, times = 1)
 train <- BankChurners2[index,]
 test <- BankChurners2[-index,]
 
@@ -485,30 +609,30 @@ ggplot(var_imp4, aes(x = reorder(rownames(var_imp4), Overall), y = Overall)) +
   coord_flip()
 ```
 
-### vi. 🔔Gradient Boosting Tree Train NA✨
+### vi. 🔔Gradient Boosting Tree Train NA✨  
 > Original Dataset with Training Set Missing Value Replaced and only replaced missing values in the training set  
 
-The model has 0.7422 of accuracy and 0.0264 in kappa, and recall is 0.17538, which is the worst model😮 (P-Value [Acc > NIR] : 1, Mcnemar's Test P-Value : 0.4034). 
+The model has 0.9691 of accuracy and 0.8805 in kappa, and recall is 0.8545 
 
 ```{r GBM2}
-# # data split
-# index2 <- createDataPartition(BankChurners1$Attrition_Flag, 
-#                              p = .6, list = FALSE, times = 1)
-# train2 <- BankChurners1[index,]
-# test2 <- BankChurners1[-index,]
-# table(is.na(train2))
-# 
-# # replace missing values in the training set
-# train2 <- kNN(train2, 
-#               variable = c("Dependent_count", "Education_Level", 
-#                           "Marital_Status", "Income_Level", 
-#                           "Months_Inactive_12_mon", "Contacts_Count_12_mon",
-#                           "Total_Revolving_Bal", "Total_Amt_Chng_Q4_Q1",
-#                           "Total_Ct_Chng_Q4_Q1", "Avg_Utilization_Ratio"),
-#              k = 10)
-# # summary(train2)
-# train2 <- train2[,-c(21:30)]
-# table(is.na(train2))
+# data split
+index2 <- createDataPartition(BankChurners1$Attrition_Flag, 
+                              p = .7, list = FALSE, times = 1)
+ train2 <- BankChurners1[index,]
+ test2 <- BankChurners1[-index,]
+ table(is.na(train2))
+ 
+# replace missing values in the training set
+train2 <- VIM::kNN(train2, 
+               variable = c("Dependent_count", "Education_Level", 
+                           "Marital_Status", "Income_Level", 
+                           "Months_Inactive_12_mon", "Contacts_Count_12_mon",
+                           "Total_Revolving_Bal", "Total_Amt_Chng_Q4_Q1",
+                           "Total_Ct_Chng_Q4_Q1", "Avg_Utilization_Ratio"),
+              k = 10)
+# summary(train2)
+train2 <- train2[,-c(21:30)]
+table(is.na(train2))
 
 # train5
 churn_GBM2 <- train(
@@ -553,12 +677,12 @@ ggplot(as.data.frame(churn_matrix5$table)) +
 ### vii. 🦌Gradient Boosting Tree Total NA & SMOTE🥕
 > Original Dataset with Total Missing Value Replaced and Resampling in the Training Set  
 
-The model has 0.964 of accuracy and 0.8685 in kappa, which is similar to the previous result. The recall is 0.9092 🎉 (Mcnemar's Test P-Value : 0.02545 🅿) 
+The model has 0.9635 of accuracy and 0.8668 in kappa, which is similar to the previous result. The recall is 0.9078 🎉 (Mcnemar's Test P-Value : 0.02545 🅿) 
 
 ```{r GBM3}
 # data split
 index <- createDataPartition(BankChurners2$Attrition_Flag, 
-                             p = .6, list = FALSE, times = 1)
+                             p = .7, list = FALSE, times = 1)
 train <- BankChurners2[index,]
 test <- BankChurners2[-index,]
 
@@ -666,20 +790,22 @@ ggplot(as.data.frame(churn_matrix7$table)) +
   theme(plot.title = element_text(hjust = .5, size = 10, face = "bold"))
 ```
 
-## VI. Result
+## VI. Result   
 Overall, 🌳random forest model has better performance🏆 than gradient boosting tree🌲, especially after replacing total missing values and using SMOTE to fix 🔧 the imbalanced dataset issue. (**iv.RF TOTAL NA & SMOTE**)
 
 ```{r comparison}
-comparison <- matrix(c(0.9583, 0.8350, 0.7938, 0.9583, 0.8339, 0.7862, 0.9610, 0.8452, 
-                       0.7985, 0.9514, 0.8282, 0.9108, 0.9662, 0.8695, 0.8477, 0.7422, 
-                       0.0264, 0.1754, 0.9640, 0.8685, 0.9092, 0.9351, 0.7446, 0.7277),
+comparison <- matrix(c(0.9661, 0.8683, 0.8381, 0.9585, 0.8409, 0.8308, 0.9575, 0.8341, 
+                       0.8062, 0.9549, 0.8423, 0.9344, 0.9681, 0.8781, 0.8648, 0.9691,  
+                       0.8805, 0.8545, 0.9635, 0.8668, 0.9078, 0.9351, 0.7446, 0.7277),
                      ncol = 3, byrow = TRUE)
 colnames(comparison) <- c("Accuracy", "Kappa", "Recall")
 rownames(comparison) <- c("i.RF TOTAL NA", "ii.RF TOTAL NA & VAR", "iii.RF TRAIN NA", 
                           "iv.RF TOTAL NA & SMOTE", "v.GBT TOTAL NA", "vi.GBT TRAIN NA", 
                           "vii.GBT TOTAL NA & SMOTE", "viii.NNET TOTAL NA")
 comparison <- as.data.frame.matrix(comparison)
-comparison
+kable(comparison) %>% 
+  row_spec(4, color = "white", background = "#bdaeea")
+  
 ```
 The original model from Kaggle has 62% of recall, so 🤠my models did improve the performance of predicting churned customers🥳. So it can help companies to identify potential customer churn. The neural network model is no good or messed up something. Based on the variable importance rates, customers' transaction numbers and amounts, changes in transaction amount, and total product held by customers are the most important⭐ predicting variables in those models. The demographic factors are not important in those models though.  
 
