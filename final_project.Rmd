@@ -100,6 +100,7 @@ cbind(counts, proportions)
 </aside>  
 
 
+
 ::: panelset
 ::: panel
 [Transaction Count]{.panel-name} Attrited customer has less variability and less spread regarding the total number of transactions. We can see that 50% of customer churn has less than 50 transaction counts and no of those customers have more than 100 transactions.
