@@ -7,7 +7,6 @@ output:
   distill::distill_article:
     toc: true
     toc_depth: 3
-    toc_float: true
     code_folding: true
 ---
 
@@ -180,7 +179,7 @@ kable(IncomeLevel)
 3. Neural Network🔮: Neural network is very effective and efficient in making inferences and detecting patterns from complex datasets. It uses the input information to optimize the weight of those inputs and then generates outputs. It also minimizes the errors ❌ of those outputs to improve those processed inputs until the errors become small enough🔄. The final result is based on minimized errors❓
 
 ## IV. The Process
-I split the dataset into the training set and testing set based on 4 different ratios, and 7:3 ratio has the best result, so I use this ratio for rest of models: 🌳random forest, gradient boosting tree🌲, and 💫neural network🔮 to train🚋 each dataset. After importing the original dataset, I use the kNN function with k = 10 to replace those missing values. For comparison, I replace missing values only in the training set and leave the testing set as it is. Both random forest and gradient boosting trees have better performance in terms of recall after re-sampling in the training sets. Nerual network model turns out to has the worst performance. 
+I split the dataset into the training set and testing set based on 4 different ratios, and 7:3 ratio has the best result, so I use this ratio for rest of models: 🌳random forest, gradient boosting tree🌲, and 💫neural network🔮 to train🚋 each dataset. After importing the original dataset, I use the kNN function with k = 10 to replace those missing values. For comparison, I replace missing values only in the training set and leave the testing set as it is. Both random forest and gradient boosting trees have better performance in terms of recall after re-sampling in the training sets. Nerual network model turns out to have the worst performance. 
 
 ## V. Code 
 

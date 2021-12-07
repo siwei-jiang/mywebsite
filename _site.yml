@@ -3,6 +3,7 @@ title: "Siwei Jiang"
 description: |
 output_dir: "docs"
 base_url: https://github.com/siwei-jiang/mywebsite
+google_analytics: "G-EQGVZLTZNC"
 theme: postcards.css
 navbar:
   search: false
