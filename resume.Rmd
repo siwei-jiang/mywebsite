@@ -54,7 +54,7 @@ body {
 ```
 
 ## Education
-Master in Taxation: Adkerson School of Accountancy [Expected Graduattion Date]{style="float:right"}  
+Master in Taxation: Adkerson School of Accountancy [May 2022]{style="float:right"}  
   
 Bachelor of Business in Accounting: Adkerson School of Accountancy [May 2020]{style="float:right"}    
 Minor in Business Analytics  
@@ -71,7 +71,7 @@ Mississippi State University, Mississippi State, MS
 ## Course Group Projects
 -	&nbsp;&nbsp;PowerPoint and social platforms: Marketing strategy plans for a drone startup
 - &nbsp;&nbsp;Excel and Word: Prepared consolidated financial reports for company acquisition
-- &nbsp;&nbsp;R: Bankruptcy analysis. Methods: holdout validation in discriminant analysis and logistic &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; regression analysis, and cross-validation in decision tree analysis
+- &nbsp;&nbsp;R: Bankruptcy analysis. Methods: holdout validation in discriminant analysis and logistic &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; regression analysis, and cross-validation in decision tree analysis.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Customer Churn prediction. Methods: cross-validation in random forest and gradient &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boosting.
 
 ## Computer Skills
 - &nbsp;&nbsp;Advanced in Microsoft Office including Excel, Word, and PowerPoint
